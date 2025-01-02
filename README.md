@@ -1,8 +1,10 @@
 # <img src="https://github.com/user-attachments/assets/5e50d491-f22a-46a5-b6ac-135751340da4" hspace="10" width="37"  align="left"/><p><center>FastCat FastFetch Theme Pack.</center>
 
-<p align="center"><img src="https://github.com/user-attachments/assets/bd9275a7-54bd-47ee-b499-1de83fb8d2bb"></p>
+<p align="center"><img src="https://github.com/user-attachments/assets/ca14e004-c0d3-4fc5-853f-8e4f2005daa9"></p>
+
 
 --------------------------------------------------------------------------
+
 
 <img src="https://img.shields.io/badge/Version-BETA-black.svg?" hspace="10"  align="right" /></a>What is FastCat?
  --
