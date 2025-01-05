@@ -27,6 +27,7 @@ echo -e '\033[0;36m
 \033[0;36m| || (_| \__ \ |_| \__/\ (_| | |_ 
 \033[0;31m\_| \__,_|___/\__|\____/\__,_|\__|                 
 \e[1;34m[01]\e[0;32mMetoSpace \e[1;35m[02]\e[0;32mFast-Snail
+\033[1;31m[x]Exit [D]Default-Theme
 '
         echo -ne "\e[1;33mm3tozz\e[0;31m@\033[1;34mfastcat\n\e[0;31m↳\e[1;36m " ; read islem
 }
