@@ -78,6 +78,11 @@ https://github.com/m3tozz/FastCat/blob/main/PREVIEW-THEMES.md</a>
 
  
 --------------------------------------------------------------------------
+  
+<p align="center"><a href="https://www.pling.com/p/2238348/" target="_blank"><img src="https://github.com/user-attachments/assets/392abc9e-5265-4cbe-a031-76d090df89a3" width="44%"></a>
+ 
+--------------------------------------------------------------------------
+
 <p align="center">Support | Bağış Yap<br>
 <a href="https://kreosus.com/m3tozzch4rm">Donate Link (Turkish)</a> or <align="right"><a href="https://www.buymeacoffee.com/m3tozz">BuyMeACoffee</a>.</p>
 
