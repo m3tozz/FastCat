@@ -73,7 +73,7 @@ https://github.com/m3tozz/FastCat/blob/main/PREVIEW-THEMES.md</a>
 
 
 <p align="center"><img src="https://github.com/user-attachments/assets/85ff5f33-d9b6-4074-bdda-24137815ba66"><img 
-<a href="https://discord.gg/sQwYCZer95"><img src="https://img.shields.io/badge/Join The Community Discord Server-black?&logo=discord" hspace="10"  align="center" /></a>
+<a href="https://discord.com/invite/sQwYCZer95"><img src="https://img.shields.io/badge/Join The Community Discord Server-black?&logo=discord" hspace="10"  align="center" /></a>
 <a href="https://matrix.to/#/#neocat-channels:matrix.org"><img src="https://img.shields.io/badge/Join The Community Matrix Server-black?&logo=matrix" hspace="10"  align="center" /></a></p>
 
  
