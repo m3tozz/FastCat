@@ -27,6 +27,7 @@ help() {
 \t${BASENAME} --shell: run the ${APP} .
 \t${BASENAME} --backup: back up your own fastfetch configuration.
 \t${BASENAME} --version: show the version.
+\t${BASENAME} --about: about ${APP} project.
 \t${BASENAME} --help: show this page.
 "
 
@@ -35,7 +36,22 @@ help() {
 fastcat:version() {
 echo "$version"
 }
-
+fastcat:about() {
+echo -e '
+ _____         _    ____      _   
+|  ___|_ _ ___| |_ / ___|__ _| |_ 
+| |_ / _` / __| __| |   / _` | __|FastFetch Theme Pack!
+|  _| (_| \__ \ |_| |__| (_| | |_ 
+|_|  \__,_|___/\__|\____\__,_|\__|                       
+'
+    echo -e "$blue##########################################################$tp"
+    echo -e "    Create by           ":" $red M3TOZZ$tp"
+    echo -e "    Github              ":" $red https://github.com/m3tozz$tp"
+    echo -e "    Instagram           ":" $red @textzuhree$tp"
+    echo -e "    Version             ":" $red ${version} $tp"
+    echo -e "$blue##########################################################$tp"
+	exit 1
+}
 fastcat:backup() {
 bash ./backup.sh
 }
@@ -45,6 +61,7 @@ help() {
 --shell: run the ${APP} .
 --backup: back up your own fastfetch configuration.
 --version: show the version.
+--about: about ${APP} project.
 --help: show this page."
 }
 
@@ -134,6 +151,9 @@ case "${1,,}" in
 	;;
 	"--backup"|"-b")
 		fastcat:backup
+	;;
+		"--about"|"-a")
+		fastcat:about
 	;;
 	"--version"|"-v")
 		fastcat:version
