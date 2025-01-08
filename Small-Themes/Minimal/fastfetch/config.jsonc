@@ -16,33 +16,33 @@
 	"break",
         {
             "type": "os",
-            "key": " ",
+            "key": "OS  ",
             "keyColor": "31",
         },
         {
             "type": "kernel",
-            "key": " ",
+            "key": "KER ",
             "keyColor": "32",
         },
         {
             "type": "packages",
-            "key": " ",
+            "key": "PKG ",
             "keyColor": "33",
         },
         {
             "type": "shell",
-            "key": " ",
+            "key": "SH  ",
             "keyColor": "34",
         },
         {
             "type": "terminal",
-            "key": " ",
+            "key": "TER ",
             "keyColor": "35",
         },
         {
             "type": "wm",
-            "key": " ",
-            "keyColor": "36", 
+            "key": "WM  ",
+            "keyColor": "36",
         },
         "break",
     ]

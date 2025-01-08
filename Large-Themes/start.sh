@@ -28,7 +28,8 @@ echo -e '\033[0;36m
 \033[0;31m\_| \__,_|___/\__|\____/\__,_|\__|                 
 \e[1;34m[01]\e[0;32mAnime-Boy \e[1;35m[02]\e[0;32mDeath \e[1;31m[03]\e[0;32mPentagram \033[1;33m[04]\e[0;32mScorpion
 \033[1;33m[05]\e[0;32mAnime-Girl \e[1;36m[06]\e[0;32mSaturn \e[1;35m[07]\e[0;32mSuse-Icons \033[0;36m[08]\e[0;32mCat
-\e[1;35m[09]\e[0;32mJurassic \033[1;33m[10]\e[0;32mBatMan
+\e[1;35m[09]\e[0;32mJurassic \033[1;33m[10]\e[0;32mBatMan \e[1;34m[11]\e[0;32mGroups \e[1;31m[12]\e[0;32mRose
+\e[0;36m[13]\e[0;32mFedora \e[1;34m[14]\e[0;32mArch \e[1;35m[15]\e[0;32mHyprland
 \033[1;31m[x]Exit [D]Default-Theme
 '
         echo -ne "\e[1;33mm3tozz\e[0;31m@\033[1;34mfastcat\n\e[0;31m↳\e[1;36m " ; read islem
@@ -139,6 +140,55 @@ sleep 1
 clear   
 fastfetch
 
+elif [[ $islem == 11 ]]; then
+	sleep 1
+	clear
+	loader
+rm -r /home/$USER/.config/fastfetch
+sleep 1
+        cd Groups/ && cp -r fastfetch /home/$USER/.config
+clear
+fastfetch
+
+elif [[ $islem == 12 ]]; then
+	sleep 1
+	clear
+	loader
+rm -r /home/$USER/.config/fastfetch
+sleep 1
+        cd Rose/ && cp -r fastfetch /home/$USER/.config
+clear
+fastfetch
+
+elif [[ $islem == 13 ]]; then
+	sleep 1
+	clear
+	loader
+rm -r /home/$USER/.config/fastfetch
+sleep 1
+        cd Fedora/ && cp -r fastfetch /home/$USER/.config
+clear
+fastfetch
+
+elif [[ $islem == 14 ]]; then
+	sleep 1
+	clear
+	loader
+rm -r /home/$USER/.config/fastfetch
+sleep 1
+        cd Arch/ && cp -r fastfetch /home/$USER/.config
+clear
+fastfetch
+
+elif [[ $islem == 15 ]]; then
+	sleep 1
+	clear
+	loader
+rm -r /home/$USER/.config/fastfetch
+sleep 1
+        cd Hyprland/ && cp -r fastfetch /home/$USER/.config
+clear
+fastfetch
 
 elif [[ $islem == D || $islem == d  ]]; then
         sleep 1
