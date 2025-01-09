@@ -26,7 +26,8 @@ echo -e '\033[0;36m
 \033[0;35m|  _/ _` / __| __| |    / _` | __|\033[0;31mSmall-Themes
 \033[0;36m| || (_| \__ \ |_| \__/\ (_| | |_ 
 \033[0;31m\_| \__,_|___/\__|\____/\__,_|\__|                 
-\e[1;34m[01]\e[0;32mMetoSpace \e[1;35m[02]\e[0;32mFast-Snail
+\e[1;34m[01]\e[0;32mMetoSpace \e[1;35m[02]\e[0;32mFast-Snail \e[1;36m[03]\e[0;32mCat \e[1;31m[04]\e[0;32mMinimal
+\e[1;33m[05]\e[0;32mArch
 \033[1;31m[x]Exit [D]Default-Theme
 '
         echo -ne "\e[1;33mm3tozz\e[0;31m@\033[1;34mfastcat\n\e[0;31m↳\e[1;36m " ; read islem
@@ -43,7 +44,6 @@ rm -r /home/$USER/.config/fastfetch
 sleep 1
         cd MetoSpace/ && cp -r fastfetch /home/$USER/.config
 clear	
-
 fastfetch
 
 elif [[ $islem == 2 || $islem == 02 ]]; then
@@ -54,9 +54,37 @@ rm -r /home/$USER/.config/fastfetch
 sleep 1
         cd Fast-Snail/ && cp -r fastfetch /home/$USER/.config
 clear	
-
 fastfetch
 
+elif [[ $islem == 3 || $islem == 03 ]]; then
+	sleep 1
+	clear
+	loader
+rm -r /home/$USER/.config/fastfetch
+sleep 1
+        cd Cat/ && cp -r fastfetch /home/$USER/.config
+clear	
+fastfetch
+
+elif [[ $islem == 4 || $islem == 04 ]]; then
+	sleep 1
+	clear
+	loader
+rm -r /home/$USER/.config/fastfetch
+sleep 1
+        cd Minimal/ && cp -r fastfetch /home/$USER/.config
+clear	
+fastfetch
+
+elif [[ $islem == 5 || $islem == 05 ]]; then
+	sleep 1
+	clear
+	loader
+rm -r /home/$USER/.config/fastfetch
+sleep 1
+        cd Arch/ && cp -r fastfetch /home/$USER/.config
+clear	
+fastfetch
 
 elif [[ $islem == D || $islem == d  ]]; then
         sleep 1
