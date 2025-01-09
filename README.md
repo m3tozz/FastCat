@@ -82,8 +82,13 @@ https://github.com/m3tozz/FastCat/blob/main/PREVIEW-THEMES.md</a>
  
 --------------------------------------------------------------------------
 
-<p align="center">Support | Bağış Yap<br>
-<a href="https://kreosus.com/m3tozzch4rm">Donate Link (Turkish)</a> or <align="right"><a href="https://www.buymeacoffee.com/m3tozz">BuyMeACoffee</a>.</p>
+Support | Bağış Yap
+--
+<a href="https://kreosus.com/m3tozzch4rm">Donate Link (Turkish)</a> or <a href="https://www.buymeacoffee.com/m3tozz">BuyMeACoffee</a>.
 
 --------------------------------------------------------------------------
-<p align="center">made by<a href="https://m3tozz.github.io/"> m3tozz</a></p>
+
+Contributors
+--
+
+<table> <tr> <td align="center"> <a href="https://github.com/m3tozz"> <img src="https://avatars.githubusercontent.com/u/79897762?v=4" width="100;" alt="m3tozz"/> <br /> <sub><b>m3tozz</b></sub> </a> </td> <td align="center"> <a href="https://github.com/LierB"> <img src="https://avatars.githubusercontent.com/u/104396477?v=4" width="100;" alt="LierB"/> <br /> <sub><b>LierB</b></sub> </a> </td></tr> </table>
