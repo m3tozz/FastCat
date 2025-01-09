@@ -44,6 +44,30 @@
   --
   <img src="https://github.com/user-attachments/assets/bc79bef2-4f37-48b9-82c0-d74c1bde82a6" width="700" >
 
+  Simpsons
+  --
+  <img src="https://github.com/user-attachments/assets/1cef4cda-62e4-424c-9c27-77ff984b9afb" width="700">
+
+  Rose
+  --
+  <img src="https://github.com/user-attachments/assets/178fa1f8-fbb2-4124-90f1-9196648e7b1b" width="700">
+
+  Origami
+  --
+  <img src="https://github.com/user-attachments/assets/dd44b18e-4db7-48a1-96c0-828c87bba98d" width="700">
+
+  Fedora
+  --
+  <img src="https://github.com/user-attachments/assets/5e98c3be-9371-4a60-87d2-0f0e9b58bcca" width="700">
+  
+  Arch
+  --
+  <img src="https://github.com/user-attachments/assets/49c743cc-6095-4b08-9253-7ddd1418e5f3" width="700">
+
+  Groups
+  --
+  <img src="https://github.com/user-attachments/assets/1f81438a-5797-4abb-b01a-debe886c80e7" width="700">
+
 </details>
 <details>
 <summary>Small-Themes</summary>
@@ -55,5 +79,17 @@
   Fast-Snail
   --
   <img src="https://github.com/user-attachments/assets/eb7fbba4-1369-4ea9-9587-48779f1ffa7b">
-  
+
+  Cat
+  --
+  <img src="https://github.com/user-attachments/assets/6f5e8a76-f8cb-4523-9d3d-145c8fd59581" width="300">
+
+  Arch
+  --
+  <img src="https://github.com/user-attachments/assets/c1ff38ea-59ed-440c-944f-5cc13d1c0b6c">
+
+  Minimal
+  --
+  <img src="https://github.com/user-attachments/assets/9c375e68-a813-435d-bf19-73571993db7a">
+</details>
 </details>
