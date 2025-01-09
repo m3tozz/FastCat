@@ -1,12 +1,11 @@
 # <img src="https://github.com/user-attachments/assets/5e50d491-f22a-46a5-b6ac-135751340da4" hspace="10" width="37"  align="left"/><p><center>FastCat FastFetch Theme Pack.</center>
 
-<p align="center"><img src="https://github.com/user-attachments/assets/dc23c42b-a195-4519-9b5d-edf330e6bbfd"></p>
+<p align="center"><img src="https://github.com/user-attachments/assets/08725749-828a-41a2-b4f2-4adfeadd39ff"></p>
 
 
 --------------------------------------------------------------------------
 
-
-<img src="https://img.shields.io/badge/Version-1.0-black.svg?" hspace="10"  align="right" /></a>What is FastCat?
+What is FastCat?
  --
 FastCat contains its own fastfetch configurations and uploads the selected configuration to your system!
 
