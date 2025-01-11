@@ -72,7 +72,7 @@ if ! command -v fastfetch
 then
     	clear
     	echo -e "\033[1;31m
-FastFetch Not Found!\033[1;33m"
+FastFetch Not Found!\033[0m"
 exit 1
 fi
 mkdir /home/$USER/.config/fastfetch
