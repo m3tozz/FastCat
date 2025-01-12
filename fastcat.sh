@@ -1,6 +1,6 @@
 ########################################
-# Made By M3TOZZ                       #
-# https://m3tozz.github.io             #
+# Made By M3TOZZ                            #
+# https://m3tozz.github.io                #
 ########################################
 
 
@@ -44,13 +44,13 @@ echo -e '
 |  _| (_| \__ \ |_| |__| (_| | |_ 
 |_|  \__,_|___/\__|\____\__,_|\__|                       
 '
-    echo -e "$blue##############################################################$tp"
+    echo -e "$blue##########################################################$tp"
     echo -e "    Create by           ":" $red M3TOZZ$tp"
     echo -e "    Contributors        ":" $red LierB & m3tozz$tp"
-    echo -e "    Github              ":" $red https://github.com/m3tozz/FastCat$tp"
+    echo -e "    Github              ":" $red github.com/m3tozz/FastCat$tp"
     echo -e "    Community Server    ":" $red discord.com/invite/sQwYCZer95$tp"
     echo -e "    Version             ":" $red ${version} $tp"
-    echo -e "$blue##############################################################$tp"
+    echo -e "$blue##########################################################$tp"
 	exit 1
 }
 fastcat:backup() {
@@ -131,13 +131,13 @@ echo -e '
 |  _| (_| \__ \ |_| |__| (_| | |_ 
 |_|  \__,_|___/\__|\____\__,_|\__|                       
 '
-    echo -e "$blue##############################################################$tp"
+    echo -e "$blue##########################################################$tp"
     echo -e "    Create by           ":" $red M3TOZZ$tp"
     echo -e "    Contributors        ":" $red LierB & m3tozz$tp"
-    echo -e "    Github              ":" $red https://github.com/m3tozz/FastCat$tp"
+    echo -e "    Github              ":" $red github.com/m3tozz/FastCat$tp"
     echo -e "    Community Server    ":" $red discord.com/invite/sQwYCZer95$tp"
     echo -e "    Version             ":" $red ${version} $tp"
-    echo -e "$blue##############################################################$tp"
+    echo -e "$blue##########################################################$tp"
 	exit 1
 
 elif [[ $islem == b || $islem == B ]]; then
