@@ -68,6 +68,30 @@
   --
   <img src="https://github.com/user-attachments/assets/1f81438a-5797-4abb-b01a-debe886c80e7" width="700">
 
+  MetoCat
+  --
+  <img src="https://github.com/user-attachments/assets/0be640df-ca9d-4a3a-9a9c-cc39f764abc7" width="700">
+
+SpiderMan
+--
+ <img src="https://github.com/user-attachments/assets/554abc45-0b2d-467c-8cc0-f26a65d64cfe" width="700">
+
+SuperMan
+--
+ <img src="https://github.com/user-attachments/assets/f075c6cb-7a13-48d0-930b-ef89889096af">
+
+Home
+--
+<img src="https://github.com/user-attachments/assets/16d6adaf-64ea-4bbe-90fd-4a5cb7b86e81">
+
+DeadPool
+--
+<img src="https://github.com/user-attachments/assets/edac3042-ab3c-48a5-ae7b-ae014c6607cd">
+
+Triangle
+--
+<img src="https://github.com/user-attachments/assets/2331b32a-8845-4c74-8c09-6e69658f1aca">
+
 </details>
 <details>
 <summary>Small-Themes</summary>
@@ -91,5 +115,25 @@
   Minimal
   --
   <img src="https://github.com/user-attachments/assets/9c375e68-a813-435d-bf19-73571993db7a">
+
+  Sheriff
+  --
+  <img src="https://github.com/user-attachments/assets/9765b619-3048-43db-9beb-6ef25aacb680">
+
+  Palm
+  --
+  <img src="https://github.com/user-attachments/assets/351b51d0-9852-4c4c-a8ea-a9c6d169c47b">
+
+  Duck
+  --
+  <img src="https://github.com/user-attachments/assets/8ade2125-9a29-45db-aece-b5baf5a7ff7e">
+
+  Cocktail
+  --
+  <img src="https://github.com/user-attachments/assets/a0d730fb-fdfe-4ba8-ae96-d8d988b631e0">
+
+  Blocks
+  --
+  <img src="https://github.com/user-attachments/assets/e8c3db08-a77d-474f-afab-da6472286cb9">
 </details>
 </details>
