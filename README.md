@@ -65,8 +65,7 @@ bash ./fastcat.sh --backup
 
 # Themes
 
-<a href="https://github.com/m3tozz/FastCat/blob/main/PREVIEW-THEMES.md">
-https://github.com/m3tozz/FastCat/blob/main/PREVIEW-THEMES.md</a>
+<a href="https://m3tozz.github.io/FastCat-Themes/">https://m3tozz.github.io/FastCat-Themes/</a><br>
 
 --------------------------------------------------------------------------
 
