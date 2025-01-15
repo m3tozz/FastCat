@@ -42,7 +42,14 @@ Use This Command: <code> git clone https://aur.archlinux.org/ttf-meslo-nerd-font
 </details>
 <details>
 <summary>Ubuntu/Debian</summary>
-Use This Command: <code> sudo apt install fonts-font-awesome </code>
+Use This Command:<br>
+<code> mkdir ~/.fonts &&
+wget -P ~/.fonts https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/CascadiaCode.zip \
+&& cd ~/.fonts \
+&& unzip CascadiaCode.zip \
+&& rm CascadiaCode.zip \
+&& fc-cache -fv </code><br>
+And then go to your terminal settings and select CascadiaCode from the font section.
 </details>
 <details>
 <summary>OpenSUSE</summary>
@@ -50,7 +57,14 @@ Install This Package:<a href="https://software.opensuse.org/package/symbols-only
 </details>
 <details>
 <summary>Fedora</summary>
-Use This Command: <code> sudo dnf install google-noto-sans-fonts && sudo dnf install google-noto-sans-mono-fonts </code>
+Use This Command:<br>
+<code> mkdir ~/.fonts &&
+wget -P ~/.fonts https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/CascadiaCode.zip \
+&& cd ~/.fonts \
+&& unzip CascadiaCode.zip \
+&& rm CascadiaCode.zip \
+&& fc-cache -fv </code><br>
+And then go to your terminal settings and select CascadiaCode from the font section.
 </details>
 </details>
 
