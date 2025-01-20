@@ -5,7 +5,7 @@
 
 
 # FastCat Version
-    version='FastCat- 1.1'
+    version='FastCat- 1.2'
 
 #Colors
     red='\e[1;31m'
