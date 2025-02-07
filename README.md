@@ -81,6 +81,11 @@ bash ./fastcat.sh --backup
 
 <a href="https://m3tozz.github.io/FastCat-Themes/">https://m3tozz.github.io/FastCat-Themes/</a><br>
 
+<details>
+<summary>How can I add my own fastfetch configuration to the fastcat community?</summary>
+ Fork <a href="https://github.com/m3tozz/fastcat-community-themes">this repo</a>, add your theme, and submit a pull request.
+</details>
+
 --------------------------------------------------------------------------
 
 
