@@ -113,12 +113,12 @@ banner
 if [[ $islem == 1 || $islem == 01 ]]; then
 	clear
 	cd Small-Themes/
-	bash start.sh
+	$SHELL start.sh
 
 elif [[ $islem == 2 || $islem == 02 ]]; then
 	clear
 	cd Large-Themes/
-	bash start.sh
+	$SHELL start.sh
 elif [[ $islem == x || $islem == X ]]; then
 	clear
 elif [[ $islem == c || $islem == C ]]; then
@@ -147,7 +147,7 @@ echo -e '
 	exit 1
 
 elif [[ $islem == b || $islem == B ]]; then
-bash ./backup.sh
+$SHELL ./backup.sh
 else
 	echo -e '\e[1;34m Wrong transaction number!\033[0m'
 fi
