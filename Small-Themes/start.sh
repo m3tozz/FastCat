@@ -28,7 +28,8 @@ echo -e '\033[0;36m
 \033[0;31m\_| \__,_|___/\__|\____/\__,_|\__|                 
 \e[1;34m[01]\e[0;32mMetoSpace \e[1;35m[02]\e[0;32mFast-Snail \e[1;36m[03]\e[0;32mCat \e[1;31m[04]\e[0;32mMinimal
 \e[1;33m[05]\e[0;32mArch \e[1;36m[06]\e[0;32mBlocks \e[1;34m[07]\e[0;32mCocktail \033[1;33m[08]\e[0;32mPalm \033[0;36m[09]\e[0;32mSheriff 
-\e[1;35m[10]\e[0;32mBunny \e[1;34m[11]\e[0;32mCoffee
+\e[1;35m[10]\e[0;32mBunny \e[1;34m[11]\e[0;32mCoffee \e[1;35m[12]\e[0;32mDuck \033[1;33m[13]\e[0;32mOWL \e[1;34m[14]\e[0;32mGiraffe
+\e[1;36m[15]\e[0;32mRobo-Dog
 \033[1;31m[x]Exit [00]Menu [D]Default-Theme
 '
         echo -ne "\e[1;33mm3tozz\e[0;31m@\033[1;34mfastcat\n\e[0;31m↳\e[1;36m " ; read islem
@@ -144,6 +145,46 @@ elif [[ $islem == 11 ]]; then
 rm -r /home/$USER/.config/fastfetch
 sleep 1
         cd Coffee/ && cp -r fastfetch /home/$USER/.config
+clear	
+fastfetch
+
+elif [[ $islem == 12 ]]; then
+	sleep 1
+	clear
+	loader
+rm -r /home/$USER/.config/fastfetch
+sleep 1
+        cd Duck/ && cp -r fastfetch /home/$USER/.config
+clear	
+fastfetch
+
+elif [[ $islem == 13 ]]; then
+	sleep 1
+	clear
+	loader
+rm -r /home/$USER/.config/fastfetch
+sleep 1
+        cd OWL/ && cp -r fastfetch /home/$USER/.config
+clear	
+fastfetch
+
+elif [[ $islem == 14 ]]; then
+	sleep 1
+	clear
+	loader
+rm -r /home/$USER/.config/fastfetch
+sleep 1
+        cd Giraffe/ && cp -r fastfetch /home/$USER/.config
+clear	
+fastfetch
+
+elif [[ $islem == 15 ]]; then
+	sleep 1
+	clear
+	loader
+rm -r /home/$USER/.config/fastfetch
+sleep 1
+        cd Robo-Dog/ && cp -r fastfetch /home/$USER/.config
 clear	
 fastfetch
 
