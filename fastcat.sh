@@ -113,12 +113,12 @@ banner
 if [[ $islem == 1 || $islem == 01 ]]; then
 	clear
 	cd Small-Themes/
-	$SHELL start.sh
+	bash start.sh
 
 elif [[ $islem == 2 || $islem == 02 ]]; then
 	clear
 	cd Large-Themes/
-	$SHELL start.sh
+	bash start.sh
 elif [[ $islem == x || $islem == X ]]; then
 	clear
 elif [[ $islem == c || $islem == C ]]; then
