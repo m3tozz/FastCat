@@ -102,12 +102,22 @@ bash ./fastcat.sh --backup
 
 Support | Bağış Yap
 --
-<a href="https://www.thkd.org.tr/bagis">Donate Link (Turkish)</a> or <a href="https://www.buymeacoffee.com/m3tozz">BuyMeACoffee</a>.
-> All donations will be forwarded to the [Turkish Animal Protection Association (THKD)](https://www.thkd.org.tr) to support the care and protection of stray and vulnerable animals.
+[![Donate to HAYTAP](https://img.shields.io/badge/🐾_Donate-HAYTAP❤️-red?style=for-the-badge)](https://fonzip.com/haytap/bagis)
+> [!CAUTION]
+> This open-source project is not affiliated with any organization.  
+> [Animal Rights Federation (HAYTAP)](https://www.haytap.org) is a leading animal rights organization in Türkiye,  
+> dedicated to protecting stray and vulnerable animals.  
+> If you’d like to help, please consider donating directly to HAYTAP.
+
+
 
 --------------------------------------------------------------------------
 
 Contributors
 --
 
-<table> <tr> <td align="center"> <a href="https://github.com/m3tozz"> <img src="https://avatars.githubusercontent.com/u/79897762?v=4" width="100;" alt="m3tozz"/> <br /> <sub><b>m3tozz</b></sub> </a> </td> <td align="center"> <a href="https://github.com/LierB"> <img src="https://avatars.githubusercontent.com/u/104396477?v=4" width="100;" alt="LierB"/> <br /> <sub><b>LierB</b></sub> </a> </td></tr> </table>
+<table> <tr> 
+<td align="center"> <a href="https://github.com/m3tozz"> <img src="https://avatars.githubusercontent.com/u/79897762?v=4" width="100;" alt="m3tozz"/> <br /> <sub><b>m3tozz</b></sub> </a> </td> 
+<td align="center"> <a href="https://github.com/LierB"> <img src="https://avatars.githubusercontent.com/u/104396477?v=4" width="100;" alt="LierB"/> <br /> <sub><b>LierB</b></sub> </a> </td>
+<td align="center"> <a href="https://github.com/ArThirtyFour"> <img src="https://avatars.githubusercontent.com/u/149522975?v=4" width="100;" alt="LierB"/> <br /> <sub><b>ArThirtyFour</b></sub> </a> </td>
+</tr>
