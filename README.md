@@ -50,9 +50,9 @@ bash ./fastcat.sh --backup
 --------------------------------------------------------------------------
 
 # Themes
-<p align="center"><img src="https://github.com/user-attachments/assets/aa96371a-8c47-4ce8-9c89-2e482e726bf0">
+
 <a href="https://m3tozz.github.io/FastCat-Themes/"><img src="https://img.shields.io/badge/preview_fastcat's_themes-000000.svg?&style=for-the-badge"></a>
-<a href="https://github.com/m3tozz/fastcat-community-themes/blob/main/PREVIEW-THEMES.md"><img src="https://img.shields.io/badge/preview_fastcat's_community_themes-000000.svg?&style=for-the-badge"></a></p>
+<a href="https://github.com/m3tozz/fastcat-community-themes/blob/main/PREVIEW-THEMES.md"><img src="https://img.shields.io/badge/preview_fastcat's_community_themes-000000.svg?&style=for-the-badge"></a>
 
 <details>
 <summary>How can I add my own fastfetch configuration to the fastcat community?</summary>
@@ -61,10 +61,9 @@ bash ./fastcat.sh --backup
 
 --------------------------------------------------------------------------
 
-# Community
-
+<p align="center"><img src="https://github.com/user-attachments/assets/aa96371a-8c47-4ce8-9c89-2e482e726bf0">
 <a href="https://discord.com/invite/sQwYCZer95"><img src="https://img.shields.io/badge/Join The Community Discord Server-black?&logo=discord" hspace="10"  align="center" /></a>
-<a href="https://matrix.to/#/#neocat-channels:matrix.org"><img src="https://img.shields.io/badge/Join The Community Matrix Server-black?&logo=matrix" hspace="10"  align="center" /></a>
+<a href="https://matrix.to/#/#neocat-channels:matrix.org"><img src="https://img.shields.io/badge/Join The Community Matrix Server-black?&logo=matrix" hspace="10"  align="center" /></a></p>
  
 --------------------------------------------------------------------------
 
