@@ -50,9 +50,9 @@ bash ./fastcat.sh --backup
 --------------------------------------------------------------------------
 
 # Themes
-<img src="https://github.com/user-attachments/assets/85ff5f33-d9b6-4074-bdda-24137815ba66">
-<a href="https://m3tozz.github.io/FastCat-Themes/"><img src="https://img.shields.io/badge/preview_fastcat's_themes-000000.svg?&style=for-the-badge"></a>
-<a href="https://github.com/m3tozz/fastcat-community-themes/blob/main/PREVIEW-THEMES.md"><img src="https://img.shields.io/badge/preview_fastcat's_community_themes-000000.svg?&style=for-the-badge"></a>
+<p align="center"><img src="https://github.com/user-attachments/assets/aa96371a-8c47-4ce8-9c89-2e482e726bf0">
+<a href="https://m3tozz.github.io/FastCat-Themes/"><img src="https://img.shields.io/badge/preview_fastcat's_themes-e74c3c.svg?&style=for-the-badge"></a>
+<a href="https://github.com/m3tozz/fastcat-community-themes/blob/main/PREVIEW-THEMES.md"><img src="https://img.shields.io/badge/preview_fastcat's_community_themes-8e44ad.svg?&style=for-the-badge"></a></p>
 
 <details>
 <summary>How can I add my own fastfetch configuration to the fastcat community?</summary>
