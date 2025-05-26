@@ -123,11 +123,17 @@ elif [[ $islem == x || $islem == X ]]; then
 	clear
 elif [[ $islem == c || $islem == C ]]; then
 	clear
+	git clone https://github.com/m3tozz/fastcat-community-themes.git
+ 	clear
+ 	cd fastcat-community-themes
  	echo -e '\033[0;33mTo add your own fastfetch configuration to the FastCat community,'
 	echo -e '\033[0;31mAdd your own configuration at https://github.com/m3tozz/fastcat-community-themes'
 	echo -e 'and submit a Pull Request..\e[0m'
-	echo -e "\e[3m\e[1;34mThis folder is currently empty\e[0m"
- 	echo -e '\033[0;33mYou need to manually install the themes in this folder into .config/fastfetch.'
+ 	echo -e "\033[1;32m Themes Uploaded by Our Community:\033[01;35m"
+ 	ls -d */
+ 	echo -e '\033[0;33mYou need to manually install the themes in this folder into .config/fastfetch.\033[0;31m'
+  	pwd
+	echo -e '    \033[0m'
 elif [[ $islem == a || $islem == A ]]; then
 	clear
 echo -e '
@@ -139,7 +145,7 @@ echo -e '
 '
     echo -e "$blue##########################################################$tp"
     echo -e "    Create by           ":" $red M3TOZZ$tp"
-    echo -e "    Contributors        ":" $red LierB & m3tozz$tp"
+    echo -e "    Theme Creators      ":" $red LierB & m3tozz$tp"
     echo -e "    Github              ":" $red github.com/m3tozz/FastCat$tp"
     echo -e "    Community Server    ":" $red discord.com/invite/sQwYCZer95$tp"
     echo -e "    Version             ":" $red ${version} $tp"
