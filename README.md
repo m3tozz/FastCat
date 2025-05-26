@@ -78,7 +78,8 @@ bash ./fastcat.sh --backup
 
 # Themes
 
-<a href="https://m3tozz.github.io/FastCat-Themes/">https://m3tozz.github.io/FastCat-Themes/</a><br>
+<a href="https://m3tozz.github.io/FastCat-Themes/"><img src="https://img.shields.io/badge/preview_fastcat's_themes-000000.svg?&style=for-the-badge"></a>
+<a href="https://github.com/m3tozz/fastcat-community-themes/blob/main/PREVIEW-THEMES.md"><img src="https://img.shields.io/badge/preview_fastcat's_community_themes-000000.svg?&style=for-the-badge"></a>
 
 <details>
 <summary>How can I add my own fastfetch configuration to the fastcat community?</summary>
@@ -102,6 +103,7 @@ bash ./fastcat.sh --backup
 Support | Bağış Yap
 --
 <a href="https://kreosus.com/m3tozzch4rm">Donate Link (Turkish)</a> or <a href="https://www.buymeacoffee.com/m3tozz">BuyMeACoffee</a>.
+> All donations will be forwarded to the [Turkish Animal Protection Association (THKD)](https://www.thkd.org.tr) to support the care and protection of stray and vulnerable animals.
 
 --------------------------------------------------------------------------
 
