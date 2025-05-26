@@ -51,8 +51,8 @@ bash ./fastcat.sh --backup
 
 # Themes
 <p align="center"><img src="https://github.com/user-attachments/assets/aa96371a-8c47-4ce8-9c89-2e482e726bf0">
-<a href="https://m3tozz.github.io/FastCat-Themes/"><img src="https://img.shields.io/badge/preview_fastcat's_themes-e74c3c.svg?&style=for-the-badge"></a>
-<a href="https://github.com/m3tozz/fastcat-community-themes/blob/main/PREVIEW-THEMES.md"><img src="https://img.shields.io/badge/preview_fastcat's_community_themes-8e44ad.svg?&style=for-the-badge"></a></p>
+<a href="https://m3tozz.github.io/FastCat-Themes/"><img src="https://img.shields.io/badge/preview_fastcat's_themes-000000.svg?&style=for-the-badge"></a>
+<a href="https://github.com/m3tozz/fastcat-community-themes/blob/main/PREVIEW-THEMES.md"><img src="https://img.shields.io/badge/preview_fastcat's_community_themes-000000.svg?&style=for-the-badge"></a></p>
 
 <details>
 <summary>How can I add my own fastfetch configuration to the fastcat community?</summary>
@@ -65,11 +65,6 @@ bash ./fastcat.sh --backup
 
 <a href="https://discord.com/invite/sQwYCZer95"><img src="https://img.shields.io/badge/Join The Community Discord Server-black?&logo=discord" hspace="10"  align="center" /></a>
 <a href="https://matrix.to/#/#neocat-channels:matrix.org"><img src="https://img.shields.io/badge/Join The Community Matrix Server-black?&logo=matrix" hspace="10"  align="center" /></a>
-
- 
---------------------------------------------------------------------------
-  
-<p align="center"><a href="https://www.pling.com/p/2238348/" target="_blank"><img src="https://github.com/user-attachments/assets/392abc9e-5265-4cbe-a031-76d090df89a3" width="44%"></a>
  
 --------------------------------------------------------------------------
 
@@ -90,4 +85,4 @@ Contributors
 <td align="center"> <a href="https://github.com/m3tozz"> <img src="https://avatars.githubusercontent.com/u/79897762?v=4" width="100;" alt="m3tozz"/> <br /> <sub><b>m3tozz</b></sub> </a> </td> 
 <td align="center"> <a href="https://github.com/LierB"> <img src="https://avatars.githubusercontent.com/u/104396477?v=4" width="100;" alt="LierB"/> <br /> <sub><b>LierB</b></sub> </a> </td>
 <td align="center"> <a href="https://github.com/ArThirtyFour"> <img src="https://avatars.githubusercontent.com/u/149522975?v=4" width="100;" alt="LierB"/> <br /> <sub><b>ArThirtyFour</b></sub> </a> </td>
-</tr>
+</tr></table>
