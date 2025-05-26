@@ -102,7 +102,7 @@ bash ./fastcat.sh --backup
 
 Support | Bağış Yap
 --
-<a href="https://kreosus.com/m3tozzch4rm">Donate Link (Turkish)</a> or <a href="https://www.buymeacoffee.com/m3tozz">BuyMeACoffee</a>.
+<a href="https://www.thkd.org.tr/bagis">Donate Link (Turkish)</a> or <a href="https://www.buymeacoffee.com/m3tozz">BuyMeACoffee</a>.
 > All donations will be forwarded to the [Turkish Animal Protection Association (THKD)](https://www.thkd.org.tr) to support the care and protection of stray and vulnerable animals.
 
 --------------------------------------------------------------------------
