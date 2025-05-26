@@ -1,37 +1,31 @@
-# Made By M3TOZZ
-
-clear
-
-banner(){
-echo -e '\033[1;36m
+    echo -e '\033[1;36m
     ______           __  ______      __ 
    / ____/___ ______/ /_/ ____/___ _/ /_
   / /_  / __ `/ ___/ __/ /   / __ `/ __/
  / __/ / /_/ (__  ) /_/ /___/ /_/ / /_  
 /_/    \__,_/____/\__/\____/\__,_/\__/  
  FastFetch Theme Pack                             
-'
+\033[0m'
 
-        echo -ne "\e[0;32mInstall Terminal Icons (icons-in-terminal) (Y/N)" ; read islem
-}
+FONT_DIR="$HOME/.fonts"
 
-banner
-if [[ $islem == y || $islem == Y ]]; then
-	clear
-	echo -e "\033[0;31mSetting Up...\033[1;36m"
-	git clone https://github.com/sebastiencs/icons-in-terminal.git
-	cd icons-in-terminal
-	./install.sh
-        clear
-	echo -e "\033[1;31mFastCat - FastFetch Theme Pack!\033[0m"
-       	sleep 3
-	./print_icons.sh
-	echo -e "\033[1;31mInstalled! \033[1;36mNow Start A New Terminal :) \033[0m"
-
-elif [[ $islem == n || $islem == N ]]; then
-	clear
-echo -e "\033[0m GoodBye."
-	exit 1
- else
-	echo -e '\033[36;40;1m Wrong transaction number!\033[0m'	
+if [ ! -d "$FONT_DIR" ]; then
+    echo "Creating ~/.fonts directory..."
+    mkdir -p "$FONT_DIR"
+else
+    echo "~/.fonts directory already exists."
 fi
+
+echo "Downloading CascadiaCode Nerd Font..."
+wget -q -P "$FONT_DIR" https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/CascadiaCode.zip
+
+echo "Extracting font files..."
+unzip -oq "$FONT_DIR/CascadiaCode.zip" -d "$FONT_DIR"
+
+echo "Cleaning up..."
+rm "$FONT_DIR/CascadiaCode.zip"
+
+echo "Refreshing font cache..."
+fc-cache -fv
+
+echo -e "\nInstallation complete! Please select 'CascadiaCode Nerd Font' in your terminal settings."
