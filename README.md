@@ -70,10 +70,11 @@ bash ./fastcat.sh --backup
 Support | Bağış Yap
 --
 [![Donate to HAYTAP](https://img.shields.io/badge/🐾_Donate-HAYTAP❤️-red?style=for-the-badge)](https://fonzip.com/haytap/bagis)
-> [!CAUTION]
-> This open-source project is not affiliated with any organization.  
-> [Animal Rights Federation (HAYTAP)](https://www.haytap.org) is a leading animal rights organization in Türkiye, dedicated to protecting stray and vulnerable animals.  
-> If you’d like to help, please consider donating directly to HAYTAP.
+
+> [!IMPORTANT]  
+> [HAYTAP (Animal Rights Federation)](https://www.haytap.org) is an independent NGO in Türkiye that protects stray animals and defends animal rights.  
+> This project is not affiliated with HAYTAP.  
+> However, if you’d like to support its spirit and purpose, you can contribute by donating directly to HAYTAP.
 
 --------------------------------------------------------------------------
 
