@@ -46,7 +46,7 @@ echo -e '
 '
     echo -e "$blue##########################################################$tp"
     echo -e "    Create by           ":" $red M3TOZZ$tp"
-    echo -e "    Contributors        ":" $red LierB & m3tozz$tp"
+    echo -e "    Theme Creators      ":" $red LierB & m3tozz$tp"
     echo -e "    Github              ":" $red github.com/m3tozz/FastCat$tp"
     echo -e "    Community Server    ":" $red discord.com/invite/sQwYCZer95$tp"
     echo -e "    Version             ":" $red ${version} $tp"
