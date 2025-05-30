@@ -28,4 +28,4 @@ rm "$FONT_DIR/CascadiaCode.zip"
 echo "Refreshing font cache..."
 fc-cache -fv
 
-echo -e "\nInstallation complete! Please select 'CascadiaCode Nerd Font' in your terminal settings."
+echo -e "\nInstallation complete! Please open a new terminal and select 'CascadiaCove Nerd Font Regular' in your terminal settings."
