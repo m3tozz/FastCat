@@ -26,7 +26,7 @@ fi
 
 
 # FastCat Version
-    version='FastCat- 1.3'
+    version='FastCat- 1.3.0'
 
 # Colors
     red='\e[1;31m'
@@ -146,6 +146,8 @@ elif [[ $islem == 2 || $islem == 02 ]]; then
 elif [[ $islem == 3 || $islem == 03 ]]; then
 	clear
 	cd Visuals-Themes/
+	sed -i 's/\r$//' start.sh
+	chmod +x start.sh
 	bash start.sh
 
 elif [[ $islem == x || $islem == X ]]; then
