@@ -102,7 +102,7 @@ echo -e '\033[1;36m
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀                                       
 '
 echo -e '
-\e[1;34m[01]\e[0;32mSmall Themes \e[1;35m[02]\e[0;32mLarge Themes \e[1;33m[03]\e[0;32mVisuals Themes \033[0;33m[C]\e[0;32mCommunity-Themes 
+\e[1;34m[01]\e[0;32mSmall Themes \e[1;35m[02]\e[0;32mLarge Themes \e[1;33m[03]\e[0;32mVisuals Themes \033[0;33m[C]\e[0;32mCommunity Themes 
 
 \e[1;31m[A]About [B]Backup [x]Exit\033[0m
 '
