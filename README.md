@@ -85,4 +85,5 @@ Contributors
 <td align="center"> <a href="https://github.com/m3tozz"> <img src="https://avatars.githubusercontent.com/u/79897762?v=4" width="100;" alt="m3tozz"/> <br /> <sub><b>m3tozz</b></sub> </a> </td> 
 <td align="center"> <a href="https://github.com/LierB"> <img src="https://avatars.githubusercontent.com/u/104396477?v=4" width="100;" alt="LierB"/> <br /> <sub><b>LierB</b></sub> </a> </td>
 <td align="center"> <a href="https://github.com/ArThirtyFour"> <img src="https://avatars.githubusercontent.com/u/149522975?v=4" width="100;" alt="LierB"/> <br /> <sub><b>ArThirtyFour</b></sub> </a> </td>
+<td align="center"> <a href="https://github.com/cassiofb-dev"> <img src="https://avatars.githubusercontent.com/u/61878987?v=4" width="100;" alt="LierB"/> <br /> <sub><b>cassiofb-dev</b></sub> </a> </td>
 </tr></table>
