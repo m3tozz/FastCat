@@ -1,13 +1,34 @@
-########################################
-# Made By M3TOZZ                       #
-# https://m3tozz.github.io             #
-########################################
+# fastcat updater 
+
+remote_url="https://raw.githubusercontent.com/m3tozz/FastCat/main/fastcat.sh"
+local_file="$0"
+tmp_file=$(mktemp)
+
+curl -s "$remote_url" -o "$tmp_file"
+
+remote_ver=$(grep -E "^ *version=" "$tmp_file" | cut -d"'" -f2)
+local_ver=$(grep -E "^ *version=" "$local_file" | cut -d"'" -f2)
+
+rm "$tmp_file"
+
+if [ "$remote_ver" != "$local_ver" ]; then
+    echo "new version found: $local_ver → $remote_ver"
+    echo "updating... syncing entire repository"
+
+    branch=$(git symbolic-ref --short HEAD)
+    git fetch origin
+    git reset --hard origin/$branch
+
+    echo "update complete. restarting script..."
+    exec "$local_file" "$@"
+    exit
+fi
 
 
 # FastCat Version
     version='FastCat- 1.3'
 
-#Colors
+# Colors
     red='\e[1;31m'
     yellow='\e[1;33m'
     blue='\e[1;34m'
