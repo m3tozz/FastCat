@@ -1,4 +1,12 @@
 # Made By M3TOZZ
+if grep -q $'\r' "$0"; then
+  if command -v dos2unix &> /dev/null; then
+    dos2unix "$0"
+  else
+    sed -i 's/\r$//' "$0"
+  fi
+  exec bash "$0" "$@"
+fi
 loader ()
 {
 printf "\033[0m
