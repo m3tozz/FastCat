@@ -44,13 +44,13 @@ echo -e '
 |  _| (_| \__ \ |_| |__| (_| | |_ 
 |_|  \__,_|___/\__|\____\__,_|\__|                       
 '
-    echo -e "$blue##########################################################$tp"
+    echo -e "$blue##############################################################$tp"
     echo -e "    Create by           ":" $red M3TOZZ$tp"
-    echo -e "    Theme Creators      ":" $red LierB & m3tozz$tp"
+    echo -e "    Contributors        ":" $red LierB, ArThirtyFour, cassiofb-dev$tp"
     echo -e "    Github              ":" $red github.com/m3tozz/FastCat$tp"
     echo -e "    Community Server    ":" $red discord.com/invite/sQwYCZer95$tp"
     echo -e "    Version             ":" $red ${version} $tp"
-    echo -e "$blue##########################################################$tp"
+    echo -e "$blue##############################################################$tp"
 	exit 1
 }
 fastcat:backup() {
@@ -102,7 +102,9 @@ echo -e '\033[1;36m
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀                                       
 '
 echo -e '
-\e[1;34m[01]\e[0;32mSmall Themes \e[1;35m[02]\e[0;32mLarge Themes\e[1;34m \033[0;33m[C]\e[0;32mCommunity-Themes \e[1;31m[A]\e[0;32mAbout \e[1;31m[B]\e[0;32mBackup \e[1;31m[x]\e[0;32mExit
+\e[1;34m[01]\e[0;32mSmall Themes \e[1;35m[02]\e[0;32mLarge Themes \e[1;33m[03]\e[0;32mVisuals Themes \033[0;33m[C]\e[0;32mCommunity-Themes 
+
+\e[1;31m[A]About [B]Backup [x]Exit\033[0m
 '
         echo -ne "\e[1;31mm3tozz\033[0;36m@\033[1;33mfastcat\n\e \033[0;36m↳\033[0m " ; read islem
 }
@@ -119,6 +121,12 @@ elif [[ $islem == 2 || $islem == 02 ]]; then
 	clear
 	cd Large-Themes/
 	bash start.sh
+
+elif [[ $islem == 3 || $islem == 03 ]]; then
+	clear
+	cd Visuals-Themes/
+	bash start.sh
+
 elif [[ $islem == x || $islem == X ]]; then
 	clear
 elif [[ $islem == c || $islem == C ]]; then
@@ -143,13 +151,13 @@ echo -e '
 |  _| (_| \__ \ |_| |__| (_| | |_ 
 |_|  \__,_|___/\__|\____\__,_|\__|                       
 '
-    echo -e "$blue##########################################################$tp"
+    echo -e "$blue##############################################################$tp"
     echo -e "    Create by           ":" $red M3TOZZ$tp"
-    echo -e "    Theme Creators      ":" $red LierB & m3tozz$tp"
+    echo -e "    Contributors        ":" $red LierB, ArThirtyFour, cassiofb-dev$tp"
     echo -e "    Github              ":" $red github.com/m3tozz/FastCat$tp"
     echo -e "    Community Server    ":" $red discord.com/invite/sQwYCZer95$tp"
     echo -e "    Version             ":" $red ${version} $tp"
-    echo -e "$blue##########################################################$tp"
+    echo -e "$blue##############################################################$tp"
 	exit 1
 
 elif [[ $islem == b || $islem == B ]]; then
