@@ -31,7 +31,7 @@ fi
 
 
 # FastCat Version
-    version='FastCat- 1.3.0'
+    version='FastCat- 1.3.1'
 
 # Colors
     red='\e[1;31m'
