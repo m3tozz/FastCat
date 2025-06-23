@@ -1,5 +1,4 @@
 # fastcat updater 
-
 remote_url="https://raw.githubusercontent.com/m3tozz/FastCat/main/fastcat.sh"
 local_file="$0"
 tmp_file=$(mktemp)
@@ -13,15 +12,21 @@ rm "$tmp_file"
 
 if [ "$remote_ver" != "$local_ver" ]; then
     echo "new version found: $local_ver → $remote_ver"
-    echo "updating... syncing entire repository"
 
-    branch=$(git symbolic-ref --short HEAD)
-    git fetch origin
-    git reset --hard origin/$branch
+    if [ -d ".git" ]; then
+        echo "updating... syncing entire repository"
+        branch=$(git symbolic-ref --short HEAD 2>/dev/null)
+        git fetch origin
+        git reset --hard origin/$branch
 
-    echo "update complete. restarting script..."
-    exec "$local_file" "$@"
-    exit
+        echo "update complete. restarting script..."
+        exec "$local_file" "$@"
+        exit
+    else
+        echo -e "\e[1;33m[Warning]\e[0m Git repository not found. Skipping full update."
+        echo -e "To update manually, run:\n\e[1;34mgit clone --depth 1 https://github.com/m3tozz/FastCat.git && cd FastCat && bash ./fastcat.sh --shell\e[0m"
+        sleep 2
+    fi
 fi
 
 
@@ -91,9 +96,16 @@ help() {
 shell(){
 if ! command -v fastfetch
 then
-    	clear
-    	echo -e "\033[1;31m
-FastFetch Not Found!\033[0m"
+    clear
+    echo -e "\033[1;31mFastFetch Not Found!\033[1;33m"
+    echo -e "To use FastCat, you must first install FastFetch :)"
+    echo -e "\n\033[1;31mFastFetch Installation:\033[0m"
+    echo -e "\033[1;36mDebian or Ubuntu using APT:\033[0m"
+    echo -e "  \033[1;34m→ sudo apt install fastfetch\033[0m"
+    echo -e "\n\033[1;32mArch Linux using Pacman:\033[0m"
+    echo -e "  \033[1;34m→ sudo pacman -S fastfetch\033[0m"
+    echo -e "\n\033[1;35mRHEL, Fedora, or CentOS using DNF:\033[0m"
+    echo -e "  \033[1;34m→ sudo dnf install fastfetch\033[0m"
 exit 1
 fi
 mkdir /home/$USER/.config/fastfetch
