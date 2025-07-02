@@ -118,8 +118,7 @@ Support | Bağış Yap
 ### 6. Supporting by Donating Directly to HAYTAP
 - Instead of donating to the project owner, sending money directly to HAYTAP’s account.
 - **Example:** Making a donation to HAYTAP’s IBAN via their website.
-
----
+  
 
 </details>
 
