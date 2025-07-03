@@ -7,12 +7,15 @@ echo -e '\033[1;36m
  FastFetch Theme Pack                           
 \033[0m'
 
-if ! command -v unzip >/dev/null 2>&1; then
+read -p "Do you want to install CascadiaCode Nerd Font? (Y/N): " choice
+
+if [[ "$choice" =~ ^[Yy]$ ]]; then
+    if ! command -v unzip >/dev/null 2>&1; then
     echo -e "\033[1;31mError: 'unzip' is not installed. Please install it and rerun the script.\033[0m"
     sleep 0.2
     clear
     echo -e "\033[1;31munzip Not Found!\033[1;33m"
-    echo -e "\n\033[1;31munzip Installation:\033[0m"
+    echo -e "\n\033[1;3munzip Installation:\033[0m"
     echo -e "\033[1;36mDebian or Ubuntu using APT:\033[0m"
     echo -e "  \033[1;34m→ sudo apt install unzip\033[0m"
     echo -e "\n\033[1;32mArch Linux using Pacman:\033[0m"
@@ -21,10 +24,6 @@ if ! command -v unzip >/dev/null 2>&1; then
     echo -e "  \033[1;34m→ sudo dnf install unzip\033[0m"
     exit 1
 fi
-
-read -p "Do you want to install CascadiaCode Nerd Font? (Y/N): " choice
-
-if [[ "$choice" =~ ^[Yy]$ ]]; then
     FONT_DIR="$HOME/.fonts"
 
     if [ ! -d "$FONT_DIR" ]; then
