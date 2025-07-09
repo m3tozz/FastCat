@@ -1,4 +1,33 @@
 #!/bin/bash
+
+# This block ensures the script runs correctly on Unix/macOS even if created or modified on Windows.
+if grep -q $'\r' "$0"; then # Check if the script contains Windows-style carriage returns.
+  # Option 1: Prefer 'dos2unix' tool if available.
+  if command -v dos2unix &> /dev/null; then
+    dos2unix "$0"
+  # Option 2: Handle macOS specific 'sed' behaviors.
+  elif [[ "$(uname)" == "Darwin" ]]; then
+    # On macOS, use 'gsed' (GNU sed, typically installed via Homebrew) if available.
+    if command -v gsed &> /dev/null; then
+      gsed -i 's/\r$//' "$0" # Remove carriage returns in-place.
+    # If 'gsed' not found on macOS, use default 'sed' (BSD sed), which requires -i ''.
+    elif command -v sed &> /dev/null; then
+      sed -i '' 's/\r$//' "$0"
+    else
+      # Warning for macOS if no suitable tool found.
+      echo "Warning: Neither dos2unix, gsed, nor sed found to convert line endings on macOS for '$0'. Script might fail." >&2
+    fi
+  # Option 3: Handle Linux and other Unix-like systems (where 'sed' is typically GNU sed by default).
+  elif command -v sed &> /dev/null; then
+    sed -i 's/\r$//' "$0" # Use standard sed to remove carriage returns in-place.
+  else
+    # General warning if no compatible tool found on any OS.
+    echo "Warning: No suitable tool found to convert line endings for '$0'. Script might fail due to CRLF issues." >&2
+  fi
+  # Re-execute the script with corrected line endings.
+  exec bash "$0" "$@"
+fi
+
 # Made By M3TOZZ
 
 if grep -q $'\r' "$0"; then
