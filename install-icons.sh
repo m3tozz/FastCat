@@ -1,3 +1,18 @@
+#!/usr/bin/env bash
+if grep -q $'\r' "$0"; then
+    # Script has CRLF, try to fix it
+    if command -v dos2unix &>/dev/null; then
+        dos2unix "$0"
+    elif [[ "$(uname)" == "Darwin" ]] && command -v gsed &>/dev/null; then
+        gsed -i 's/\r$//' "$0" # Use gsed on macOS if available
+    elif [[ "$(uname)" == "Darwin" ]]; then
+        sed -i '' 's/\r$//' "$0" # Use BSD sed on macOS
+    else
+        sed -i 's/\r$//' "$0" # Use GNU sed on Linux
+    fi
+    # Re-execute the script with the corrected line endings
+    exec bash "$0" "$@"
+fi
 echo -e '\033[1;36m
     ______           __  ______      __ 
    / ____/___ ______/ /_/ ____/___ _/ /_
@@ -6,9 +21,7 @@ echo -e '\033[1;36m
 /_/    \__,_/____/\__/\____/\__,_/\__/  
  FastFetch Theme Pack                           
 \033[0m'
-
 read -p "Do you want to install CascadiaCode Nerd Font? (Y/N): " choice
-
 if [[ "$choice" =~ ^[Yy]$ ]]; then
     if ! command -v unzip >/dev/null 2>&1; then
     echo -e "\033[1;31mError: 'unzip' is not installed. Please install it and rerun the script.\033[0m"
@@ -25,26 +38,20 @@ if [[ "$choice" =~ ^[Yy]$ ]]; then
     exit 1
 fi
     FONT_DIR="$HOME/.fonts"
-
     if [ ! -d "$FONT_DIR" ]; then
         echo -e "\033[1;32mCreating ~/.fonts directory...\033[0m"
         mkdir -p "$FONT_DIR"
     else
         echo -e "\033[1;33m~/.fonts directory already exists.\033[0m"
     fi
-
     echo -e "\033[1;34mDownloading CascadiaCode Nerd Font...\033[0m"
     wget -q -P "$FONT_DIR" https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/CascadiaCode.zip
-
     echo -e "\033[1;34mExtracting font files...\033[0m"
     unzip -oq "$FONT_DIR/CascadiaCode.zip" -d "$FONT_DIR"
-
     echo -e "\033[1;34mCleaning up...\033[0m"
     rm "$FONT_DIR/CascadiaCode.zip"
-
     echo -e "\033[1;34mRefreshing font cache...\033[0m"
     fc-cache -fv
-
     echo -e "\nInstallation complete! Please open a new terminal and select 'CascadiaCove Nerd Font Regular' in your terminal settings."
 else
     echo -e "\033[1;31mInstallation canceled by user.\033[0m"

@@ -1,3 +1,18 @@
+#!/usr/bin/env bash
+if grep -q $'\r' "$0"; then
+    # Script has CRLF, try to fix it
+    if command -v dos2unix &>/dev/null; then
+        dos2unix "$0"
+    elif [[ "$(uname)" == "Darwin" ]] && command -v gsed &>/dev/null; then
+        gsed -i 's/\r$//' "$0" # Use gsed on macOS if available
+    elif [[ "$(uname)" == "Darwin" ]]; then
+        sed -i '' 's/\r$//' "$0" # Use BSD sed on macOS
+    else
+        sed -i 's/\r$//' "$0" # Use GNU sed on Linux
+    fi
+    # Re-execute the script with the corrected line endings
+    exec bash "$0" "$@"
+fi
 # Made By M3TOZZ
 loader ()
 {
@@ -16,7 +31,6 @@ FastCat - FastFetch Theme Pack!
 [####################] 100%%  completed.\r"
 sleep 0.2
 }
-
 clear
 banner(){
 echo -e '\033[0;36m
@@ -36,9 +50,6 @@ echo -e '\033[0;36m
 '
         echo -ne "\e[1;33mm3tozz\e[0;31m@\033[1;34mfastcat\n\e[0;31m↳\e[1;36m " ; read islem
 }
-
-
-
 banner
 if [[ $islem == 1 || $islem == 01 ]]; then
 	sleep 1
@@ -48,9 +59,7 @@ rm -r /home/$USER/.config/fastfetch
 sleep 1
         cd Anime-Boy/ && cp -r fastfetch /home/$USER/.config
 clear	
-
 fastfetch
-
 elif [[ $islem == 2 || $islem == 02 ]]; then
 	sleep 1
 	clear
@@ -59,9 +68,7 @@ rm -r /home/$USER/.config/fastfetch
 sleep 1
         cd Death/ && cp -r fastfetch /home/$USER/.config
 clear	
-
 fastfetch
- 
 elif [[ $islem == 3 || $islem == 03 ]]; then
 	sleep 1
 	clear
@@ -71,7 +78,6 @@ sleep 1
         cd Pentagram/ && cp -r fastfetch /home/$USER/.config
 clear
 fastfetch
-
 elif [[ $islem == 4 || $islem == 04 ]]; then
         sleep 1
         clear
@@ -81,7 +87,6 @@ sleep 1
         cd Scorpion/ && cp -r fastfetch /home/$USER/.config
 clear   
 fastfetch
-
 elif [[ $islem == 5 || $islem == 05 ]]; then
         sleep 1
         clear
@@ -91,7 +96,6 @@ sleep 1
         cd Anime-Girl/ && cp -r fastfetch /home/$USER/.config
 clear   
 fastfetch
-
 elif [[ $islem == 6 || $islem == 06 ]]; then
         sleep 1
         clear
@@ -101,7 +105,6 @@ sleep 1
         cd Saturn/ && cp -r fastfetch /home/$USER/.config
 clear   
 fastfetch
-
 elif [[ $islem == 7 || $islem == 07 ]]; then
         sleep 1
         clear
@@ -111,7 +114,6 @@ sleep 1
         cd Suse-Icons/ && cp -r fastfetch /home/$USER/.config
 clear   
 fastfetch
-
 elif [[ $islem == 8 || $islem == 08 ]]; then
         sleep 1
         clear
@@ -121,7 +123,6 @@ sleep 1
         cd Cat/ && cp -r fastfetch /home/$USER/.config
 clear   
 fastfetch
-
 elif [[ $islem == 9 || $islem == 09 ]]; then
         sleep 1
         clear
@@ -131,7 +132,6 @@ sleep 1
         cd Jurassic/ && cp -r fastfetch /home/$USER/.config
 clear   
 fastfetch
-
 elif [[ $islem == 10 ]]; then
         sleep 1
         clear
@@ -141,7 +141,6 @@ sleep 1
         cd BatMan/ && cp -r fastfetch /home/$USER/.config
 clear   
 fastfetch
-
 elif [[ $islem == 11 ]]; then
 	sleep 1
 	clear
@@ -151,7 +150,6 @@ sleep 1
         cd Groups/ && cp -r fastfetch /home/$USER/.config
 clear
 fastfetch
-
 elif [[ $islem == 12 ]]; then
 	sleep 1
 	clear
@@ -161,7 +159,6 @@ sleep 1
         cd Rose/ && cp -r fastfetch /home/$USER/.config
 clear
 fastfetch
-
 elif [[ $islem == 13 ]]; then
 	sleep 1
 	clear
@@ -171,7 +168,6 @@ sleep 1
         cd Fedora/ && cp -r fastfetch /home/$USER/.config
 clear
 fastfetch
-
 elif [[ $islem == 14 ]]; then
 	sleep 1
 	clear
@@ -181,7 +177,6 @@ sleep 1
         cd Arch/ && cp -r fastfetch /home/$USER/.config
 clear
 fastfetch
-
 elif [[ $islem == 15 ]]; then
 	sleep 1
 	clear
@@ -191,7 +186,6 @@ sleep 1
         cd Hyprland/ && cp -r fastfetch /home/$USER/.config
 clear
 fastfetch
-
 elif [[ $islem == 16 ]]; then
 	sleep 1
 	clear
@@ -201,7 +195,6 @@ sleep 1
         cd Simpsons/ && cp -r fastfetch /home/$USER/.config
 clear
 fastfetch
-
 elif [[ $islem == 17 ]]; then
 	sleep 1
 	clear
@@ -211,7 +204,6 @@ sleep 1
         cd Origami/ && cp -r fastfetch /home/$USER/.config
 clear
 fastfetch
-
 elif [[ $islem == 18 ]]; then
 	sleep 1
 	clear
@@ -221,7 +213,6 @@ sleep 1
         cd Home/ && cp -r fastfetch /home/$USER/.config
 clear
 fastfetch
-
 elif [[ $islem == 19 ]]; then
 	sleep 1
 	clear
@@ -231,7 +222,6 @@ sleep 1
         cd DeadPool/ && cp -r fastfetch /home/$USER/.config
 clear
 fastfetch
-
 elif [[ $islem == 20 ]]; then
 	sleep 1
 	clear
@@ -241,7 +231,6 @@ sleep 1
         cd Superman/ && cp -r fastfetch /home/$USER/.config
 clear
 fastfetch
-
 elif [[ $islem == 21 ]]; then
 	sleep 1
 	clear
@@ -251,7 +240,6 @@ sleep 1
         cd Spider-Man/ && cp -r fastfetch /home/$USER/.config
 clear
 fastfetch
-
 elif [[ $islem == 22 ]]; then
 	sleep 1
 	clear
@@ -261,7 +249,6 @@ sleep 1
         cd Triangle/ && cp -r fastfetch /home/$USER/.config
 clear
 fastfetch
-
 elif [[ $islem == 23 ]]; then
 	sleep 1
 	clear
@@ -271,7 +258,6 @@ sleep 1
         cd Stars/ && cp -r fastfetch /home/$USER/.config
 clear
 fastfetch
-
 elif [[ $islem == 24 ]]; then
 	sleep 1
 	clear
@@ -281,12 +267,10 @@ sleep 1
         cd Yandere-Girl/ && cp -r fastfetch /home/$USER/.config
 clear
 fastfetch
-
 elif [[  $islem == 00 ]]; then
         sleep 1
         cd ..
         bash ./fastcat.sh -s
-
 elif [[ $islem == D || $islem == d  ]]; then
         sleep 1
         clear
@@ -296,7 +280,6 @@ sleep 1
         cd Default/ && cp -r fastfetch /home/$USER/.config
 clear   
 fastfetch
-
 elif [[ $islem == x || $islem == X ]]; then
 	clear
 echo -e "\033[1;31m GoodBye\033[0m"
