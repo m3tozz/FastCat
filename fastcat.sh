@@ -108,7 +108,7 @@ then
     echo -e "  \033[1;34m→ sudo dnf install fastfetch\033[0m"
 exit 1
 fi
-mkdir /home/$USER/.config/fastfetch
+mkdir ~/.config/fastfetch
 clear
 banner(){
 echo -e '\033[1;36m
