@@ -106,7 +106,7 @@ then
     echo -e "  \033[1;34m→ sudo dnf install fastfetch\033[0m"
 exit 1
 fi
-mkdir /home/$USER/.config/fastfetch
+mkdir -p ~/.config/fastfetch
 clear
 banner(){
 echo -e '\033[1;36m
@@ -150,7 +150,7 @@ elif [[ $islem == 2 || $islem == 02 ]]; then
 elif [[ $islem == 3 || $islem == 03 ]]; then
 	clear
 	cd Visuals-Themes/
-	sed -i 's/\r$//' start.sh
+	
 	chmod +x start.sh
 	bash start.sh
 elif [[ $islem == x || $islem == X ]]; then
@@ -192,7 +192,8 @@ else
 fi
 }
 # Argument Parser.
-case "${1,,}" in
+normalized_arg=$(echo "$1" | tr '[:upper:]' '[:lower:]')
+case "$normalized_arg" in
 	"--shell"|"-s")
 		shell
 	;;

@@ -58,27 +58,27 @@ if [[ $islem == 1 || $islem == 01 ]]; then
   sleep 1
   clear
   loader
-  rm -r /home/$USER/.config/fastfetch
+  rm -r ~/.config/fastfetch
   sleep 1
-  cd Dragonball/ && cp -r fastfetch /home/$USER/.config
+  cd Dragonball/ && cp -r fastfetch ~/.config
   clear
   fastfetch
 elif [[ $islem == 2 || $islem == 02 ]]; then
   sleep 1
   clear
   loader
-  rm -r /home/$USER/.config/fastfetch
+  rm -r ~/.config/fastfetch
   sleep 1
-  cd One-Piece/ && cp -r fastfetch /home/$USER/.config
+  cd One-Piece/ && cp -r fastfetch ~/.config
   clear
   fastfetch
 elif [[ $islem == 3 || $islem == 03 ]]; then
   sleep 1
   clear
   loader
-  rm -r /home/$USER/.config/fastfetch
+  rm -r ~/.config/fastfetch
   sleep 1
-  cd Xenia/ && cp -r fastfetch /home/$USER/.config
+  cd Xenia/ && cp -r fastfetch ~/.config
   clear
   fastfetch
 elif [[ $islem == 00 ]]; then
@@ -89,9 +89,9 @@ elif [[ $islem == D || $islem == d ]]; then
   sleep 1
   clear
   loader
-  rm -r /home/$USER/.config/fastfetch
+  rm -r ~/.config/fastfetch
   sleep 1
-  cd Default/ && cp -r fastfetch /home/$USER/.config
+  cd Default/ && cp -r fastfetch ~/.config
   clear
   fastfetch
 elif [[ $islem == x || $islem == X ]]; then

@@ -53,135 +53,135 @@ if [[ $islem == 1 || $islem == 01 ]]; then
 	sleep 1
 	clear
 	loader
-rm -r /home/$USER/.config/fastfetch
+rm -r ~/.config/fastfetch
 sleep 1
-        cd MetoSpace/ && cp -r fastfetch /home/$USER/.config
+        cd MetoSpace/ && cp -r fastfetch ~/.config
 clear	
 fastfetch
 elif [[ $islem == 2 || $islem == 02 ]]; then
 	sleep 1
 	clear
 	loader
-rm -r /home/$USER/.config/fastfetch
+rm -r ~/.config/fastfetch
 sleep 1
-        cd Fast-Snail/ && cp -r fastfetch /home/$USER/.config
+        cd Fast-Snail/ && cp -r fastfetch ~/.config
 clear	
 fastfetch
 elif [[ $islem == 3 || $islem == 03 ]]; then
 	sleep 1
 	clear
 	loader
-rm -r /home/$USER/.config/fastfetch
+rm -r ~/.config/fastfetch
 sleep 1
-        cd Cat/ && cp -r fastfetch /home/$USER/.config
+        cd Cat/ && cp -r fastfetch ~/.config
 clear	
 fastfetch
 elif [[ $islem == 4 || $islem == 04 ]]; then
 	sleep 1
 	clear
 	loader
-rm -r /home/$USER/.config/fastfetch
+rm -r ~/.config/fastfetch
 sleep 1
-        cd Minimal/ && cp -r fastfetch /home/$USER/.config
+        cd Minimal/ && cp -r fastfetch ~/.config
 clear	
 fastfetch
 elif [[ $islem == 5 || $islem == 05 ]]; then
 	sleep 1
 	clear
 	loader
-rm -r /home/$USER/.config/fastfetch
+rm -r ~/.config/fastfetch
 sleep 1
-        cd Arch/ && cp -r fastfetch /home/$USER/.config
+        cd Arch/ && cp -r fastfetch ~/.config
 clear	
 fastfetch
 elif [[ $islem == 6 || $islem == 06 ]]; then
 	sleep 1
 	clear
 	loader
-rm -r /home/$USER/.config/fastfetch
+rm -r ~/.config/fastfetch
 sleep 1
-        cd Blocks/ && cp -r fastfetch /home/$USER/.config
+        cd Blocks/ && cp -r fastfetch ~/.config
 clear	
 fastfetch
 elif [[ $islem == 7 || $islem == 07 ]]; then
 	sleep 1
 	clear
 	loader
-rm -r /home/$USER/.config/fastfetch
+rm -r ~/.config/fastfetch
 sleep 1
-        cd Cocktail/ && cp -r fastfetch /home/$USER/.config
+        cd Cocktail/ && cp -r fastfetch ~/.config
 clear	
 fastfetch
 elif [[ $islem == 8 || $islem == 08 ]]; then
 	sleep 1
 	clear
 	loader
-rm -r /home/$USER/.config/fastfetch
+rm -r ~/.config/fastfetch
 sleep 1
-        cd Palm/ && cp -r fastfetch /home/$USER/.config
+        cd Palm/ && cp -r fastfetch ~/.config
 clear	
 fastfetch
 elif [[ $islem == 9 || $islem == 09 ]]; then
 	sleep 1
 	clear
 	loader
-rm -r /home/$USER/.config/fastfetch
+rm -r ~/.config/fastfetch
 sleep 1
-        cd Sheriff/ && cp -r fastfetch /home/$USER/.config
+        cd Sheriff/ && cp -r fastfetch ~/.config
 clear	
 fastfetch
 elif [[ $islem == 10 ]]; then
 	sleep 1
 	clear
 	loader
-rm -r /home/$USER/.config/fastfetch
+rm -r ~/.config/fastfetch
 sleep 1
-        cd Bunny/ && cp -r fastfetch /home/$USER/.config
+        cd Bunny/ && cp -r fastfetch ~/.config
 clear	
 fastfetch
 elif [[ $islem == 11 ]]; then
 	sleep 1
 	clear
 	loader
-rm -r /home/$USER/.config/fastfetch
+rm -r ~/.config/fastfetch
 sleep 1
-        cd Coffee/ && cp -r fastfetch /home/$USER/.config
+        cd Coffee/ && cp -r fastfetch ~/.config
 clear	
 fastfetch
 elif [[ $islem == 12 ]]; then
 	sleep 1
 	clear
 	loader
-rm -r /home/$USER/.config/fastfetch
+rm -r ~/.config/fastfetch
 sleep 1
-        cd Duck/ && cp -r fastfetch /home/$USER/.config
+        cd Duck/ && cp -r fastfetch ~/.config
 clear	
 fastfetch
 elif [[ $islem == 13 ]]; then
 	sleep 1
 	clear
 	loader
-rm -r /home/$USER/.config/fastfetch
+rm -r ~/.config/fastfetch
 sleep 1
-        cd OWL/ && cp -r fastfetch /home/$USER/.config
+        cd OWL/ && cp -r fastfetch ~/.config
 clear	
 fastfetch
 elif [[ $islem == 14 ]]; then
 	sleep 1
 	clear
 	loader
-rm -r /home/$USER/.config/fastfetch
+rm -r ~/.config/fastfetch
 sleep 1
-        cd Giraffe/ && cp -r fastfetch /home/$USER/.config
+        cd Giraffe/ && cp -r fastfetch ~/.config
 clear	
 fastfetch
 elif [[ $islem == 15 ]]; then
 	sleep 1
 	clear
 	loader
-rm -r /home/$USER/.config/fastfetch
+rm -r ~/.config/fastfetch
 sleep 1
-        cd Robo-Dog/ && cp -r fastfetch /home/$USER/.config
+        cd Robo-Dog/ && cp -r fastfetch ~/.config
 clear	
 fastfetch
 elif [[  $islem == 00 ]]; then
@@ -192,9 +192,9 @@ elif [[ $islem == D || $islem == d  ]]; then
         sleep 1
         clear
         loader
-rm -r /home/$USER/.config/fastfetch
+rm -r ~/.config/fastfetch
 sleep 1
-        cd Default/ && cp -r fastfetch /home/$USER/.config
+        cd Default/ && cp -r fastfetch ~/.config
 clear   
 fastfetch
 elif [[ $islem == x || $islem == X ]]; then
