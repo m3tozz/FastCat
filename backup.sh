@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Made By M3TOZZ
 clear
 echo -e "\033[0;31mBacking Up...\033[1;36m"

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # This block ensures the script runs correctly on Unix/macOS even if created or modified on Windows.
 if grep -q $'\r' "$0"; then # Check if the script contains Windows-style carriage returns.

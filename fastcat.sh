@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # fastcat updater
 remote_url="https://raw.githubusercontent.com/m3tozz/FastCat/main/fastcat.sh"
 local_file="$0"
@@ -109,7 +109,7 @@ then
     echo -e "  \033[1;34m→ sudo dnf install fastfetch\033[0m"
 exit 1
 fi
-mkdir ~/.config/fastfetch
+mkdir -p ~/.config/fastfetch
 clear
 banner(){
 echo -e '\033[1;36m
@@ -159,7 +159,6 @@ elif [[ $islem == 2 || $islem == 02 ]]; then
 elif [[ $islem == 3 || $islem == 03 ]]; then
 	clear
 	cd Visuals-Themes/
-	sed -i 's/\r$//' start.sh
 	chmod +x start.sh
 	bash start.sh
 
@@ -204,7 +203,9 @@ fi
 }
 
 # Argument Parser.
-case "${1,,}" in
+# Convert the first argument to lowercase explicitly for broader shell compatibility
+normalized_arg=$(echo "$1" | tr '[:upper:]' '[:lower:]')
+case "$normalized_arg" in
 	"--shell"|"-s")
 		shell
 	;;
