@@ -71,13 +71,13 @@ echo -e '
 |  _| (_| \__ \ |_| |__| (_| | |_ 
 |_|  \__,_|___/\__|\____\__,_|\__|                       
 '
-    echo -e "$blue##############################################################$tp"
+    echo -e "$blue#######################################################################$tp"
     echo -e "    Create by           ":" $red M3TOZZ$tp"
-    echo -e "    Contributors        ":" $red LierB, ArThirtyFour, cassiofb-dev$tp"
+    echo -e "    Contributors        ":" $red LierB, ArThirtyFour, cassiofb-dev, Else00$tp"
     echo -e "    Github              ":" $red github.com/m3tozz/FastCat$tp"
     echo -e "    Community Server    ":" $red discord.com/invite/sQwYCZer95$tp"
     echo -e "    Version             ":" $red ${version} $tp"
-    echo -e "$blue##############################################################$tp"
+    echo -e "$blue#######################################################################$tp"
 	exit 1
 }
 fastcat:backup() {
@@ -177,13 +177,13 @@ echo -e '
 |  _| (_| \__ \ |_| |__| (_| | |_ 
 |_|  \__,_|___/\__|\____\__,_|\__|                       
 '
-    echo -e "$blue##############################################################$tp"
+    echo -e "$blue#######################################################################$tp"
     echo -e "    Create by           ":" $red M3TOZZ$tp"
-    echo -e "    Contributors        ":" $red LierB, ArThirtyFour, cassiofb-dev$tp"
+    echo -e "    Contributors        ":" $red LierB, ArThirtyFour, cassiofb-dev, Else00$tp"
     echo -e "    Github              ":" $red github.com/m3tozz/FastCat$tp"
     echo -e "    Community Server    ":" $red discord.com/invite/sQwYCZer95$tp"
     echo -e "    Version             ":" $red ${version} $tp"
-    echo -e "$blue##############################################################$tp"
+    echo -e "$blue#######################################################################$tp"
     echo -e "\nPress any key to continue..."
     read -r -n1
     shell
