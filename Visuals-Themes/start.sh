@@ -96,12 +96,12 @@ apply_visual_theme() {
 # The main banner function only displays the menu.
 banner() {
   echo -e '\033[0;36m
-\033[0;31m______          _   _____     _
-\033[0;33m|  ___|        | | /  __ \   | |
-\033[0;34m| |_ __ _ ___| |_| /  \/ __ _| |_
+\033[0;31m______        _   _____       _   
+\033[0;33m|  ___|      | | /  __ \     | |  
+\033[0;34m| |_ __ _ ___| |_| /  \/ __ _| |_ 
 \033[0;35m|  _/ _` / __| __| |    / _` | __|\033[0;31mVisuals-Themes
-\033[0;36m| || (_| \__ \ |_| \__/\ (_| | |_
-\033[0;31m\_| \__,_|___/\__|\____/\__,_|\__|
+\033[0;36m| || (_| \__ \ |_| \__/\ (_| | |_ 
+\033[0;31m\_| \__,_|___/\__|\____/\__,_|\__|     
 \e[1;34m[01]\e[0;32mDragonball \e[1;35m[02]\e[0;32mOne-Piece \e[1;31m[03]\e[0;32mXenia
 \e[3m\e[92mThese themes require an image-supporting terminal emulator.\e[0m
 \033[1;31m[x]Exit  [00]Menu  [D]Default-Theme
