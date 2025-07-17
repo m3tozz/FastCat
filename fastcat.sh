@@ -38,7 +38,7 @@ if [ "$remote_ver" != "$local_ver" ]; then
     fi
 fi
 # FastCat Version
-    version='1.3.1.0'
+    version='1.3.1.1'
 # Colors
     red='\e[1;31m'
     yellow='\e[1;33m'
@@ -184,6 +184,8 @@ echo -e '
     echo -e "    Community Server    ":" $red discord.com/invite/sQwYCZer95$tp"
     echo -e "    Version             ":" $red ${version} $tp"
     echo -e "$blue##############################################################$tp"
+    echo -e "\nPress any key to continue..."
+    read -r -n1
 	exit 1
 elif [[ $islem == b || $islem == B ]]; then
 $SHELL ./backup.sh
