@@ -186,6 +186,7 @@ echo -e '
     echo -e "$blue##############################################################$tp"
     echo -e "\nPress any key to continue..."
     read -r -n1
+    shell
     
 elif [[ $islem == b || $islem == B ]]; then
 $SHELL ./backup.sh
