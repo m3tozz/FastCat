@@ -38,7 +38,7 @@ if [ "$remote_ver" != "$local_ver" ]; then
     fi
 fi
 # FastCat Version
-    version='1.3.1.1'
+    version='1.3.1.2'
 # Colors
     red='\e[1;31m'
     yellow='\e[1;33m'
@@ -73,7 +73,6 @@ echo -e '
 '
     echo -e "$blue#######################################################################$tp"
     echo -e "    Create by           ":" $red M3TOZZ$tp"
-    echo -e "    Contributors        ":" $red LierB, ArThirtyFour, cassiofb-dev, Else00$tp"
     echo -e "    Github              ":" $red github.com/m3tozz/FastCat$tp"
     echo -e "    Community Server    ":" $red discord.com/invite/sQwYCZer95$tp"
     echo -e "    Version             ":" $red ${version} $tp"
@@ -179,7 +178,6 @@ echo -e '
 '
     echo -e "$blue#######################################################################$tp"
     echo -e "    Create by           ":" $red M3TOZZ$tp"
-    echo -e "    Contributors        ":" $red LierB, ArThirtyFour, cassiofb-dev, Else00$tp"
     echo -e "    Github              ":" $red github.com/m3tozz/FastCat$tp"
     echo -e "    Community Server    ":" $red discord.com/invite/sQwYCZer95$tp"
     echo -e "    Version             ":" $red ${version} $tp"
