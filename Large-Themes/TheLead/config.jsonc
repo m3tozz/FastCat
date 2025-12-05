@@ -20,15 +20,6 @@
     
     "modules": [
         "break",
-        
-        {
-            "type": "title",
-            "format": "👑 {user-name}@{host-name}",
-            "keyColor": "35"  // Purple
-        },
-        
-        "break",
-        
         // System - Purple
         {
             "type": "custom",
