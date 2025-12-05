@@ -272,9 +272,10 @@ elif [[ $islem == 25 ]]; then
 	sleep 1
 	clear
 	loader
-rm -r ~/.config/fastfetch
+rm -r ~/.config/fastfetch/
 sleep 1
-        cd TheLead/ && cp -r fastfetch ~/.config
+		mkdir -p ~/.config/fastfetch/
+        cp -r TheLead/* ~/.config/fastfetch/
 clear
 fastfetch
 elif [[ $islem == 26 ]]; then
@@ -283,7 +284,8 @@ elif [[ $islem == 26 ]]; then
 	loader
 rm -r ~/.config/fastfetch
 sleep 1
-        cd ShirazTux/ && cp -r fastfetch ~/.config
+mkdir -p ~/.config/fastfetch/
+        cp -r ShirazTux/* ~/.config/fastfetch/
 clear
 fastfetch
 elif [[ $islem == 27 ]]; then
@@ -292,7 +294,8 @@ elif [[ $islem == 27 ]]; then
 	loader
 rm -r ~/.config/fastfetch
 sleep 1
-        cd Kaviani-Derafsh/ && cp -r fastfetch ~/.config
+mkdir -p ~/.config/fastfetch/
+        cp -r Kaviani-Derafsh/* ~/.config/fastfetch/
 clear
 fastfetch
 elif [[  $islem == 00 ]]; then
