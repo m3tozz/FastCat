@@ -1,9 +1,3 @@
-//    ______           __  ______      __ 
-//   / ____/___ ______/ /_/ ____/___ _/ /_
-//  / /_  / __ `/ ___/ __/ /   / __ `/ __/
-// / __/ / /_/ (__  ) /_/ /___/ /_/ / /_  
-///_/    \__,_/____/\__/\____/\__,_/\__/  
-//  https://github.com/m3tozz/FastCat
 {
     "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
     
@@ -11,10 +5,11 @@
         "source": "~/.config/fastfetch/ascii.txt",
         "padding": {
             "top": 1,
-            "right": 2
+            "right": 2,
+            "left": 2
         },
         "color": {
-            "1": "38;5;56",
+            "1": "1"
         }
     },
     
@@ -25,6 +20,13 @@
     "modules": [
         "break",
         
+        {
+            "type": "title",
+            "format": "👑 {user-name}@{host-name}",
+            "keyColor": "35"  // Purple
+        },
+        
+        "break",
         
         // System - Purple
         {
@@ -121,7 +123,17 @@
             "keyColor": "35",
             "folders": "/"
         },
-        
+
+        {
+            "type": "custom",
+            "format": "\u001b[33m━━ IP  ━━\u001b[0m"
+        },
+
+        {
+            "type": "localip",
+            "key": "󰩟 ",
+            "keyColor": "35"
+        },
         "break",
         
         {
@@ -129,7 +141,10 @@
             "key": "󰌁 ",
             "symbol": "block"
         },
-        
-        "break"
+        "break",
+        {
+            "type": "custom",
+            "format": "\u001b[35m Shiraz Tux Theme \u001b[0m"
+        },
     ]
 }
