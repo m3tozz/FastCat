@@ -46,7 +46,7 @@ echo -e '\033[0;36m
 \e[0;36m[13]\e[0;32mFedora \e[1;34m[14]\e[0;32mArch \e[1;35m[15]\e[0;32mHyprland \e[1;34m[16]\e[0;32mSimpsons
 \033[1;33m[17]\e[0;32mOrigami \e[1;35m[18]\e[0;32mHome \033[1;33m[19]\e[0;32mDeadPool \033[0;36m[20]\e[0;32mSuperman
 \e[1;34m[21]\e[0;32mSpider-Man \e[0;36m[22]\e[0;32mTriangle \033[1;33m[23]\e[0;32mStars \e[1;35m[24]\e[0;32mYandere-Girl
-\e[1;34m[25]\e[0;32mTheLead \e[1;35m[26]\e[0;32mShirazTux \e[1;31m[27]\e[0;32mKaviani-Derafsh
+\e[1;34m[25]\e[0;32mTheLead \e[1;35m[26]\e[0;32mShirazTux \e[1;31m[27]\e[0;32mKaviani-Derafsh \e[1;35m[28]\e[0;32mArthur-Morgan-hat
 \033[1;31m[x]Exit [00]Menu [D]Default-Theme
 '
         echo -ne "\e[1;33mm3tozz\e[0;31m@\033[1;34mfastcat\n\e[0;31m↳\e[1;36m " ; read islem
@@ -296,6 +296,17 @@ rm -r ~/.config/fastfetch
 sleep 1
 mkdir -p ~/.config/fastfetch/
         cp -r Kaviani-Derafsh/* ~/.config/fastfetch/
+clear
+fastfetch
+elif [[ $islem == 28 ]]; then
+	sleep 1
+	clear
+	loader
+rm -r ~/.config/fastfetch
+sleep 1
+mkdir -p ~/.config/fastfetch/
+mv "Arthur-Morgan's-hat" "Arthur-Morgan-hat"
+cp -r     Arthur-Morgan-hat/* ~/.config/fastfetch/
 clear
 fastfetch
 elif [[  $islem == 00 ]]; then
