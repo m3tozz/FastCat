@@ -275,7 +275,7 @@ elif [[ $islem == 25 ]]; then
 rm -r ~/.config/fastfetch/
 sleep 1
 		mkdir -p ~/.config/fastfetch/
-        cp -r TheLead/* ~/.config/fastfetch/
+        cp -r TheLead/ ~/.config/fastfetch/
 clear
 fastfetch
 elif [[ $islem == 26 ]]; then
@@ -285,7 +285,7 @@ elif [[ $islem == 26 ]]; then
 rm -r ~/.config/fastfetch
 sleep 1
 mkdir -p ~/.config/fastfetch/
-        cp -r ShirazTux/* ~/.config/fastfetch/
+        cp -r ShirazTux/ ~/.config/fastfetch/
 clear
 fastfetch
 elif [[ $islem == 27 ]]; then
@@ -295,7 +295,7 @@ elif [[ $islem == 27 ]]; then
 rm -r ~/.config/fastfetch
 sleep 1
 mkdir -p ~/.config/fastfetch/
-        cp -r Kaviani-Derafsh/* ~/.config/fastfetch/
+        cp -r Kaviani-Derafsh/ ~/.config/fastfetch/
 clear
 fastfetch
 elif [[ $islem == 28 ]]; then
@@ -306,7 +306,7 @@ rm -r ~/.config/fastfetch
 sleep 1
 mkdir -p ~/.config/fastfetch/
 mv "Arthur-Morgan's-hat" "Arthur-Morgan-hat"
-cp -r     Arthur-Morgan-hat/* ~/.config/fastfetch/
+cp -r     Arthur-Morgan-hat/fastfetch ~/.config/fastfetch/
 clear
 fastfetch
 elif [[  $islem == 00 ]]; then
