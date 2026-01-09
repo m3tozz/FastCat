@@ -43,7 +43,7 @@ echo -e '\033[0;36m
 \e[1;34m[01]\e[0;32mMetoSpace \e[1;35m[02]\e[0;32mFast-Snail \e[1;36m[03]\e[0;32mCat \e[1;31m[04]\e[0;32mMinimal
 \e[1;33m[05]\e[0;32mArch \e[1;36m[06]\e[0;32mBlocks \e[1;34m[07]\e[0;32mCocktail \033[1;33m[08]\e[0;32mPalm \033[0;36m[09]\e[0;32mSheriff 
 \e[1;35m[10]\e[0;32mBunny \e[1;34m[11]\e[0;32mCoffee \e[1;35m[12]\e[0;32mDuck \033[1;33m[13]\e[0;32mOWL \e[1;34m[14]\e[0;32mGiraffe
-\e[1;36m[15]\e[0;32mRobo-Dog
+\e[1;36m[15]\e[0;32mRobo-Dog \e[1;34m[16]\e[0;32mTie-Fighter
 \033[1;31m[x]Exit [00]Menu [D]Default-Theme
 '
         echo -ne "\e[1;33mm3tozz\e[0;31m@\033[1;34mfastcat\n\e[0;31m↳\e[1;36m " ; read islem
@@ -184,7 +184,7 @@ sleep 1
         cd Robo-Dog/ && cp -r fastfetch ~/.config
 clear	
 fastfetch
-elif [[ $islem == 15 ]]; then
+elif [[ $islem == 16 ]]; then
 	sleep 1
 	clear
 	loader
