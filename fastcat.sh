@@ -39,7 +39,7 @@ if [ "$remote_ver" != "$local_ver" ]; then
     fi
 fi
 # FastCat Version
-    version='1.3.1.7'
+    version='1.3.1.8'
 # Colors
     red='\e[1;31m'
     yellow='\e[1;33m'
