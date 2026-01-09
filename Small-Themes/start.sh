@@ -184,6 +184,15 @@ sleep 1
         cd Robo-Dog/ && cp -r fastfetch ~/.config
 clear	
 fastfetch
+elif [[ $islem == 15 ]]; then
+	sleep 1
+	clear
+	loader
+rm -r ~/.config/fastfetch
+sleep 1
+        cd Tie-Fighter/ && cp -r fastfetch ~/.config
+clear	
+fastfetch
 elif [[  $islem == 00 ]]; then
         sleep 1
         cd ..
