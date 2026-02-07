@@ -14,12 +14,10 @@ if grep -q $'\r' "$0"; then
     exec bash "$0" "$@"
 fi
 # Made By M3TOZZ
-	clear
-	echo -e "\033[0;31mBacking Up...\033[1;36m"
-	mkdir -p Backup-$(date +%Y-%m-%d-%H:%M:%S)	
-	cp -r ~/.config/fastfetch Backup-$(date +%Y-%m-%d-%H:%M:%S)
-	clear
-	echo -e "\033[31m Backed Up!\033[0m"
-	cd Backup-$(date +%Y-%m-%d-%H:%M:%S)
-	pwd
-	cd ..
+	BACKUP_DIR="Backup-$(date +%Y-%m-%d-%H:%M:%S)"
+echo -e "\033[0;31mBacking Up...\033[1;36m"
+mkdir -p "$BACKUP_DIR"
+cp -r ~/.config/fastfetch "$BACKUP_DIR/"
+clear
+echo -e "\033[31m Backed Up!\033[0m"
+echo "Saved to: $(pwd)/$BACKUP_DIR"
