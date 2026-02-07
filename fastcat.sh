@@ -39,7 +39,7 @@ if [ "$remote_ver" != "$local_ver" ]; then
     fi
 fi
 # FastCat Version
-    version='1.3.1.8'
+    version='1.3.1.9'
 # Colors
     red='\e[1;31m'
     yellow='\e[1;33m'
@@ -158,6 +158,7 @@ elif [[ $islem == x || $islem == X ]]; then
 	clear
 elif [[ $islem == c || $islem == C ]]; then
 	clear
+	rm -rf fastcat-community-themes
 	git clone https://github.com/m3tozz/fastcat-community-themes.git
  	clear
  	cd fastcat-community-themes
