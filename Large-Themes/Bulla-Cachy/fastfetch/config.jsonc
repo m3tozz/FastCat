@@ -1,0 +1,170 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+
+  "logo": {
+    "type": "file",
+    "source": "~/.config/fastfetch/ascii.txt",
+    "color": {
+      "1": "cyan",
+      "2": "blue",
+      "3": "cyan",
+      "4": "white"
+    },
+    "padding": {
+      "top": 5,
+      "left": 1,
+      "right": 8
+    }
+  },
+
+  "modules": [
+    "break",
+    {
+      "type": "custom",
+      "outputColor": "cyan",
+      "format": "  ╭──────────────────────────────────────╮"
+    },
+    {
+      "type": "title",
+      "format": "  │        {user-name}@{host-name}         │",
+      "color": {
+        "user-name": "cyan",
+        "at": "white",
+        "host-name": "blue"
+      }
+    },
+    {
+      "type": "custom",
+      "outputColor": "cyan",
+      "format": "  ╰──────────────────────────────────────╯"
+    },
+    "break",
+    {
+      "type": "custom",
+      "outputColor": "blue",
+      "format": "░ SYSTEM ──────────────────────────────"
+    },
+    {
+      "type": "os",
+      "key": "  󰣇 ",
+      "keyColor": "cyan",
+    },
+    {
+      "type": "kernel",
+      "key": "  󰌢 ",
+      "keyColor": "cyan",
+    },
+    {
+      "type": "uptime",
+      "key": "  󰅐 ",
+      "keyColor": "cyan",
+      "format": "{days}d {hours}h {minutes}m"
+    },
+    {
+      "type": "packages",
+      "key": "  󰏖 ",
+      "keyColor": "cyan"
+    },
+    "break",
+    {
+      "type": "custom",
+      "outputColor": "blue",
+      "format": "░ SHELL & TERM ─────────────────────────"
+    },
+    {
+      "type": "shell",
+      "key": "   ",
+      "keyColor": "magenta",
+    },
+    {
+      "type": "terminal",
+      "key": "   ",
+      "keyColor": "magenta",
+    },
+    {
+      "type": "terminalfont",
+      "key": "   ",
+      "keyColor": "magenta",
+    },
+    "break",
+    {
+      "type": "custom",
+      "outputColor": "blue",
+      "format": "░ DESKTOP ──────────────────────────────"
+    },
+    {
+      "type": "de",
+      "key": "  󰧨 ",
+      "keyColor": "yellow",
+    },
+    {
+      "type": "wm",
+      "key": "   ",
+      "keyColor": "yellow",
+    },
+    {
+      "type": "wmtheme",
+      "key": "  󰔎 ",
+      "keyColor": "yellow",
+    },
+    {
+      "type": "icons",
+      "key": "  󰀻 ",
+      "keyColor": "yellow",
+    },
+    {
+      "type": "cursor",
+      "key": "  󰇀 ",
+      "keyColor": "yellow",
+    },
+    "break",
+    {
+      "type": "custom",
+      "outputColor": "blue",
+      "format": "░ HARDWARE ─────────────────────────────"
+    },
+    {
+      "type": "cpu",
+      "key": "  󰻠 ",
+      "keyColor": "green",
+      "temp": true
+    },
+    {
+      "type": "gpu",
+      "key": "  󰍛 ",
+      "keyColor": "green",
+      "hideType": "integrated",
+      "temp": true
+    },
+    {
+      "type": "memory",
+      "key": "  󰍜 ",
+      "keyColor": "green",
+      "format": "{used} / {total} ({percentage}%)"
+    },
+    {
+      "type": "disk",
+      "key": "  󰋊 ",
+      "keyColor": "green",
+      "folders": "/",
+    },
+    {
+      "type": "battery",
+      "key": "  󰁹",
+      "keyColor": "green",
+      "ignoreMissing": true
+    },
+    "break",
+    {
+      "type": "custom",
+      "outputColor": "blue",
+      "format": "  ┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄"
+    },
+    {
+      "type": "colors",
+      "paddingLeft": 4,
+      "symbol": "circle"
+    },
+    "break"
+  ]
+}
