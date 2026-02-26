@@ -31,6 +31,60 @@ FastCat - FastFetch Theme Pack!
 [####################] 100%%  completed.\r"
 sleep 0.2
 }
+
+# Theme directory mapping
+THEMES=(
+    [1]="Anime-Boy" [2]="Death" [3]="Pentagram" [4]="Scorpion"
+    [5]="Anime-Girl" [6]="Saturn" [7]="Suse-Icons" [8]="Cat"
+    [9]="Jurassic" [10]="BatMan" [11]="Groups" [12]="Rose"
+    [13]="Fedora" [14]="Arch" [15]="Hyprland" [16]="Simpsons"
+    [17]="Origami" [18]="Home" [19]="DeadPool" [20]="Superman"
+    [21]="Spider-Man" [22]="Triangle" [23]="Stars" [24]="Yandere-Girl"
+    [25]="TheLead" [26]="ShirazTux" [27]="Kaviani-Derafsh" [28]="Arthur-Morgan-hat"
+    [29]="MetoCat" [30]="Shiraz-Linux" [31]="Bulla-Cachy"
+)
+
+# Preview a theme without applying it
+preview_theme() {
+    local theme_dir="$1"
+    local tmp_dir
+    tmp_dir=$(mktemp -d)
+
+    cp -r "$theme_dir/fastfetch/"* "$tmp_dir/"
+
+    local config="$tmp_dir/config.jsonc"
+
+    # Fix logo source paths to use temp directory
+    if [[ "$(uname)" == "Darwin" ]]; then
+        sed -i '' "s|~/.config/fastfetch/|$tmp_dir/|g" "$config"
+        sed -i '' "s|\\\$HOME/.config/fastfetch/|$tmp_dir/|g" "$config"
+    else
+        sed -i "s|~/.config/fastfetch/|$tmp_dir/|g" "$config"
+        sed -i "s|\\\$HOME/.config/fastfetch/|$tmp_dir/|g" "$config"
+    fi
+
+    # Fix relative image paths (for visual themes)
+    for img in "$tmp_dir"/*.png "$tmp_dir"/*.jpg "$tmp_dir"/*.jpeg; do
+        [[ -f "$img" ]] || continue
+        local imgname
+        imgname=$(basename "$img")
+        if [[ "$(uname)" == "Darwin" ]]; then
+            sed -i '' "s|\"source\": \"$imgname\"|\"source\": \"$tmp_dir/$imgname\"|g" "$config"
+        else
+            sed -i "s|\"source\": \"$imgname\"|\"source\": \"$tmp_dir/$imgname\"|g" "$config"
+        fi
+    done
+
+    clear
+    echo -e "\033[1;33m--- Preview Mode (not applied) ---\033[0m"
+    fastfetch --config "$config"
+    echo -e "\n\033[1;33m--- End of Preview ---\033[0m"
+    echo -e "\033[0;36mPress any key to return to menu...\033[0m"
+    read -r -n1
+
+    rm -rf "$tmp_dir"
+}
+
 clear
 banner(){
 echo -e '\033[0;36m
@@ -48,7 +102,7 @@ echo -e '\033[0;36m
 \e[1;34m[21]\e[0;32mSpider-Man \e[0;36m[22]\e[0;32mTriangle \033[1;33m[23]\e[0;32mStars \e[1;35m[24]\e[0;32mYandere-Girl
 \e[1;34m[25]\e[0;32mTheLead \e[1;35m[26]\e[0;32mShirazTux \e[1;31m[27]\e[0;32mKaviani-Derafsh \e[1;35m[28]\e[0;32mArthur-Morgan-hat
 \e[1;31m[29]\e[0;32mMetoCat \e[1;33m[30]\e[0;32mShiraz-Linux \e[1;35m[31]\e[0;32mBulla-Cachy
-\033[1;31m[x]Exit [00]Menu [D]Default-Theme
+\033[1;31m[P]\e[0;32mPreview \033[1;31m[x]Exit [00]Menu [D]Default-Theme
 '
         echo -ne "\e[1;33mm3tozz\e[0;31m@\033[1;34mfastcat\n\e[0;31m↳\e[1;36m " ; read islem
 }
@@ -353,6 +407,23 @@ sleep 1
         cd Default/ && cp -r fastfetch ~/.config
 clear   
 fastfetch
+elif [[ $islem == P || $islem == p ]]; then
+    echo -e "\033[1;33mEnter theme number to preview:\033[0m"
+    echo -ne "\e[1;33mm3tozz\e[0;31m@\033[1;34mfastcat\n\e[0;31m↳\e[1;36m " ; read preview_num
+    # Remove leading zero
+    preview_num=$((10#$preview_num))
+    if [[ -n "${THEMES[$preview_num]+x}" ]]; then
+        local_theme="${THEMES[$preview_num]}"
+        # Handle Arthur-Morgan's-hat directory name variant
+        if [[ ! -d "$local_theme" && -d "Arthur-Morgan's-hat" && "$local_theme" == "Arthur-Morgan-hat" ]]; then
+            local_theme="Arthur-Morgan's-hat"
+        fi
+        preview_theme "$local_theme"
+    else
+        echo -e "\033[1;31mInvalid theme number!\033[0m"
+        sleep 1
+    fi
+    exec bash "$0"
 elif [[ $islem == x || $islem == X ]]; then
 	clear
 echo -e "\033[1;31m GoodBye\033[0m"

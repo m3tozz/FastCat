@@ -30,6 +30,11 @@ loader() {
   sleep 0.2
 }
 
+# Theme directory mapping
+THEMES=(
+    [1]="Dragonball" [2]="One-Piece" [3]="Xenia"
+)
+
 # Prompts the user to select the image rendering protocol with details.
 # This is now called AFTER a theme is selected.
 prompt_logo_protocol() {
@@ -104,7 +109,7 @@ banner() {
 \033[0;31m\_| \__,_|___/\__|\____/\__,_|\__|     
 \e[1;34m[01]\e[0;32mDragonball \e[1;35m[02]\e[0;32mOne-Piece \e[1;31m[03]\e[0;32mXenia
 \e[3m\e[92mThese themes require an image-supporting terminal emulator.\e[0m
-\033[1;31m[x]Exit  [00]Menu  [D]Default-Theme
+\033[1;31m[P]\e[0;32mPreview \033[1;31m[x]Exit  [00]Menu  [D]Default-Theme
 '
 }
 
@@ -134,6 +139,36 @@ while true; do
             cd ..
             bash ./fastcat.sh -s
             break
+            ;;
+        P|p)
+            echo -e "\033[1;33mEnter theme number to preview:\033[0m"
+            echo -ne "\e[1;33mm3tozz\e[0;31m@\033[1;34mfastcat\n\e[0;31m↳\e[1;36m " ; read preview_num
+            preview_num=$((10#$preview_num))
+            if [[ -n "${THEMES[$preview_num]+x}" ]]; then
+                prompt_logo_protocol
+                local_theme="${THEMES[$preview_num]}"
+                tmp_dir=$(mktemp -d)
+                cp -r "$local_theme/fastfetch/"* "$tmp_dir/"
+                config="$tmp_dir/config.jsonc"
+                # Fix image protocol
+                if [[ "$(uname)" == "Darwin" ]]; then
+                    sed -i '' '/"logo": {/,/}/s/"type": ".*"/"type": "'"$LOGO_PROTOCOL"'"/' "$config"
+                    sed -i '' "s|\"source\": \"|\"source\": \"$tmp_dir/|g" "$config"
+                else
+                    sed -i '/"logo": {/,/}/ s/"type": ".*"/"type": "'"$LOGO_PROTOCOL"'"/' "$config"
+                    sed -i "s|\"source\": \"|\"source\": \"$tmp_dir/|g" "$config"
+                fi
+                clear
+                echo -e "\033[1;33m--- Preview Mode (not applied) ---\033[0m"
+                fastfetch --config "$config" --show-errors
+                echo -e "\n\033[1;33m--- End of Preview ---\033[0m"
+                echo -e "\033[0;36mPress any key to return to menu...\033[0m"
+                read -r -n1
+                rm -rf "$tmp_dir"
+            else
+                echo -e "\033[1;31mInvalid theme number!\033[0m"
+                sleep 1
+            fi
             ;;
         D|d)
             echo -e "\n\033[1;33mWarning: There is no 'default' for visual themes.\033[0m"
