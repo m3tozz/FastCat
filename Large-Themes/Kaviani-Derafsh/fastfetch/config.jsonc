@@ -35,19 +35,19 @@
         
         {
             "type": "os",
-            "key": " ",
+            "key": " ",
             "keyColor": "35"
         },
         
         {
             "type": "kernel",
-            "key": " ",
+            "key": " ",
             "keyColor": "35"
         },
         
         {
             "type": "uptime",
-            "key": " ",
+            "key": "󰔟 ",
             "keyColor": "35"
         },
         
@@ -79,7 +79,7 @@
         
         {
             "type": "terminal",
-            "key": " ",
+            "key": "󰨊 ",
             "keyColor": "33"
         },
         
