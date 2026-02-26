@@ -1,0 +1,100 @@
+{
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+    "logo": {
+    "source": "~/.config/fastfetch/ascii.txt",
+    "padding": {
+      "top": 3,
+      "right": 2,
+      "left": 6
+    },
+    "color": {
+      "1": "38;5;219"
+    }
+    },
+    "display": {
+        "separator": "    \u001b[38;5;242m󰇙\u001b[0m    ",
+        "color": {
+            "keys": "38;5;147"
+        },
+        "key": {
+            "width": 24
+        }
+    },
+    "modules": [
+        "break",
+        {
+            "type": "title",
+            "key": "     \u001b[38;5;213m󰮯 \u001b[0m  IDENTITY",
+            "format": "{1}@{2}"
+        },
+        "break",
+        {
+            "type": "custom",
+            "format": "     \u001b[38;5;141m╭──────────────────────────────────────────────────────────╮\u001b[0m"
+        },
+        "break",
+        {
+            "type": "custom",
+            "format": "     \u001b[38;5;141m\u001b[48;5;141m\u001b[38;5;232m  SYSTEM RESONANCE  \u001b[0m\u001b[38;5;141m\u001b[0m"
+        },
+        "break",
+        {
+            "type": "os",
+            "key": "     󱄅  ENVIRONMENT  󱞩",
+            "format": "{3} {12}"
+        },
+        {
+            "type": "kernel",
+            "key": "     󰏗  DATA STREAM  󱞩",
+            "format": "{2}"
+        },
+        {
+            "type": "uptime",
+            "key": "     󱑎  VITAL PULSE  󱞩",
+            "format": "{1}h {2}m"
+        },
+        "break",
+        {
+            "type": "custom",
+            "format": "     \u001b[38;5;147m\u001b[48;5;147m\u001b[38;5;232m  PHYSICAL ENTITY  \u001b[0m\u001b[38;5;147m\u001b[0m"
+        },
+        "break",
+        {
+            "type": "cpu",
+            "key": "     󰘚  NEURAL CORE  󱞩",
+            "format": "{1}"
+        },
+        {
+            "type": "gpu",
+            "key": "     󰢮  VISUAL PATH  󱞩",
+            "format": "{2}"
+        },
+        {
+            "type": "memory",
+            "key": "     󰍛  ACTIVE LOAD  󱞩",
+            "format": "{1} / {2}"
+        },
+        {
+            "type": "disk",
+            "key": "     󰋊  ECHO STORAGE 󱞩",
+            "format": "{1} / {2} ({9})"
+        },
+        "break",
+        {
+            "type": "custom",
+            "format": "     \u001b[38;5;213m\u001b[48;5;213m\u001b[38;5;232m  AETHER SPECTRUM  \u001b[0m\u001b[38;5;213m\u001b[0m"
+        },
+        "break",
+        {
+            "type": "colors",
+            "symbol": "diamond",
+            "paddingLeft": 5
+        },
+        "break",
+        {
+            "type": "custom",
+            "format": "     \u001b[38;5;141m╰──────────────────────────────────────────────────────────╯\u001b[0m"
+        },
+        "break"
+    ]
+}
