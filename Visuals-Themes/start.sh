@@ -30,6 +30,12 @@ loader() {
   sleep 0.2
 }
 
+# Theme directory mapping
+THEMES=(
+    [1]="Dragonball" [2]="One-Piece" [3]="Xenia"
+)
+THEME_COUNT=3
+
 # Prompts the user to select the image rendering protocol with details.
 # This is now called AFTER a theme is selected.
 prompt_logo_protocol() {
@@ -104,7 +110,7 @@ banner() {
 \033[0;31m\_| \__,_|___/\__|\____/\__,_|\__|     
 \e[1;34m[01]\e[0;32mDragonball \e[1;35m[02]\e[0;32mOne-Piece \e[1;31m[03]\e[0;32mXenia
 \e[3m\e[92mThese themes require an image-supporting terminal emulator.\e[0m
-\033[1;31m[x]Exit  [00]Menu  [D]Default-Theme
+\e[1;32m[R]\e[0;32mRandom \e[1;36m[/]\e[0;32mSearch \033[1;31m[x]Exit  [00]Menu  [D]Default-Theme
 '
 }
 
@@ -134,6 +140,35 @@ while true; do
             cd ..
             bash ./fastcat.sh -s
             break
+            ;;
+        R|r)
+            local rand=$((RANDOM % THEME_COUNT + 1))
+            local name="${THEMES[$rand]}"
+            echo -e "\033[1;33mRandom pick: \033[1;32m$name\033[0m"
+            sleep 1
+            prompt_logo_protocol
+            apply_visual_theme "$name"
+            break
+            ;;
+        "/")
+            echo -e "\033[1;33mSearch theme:\033[0m"
+            echo -ne "\e[1;33mm3tozz\e[0;31m@\033[1;34mfastcat\n\e[0;31m↳\e[1;36m " ; read query
+            if [[ -z "$query" ]]; then
+                echo -e "\033[1;31mEmpty search.\033[0m"
+                sleep 1
+            else
+                local found=0
+                for i in "${!THEMES[@]}"; do
+                    if echo "${THEMES[$i]}" | grep -qi "$query"; then
+                        echo -e "  \033[1;33m[$i]\033[0m ${THEMES[$i]}"
+                        ((found++))
+                    fi
+                done
+                if [[ $found -eq 0 ]]; then
+                    echo -e "\033[1;31mNo themes found matching '$query'\033[0m"
+                fi
+                sleep 2
+            fi
             ;;
         D|d)
             echo -e "\n\033[1;33mWarning: There is no 'default' for visual themes.\033[0m"
