@@ -135,7 +135,7 @@ echo -e '\033[1;36m
 '
 echo -e '
 \e[1;34m[01]\e[0;32mSmall Themes \e[1;35m[02]\e[0;32mLarge Themes \e[1;33m[03]\e[0;32mVisuals Themes \033[0;33m[C]\e[0;32mCommunity Themes 
-\e[1;31m[A]About [B]Backup [x]Exit\033[0m
+\e[1;31m[A]About [B]Backup \e[1;36m[H]History [F]Favorites \e[1;31m[x]Exit\033[0m
 '
         echo -ne "\e[1;31mm3tozz\033[0;36m@\033[1;33mfastcat\n\e \033[0;36m↳\033[0m " ; read islem
 }
@@ -190,6 +190,34 @@ echo -e '
     read -r -n1
     shell
     
+elif [[ $islem == h || $islem == H ]]; then
+    FASTCAT_DATA="$HOME/.config/fastcat"
+    if [[ ! -f "$FASTCAT_DATA/history.log" ]] || [[ ! -s "$FASTCAT_DATA/history.log" ]]; then
+        echo -e "\033[1;33mNo history yet.\033[0m"
+    else
+        echo -e "\033[1;34m--- Theme History ---\033[0m"
+        tac "$FASTCAT_DATA/history.log" | head -20 | while IFS='|' read -r date category name; do
+            echo -e "\033[0;36m$date\033[0m  \033[1;33m[$category]\033[0m  $name"
+        done
+        echo -e "\033[1;34m---------------------\033[0m"
+    fi
+    echo -e "\nPress any key to continue..."
+    read -r -n1
+    shell
+elif [[ $islem == f || $islem == F ]]; then
+    FASTCAT_DATA="$HOME/.config/fastcat"
+    if [[ ! -f "$FASTCAT_DATA/favorites.txt" ]] || [[ ! -s "$FASTCAT_DATA/favorites.txt" ]]; then
+        echo -e "\033[1;33mNo favorites yet.\033[0m"
+    else
+        echo -e "\033[1;34m--- Favorites ---\033[0m"
+        while IFS='|' read -r category name; do
+            echo -e "  \033[0;36m[$category]\033[0m $name"
+        done < "$FASTCAT_DATA/favorites.txt"
+        echo -e "\033[1;34m-----------------\033[0m"
+    fi
+    echo -e "\nPress any key to continue..."
+    read -r -n1
+    shell
 elif [[ $islem == b || $islem == B ]]; then
 $SHELL ./backup.sh
 else

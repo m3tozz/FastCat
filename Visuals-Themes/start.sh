@@ -30,6 +30,90 @@ loader() {
   sleep 0.2
 }
 
+# FastCat data directory
+FASTCAT_DATA="$HOME/.config/fastcat"
+mkdir -p "$FASTCAT_DATA/backups"
+
+# Auto-backup current fastfetch config before applying a new theme
+auto_backup() {
+    local src="$HOME/.config/fastfetch"
+    if [[ -d "$src" ]] && [[ "$(ls -A "$src" 2>/dev/null)" ]]; then
+        local backup_name="$FASTCAT_DATA/backups/Backup-$(date +%Y-%m-%d-%H%M%S)"
+        cp -r "$src" "$backup_name"
+        echo -e "\033[0;32mBackup saved: $backup_name\033[0m"
+        # Keep only the last 5 backups
+        local count
+        count=$(ls -1d "$FASTCAT_DATA/backups"/Backup-* 2>/dev/null | wc -l)
+        if [[ "$count" -gt 5 ]]; then
+            ls -1d "$FASTCAT_DATA/backups"/Backup-* | head -n $((count - 5)) | xargs rm -rf
+        fi
+    fi
+}
+
+# Log theme application to history
+log_history() {
+    local category="$1"
+    local theme_name="$2"
+    echo "$(date '+%Y-%m-%d %H:%M:%S')|$category|$theme_name" >> "$FASTCAT_DATA/history.log"
+    # Keep only last 50 entries
+    if [[ -f "$FASTCAT_DATA/history.log" ]]; then
+        tail -n 50 "$FASTCAT_DATA/history.log" > "$FASTCAT_DATA/history.log.tmp"
+        mv "$FASTCAT_DATA/history.log.tmp" "$FASTCAT_DATA/history.log"
+    fi
+}
+
+# Toggle favorite
+toggle_favorite() {
+    local entry="$1"
+    if grep -qxF "$entry" "$FASTCAT_DATA/favorites.txt" 2>/dev/null; then
+        grep -vxF "$entry" "$FASTCAT_DATA/favorites.txt" > "$FASTCAT_DATA/favorites.txt.tmp"
+        mv "$FASTCAT_DATA/favorites.txt.tmp" "$FASTCAT_DATA/favorites.txt"
+        echo -e "\033[1;31mRemoved from favorites: $entry\033[0m"
+    else
+        echo "$entry" >> "$FASTCAT_DATA/favorites.txt"
+        echo -e "\033[1;32mAdded to favorites: $entry\033[0m"
+    fi
+    sleep 1
+}
+
+# Show history
+show_history() {
+    if [[ ! -f "$FASTCAT_DATA/history.log" ]] || [[ ! -s "$FASTCAT_DATA/history.log" ]]; then
+        echo -e "\033[1;33mNo history yet.\033[0m"
+    else
+        echo -e "\033[1;34m--- Theme History (recent) ---\033[0m"
+        tac "$FASTCAT_DATA/history.log" | head -20 | while IFS='|' read -r date category name; do
+            echo -e "\033[0;36m$date\033[0m  \033[1;33m[$category]\033[0m  $name"
+        done
+        echo -e "\033[1;34m------------------------------\033[0m"
+    fi
+    echo -e "\033[0;36mPress any key to continue...\033[0m"
+    read -r -n1
+}
+
+# Show favorites
+show_favorites() {
+    if [[ ! -f "$FASTCAT_DATA/favorites.txt" ]] || [[ ! -s "$FASTCAT_DATA/favorites.txt" ]]; then
+        echo -e "\033[1;33mNo favorites yet. Use [+] after selecting a theme number.\033[0m"
+    else
+        echo -e "\033[1;34m--- Favorites ---\033[0m"
+        local i=1
+        while IFS='|' read -r category name; do
+            echo -e "  \033[1;33m$i)\033[0m \033[0;36m[$category]\033[0m $name"
+            ((i++))
+        done < "$FASTCAT_DATA/favorites.txt"
+        echo -e "\033[1;34m-----------------\033[0m"
+    fi
+    echo -e "\033[0;36mPress any key to continue...\033[0m"
+    read -r -n1
+}
+
+# Theme name mapping
+THEMES=(
+    [1]="Dragonball" [2]="One-Piece" [3]="Xenia"
+)
+CATEGORY="Visual"
+
 # Prompts the user to select the image rendering protocol with details.
 # This is now called AFTER a theme is selected.
 prompt_logo_protocol() {
@@ -65,6 +149,9 @@ apply_visual_theme() {
 
     loader
 
+    # Auto-backup before applying
+    auto_backup
+
     # Clean up old config
     rm -rf "$config_dest_path"
     mkdir -p "$config_dest_path"
@@ -86,6 +173,9 @@ apply_visual_theme() {
         sed -i "s|\"source\": \"|\"source\": \"$config_dest_path/|g" "$target_config_file"
     fi
 
+    # Log to history
+    log_history "$CATEGORY" "$theme_dir"
+
     clear
     echo "Running fastfetch with the new theme. Errors (if any) will be shown below:"
     fastfetch --show-errors
@@ -96,14 +186,15 @@ apply_visual_theme() {
 # The main banner function only displays the menu.
 banner() {
   echo -e '\033[0;36m
-\033[0;31m______        _   _____       _   
-\033[0;33m|  ___|      | | /  __ \     | |  
-\033[0;34m| |_ __ _ ___| |_| /  \/ __ _| |_ 
+\033[0;31m______        _   _____       _
+\033[0;33m|  ___|      | | /  __ \     | |
+\033[0;34m| |_ __ _ ___| |_| /  \/ __ _| |_
 \033[0;35m|  _/ _` / __| __| |    / _` | __|\033[0;31mVisuals-Themes
-\033[0;36m| || (_| \__ \ |_| \__/\ (_| | |_ 
-\033[0;31m\_| \__,_|___/\__|\____/\__,_|\__|     
+\033[0;36m| || (_| \__ \ |_| \__/\ (_| | |_
+\033[0;31m\_| \__,_|___/\__|\____/\__,_|\__|
 \e[1;34m[01]\e[0;32mDragonball \e[1;35m[02]\e[0;32mOne-Piece \e[1;31m[03]\e[0;32mXenia
 \e[3m\e[92mThese themes require an image-supporting terminal emulator.\e[0m
+\e[1;32m[+]\e[0;32mFavorite \e[1;36m[H]\e[0;32mHistory \e[1;33m[F]\e[0;32mFavorites
 \033[1;31m[x]Exit  [00]Menu  [D]Default-Theme
 '
 }
@@ -129,6 +220,23 @@ while true; do
             prompt_logo_protocol
             apply_visual_theme "Xenia"
             break
+            ;;
+        "+")
+            echo -e "\033[1;33mEnter theme number to toggle favorite:\033[0m"
+            echo -ne "\e[1;33mm3tozz\e[0;31m@\033[1;34mfastcat\n\e[0;31m↳\e[1;36m " ; read fav_num
+            fav_num=$((10#$fav_num))
+            if [[ -n "${THEMES[$fav_num]+x}" ]]; then
+                toggle_favorite "$CATEGORY|${THEMES[$fav_num]}"
+            else
+                echo -e "\033[1;31mInvalid theme number!\033[0m"
+                sleep 1
+            fi
+            ;;
+        H|h)
+            show_history
+            ;;
+        F|f)
+            show_favorites
             ;;
         00)
             cd ..
