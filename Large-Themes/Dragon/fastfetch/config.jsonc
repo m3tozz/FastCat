@@ -1,0 +1,70 @@
+{
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+    "logo": {
+        "source": "~/.config/fastfetch/dragon.png",
+        "type": "kitty",
+        "height": 16,
+        "padding": {
+            "top": 6,
+            "right": 0
+        }
+    },
+"display": {
+        "separator": " ❯ ",
+        "color": {
+            "keys": "31",
+            "output": "37"
+        }
+    },
+    "modules": [
+        "break",
+        {
+            "type": "custom",
+            "format": "           ╭◢◤──🔥 ɪᴍᴘᴇʀɪᴀʟ ᴅʀᴀɢᴏɴ ɴᴏᴅᴇ 🔥──◥◣╮",
+            "outputColor": "31"
+        },
+        {
+            "type": "custom",
+            "format": "           ╰◥◣──────────────────────────────◢◤╯",
+            "outputColor": "31"
+        },
+        "break",
+        {
+            "type": "custom",
+            "format": "  ╭─────────────────── ANCIENT RUNES ───────────────────╮",
+            "outputColor": "31"
+        },
+        { "type": "os", "key": "  🩸 OS        ", "keyColor": "31" },
+        { "type": "kernel", "key": "  🩸 KERNEL    ", "keyColor": "31" },
+        { "type": "uptime", "key": "  🩸 UPTIME    ", "keyColor": "31" },
+        { "type": "packages", "key": "  🩸 PACKAGES  ", "keyColor": "31" },
+        { "type": "locale", "key": "  🩸 LOCALE    ", "keyColor": "31" },
+        {
+            "type": "custom",
+            "format": "  ├────────────────── DRAGON'S ARMOR ───────────────────┤",
+            "outputColor": "31"
+        },
+        { "type": "shell", "key": "  🗡️ SHELL     ", "keyColor": "31" },
+        { "type": "terminal", "key": "  🗡️ TERMINAL  ", "keyColor": "31" },
+        { "type": "wm", "key": "  🗡️ WM/DE     ", "keyColor": "31" },
+        { "type": "theme", "key": "  🗡️ THEME     ","format": "{1}", "keyColor": "31" },
+        { "type": "icons", "key": "  🗡️ ICONS     ","format": "{1}", "keyColor": "31" },
+        {
+            "type": "custom",
+            "format": "  ├─────────────────── BEAST CORE ──────────────────────┤",
+            "outputColor": "31"
+        },
+        { "type": "cpu", "key": "  🐾 CPU       ","format": "{1}", "keyColor": "31" },
+        { "type": "gpu", "key": "  🐾 GPU       ", "keyColor": "31" },
+        { "type": "memory", "key": "  🐾 RAM       ", "keyColor": "31" },
+        { "type": "disk", "key": "  🐾 STORAGE   ", "keyColor": "31" },
+        { "type": "vulkan", "key": "  🐾 VULKAN    ", "keyColor": "31" },
+        { "type": "battery", "key": "  🐾 BATTERY   ", "keyColor": "31" },
+        {
+            "type": "custom",
+            "format": "  ╰─────────────────────────────────────────────────────╯",
+            "outputColor": "31"
+        },
+        "break",
+    ]
+}
