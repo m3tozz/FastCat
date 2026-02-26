@@ -1,0 +1,53 @@
+{
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+    "logo": {
+        "source": "~/.config/fastfetch/anchor.txt",
+        "color": { "1": "blue", "2": "black" },
+        "padding": { "top": 3, "right": 6 }
+    },
+    "display": {
+        "separator": " : ",
+        "color": { "keys": "blue", "title": "cyan" },
+        "key": {
+            "width": 0
+        }
+    },
+    "modules": [
+        "title",
+        {
+            "type": "custom",
+            "format": "────────────────────────────────────────────────────",
+            "outputColor": "34"
+        },
+        { "type": "os",       "key": "🏴‍☠️ OS      ", "keyColor": "blue" },
+        { "type": "host",     "key": "🏗️ Host    ", "keyColor": "blue" },
+        { "type": "kernel",   "key": "🧬 Kernel  ", "keyColor": "blue" },
+        { "type": "uptime",   "key": "⏳ Uptime  ", "keyColor": "blue" },
+        "break",
+        { "type": "packages", "key": "📦 Packages", "keyColor": "blue" },
+        { "type": "shell",    "key": "🐚 Shell   ", "keyColor": "blue" },
+        { "type": "display",  "key": "🖥️ Display ", "keyColor": "blue" },
+        { "type": "wm",       "key": "🧭 WM      ", "keyColor": "blue" },
+        { "type": "terminal", "key": "⚓ Terminal", "keyColor": "blue" },
+        "break",
+        { "type": "cpu",      "key": "⚙️ CPU     ", "format": "{1}", "keyColor": "blue" },
+        { "type": "gpu",      "key": "⚡ GPU     ", "keyColor": "blue" },
+        { "type": "memory",   "key": "🧠 Memory  ", "keyColor": "blue" },
+        { "type": "disk",     "key": "🛖 Disk    ", "keyColor": "blue" },
+        "break",
+        {
+            "type": "colors",
+            "symbol": "circle"
+        },
+        {
+            "type": "custom",
+            "format": "────────────────────────────────────────────────────",
+            "outputColor": "34"
+        },
+        {
+            "type": "custom",
+            "format": "\"A smooth sea never made a skilled sailor\"",
+            "outputColor": "30"
+        }
+    ]
+}
