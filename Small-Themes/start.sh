@@ -123,8 +123,8 @@ echo -e '\033[0;36m
 \e[1;34m[01]\e[0;32mMetoSpace \e[1;35m[02]\e[0;32mFast-Snail \e[1;36m[03]\e[0;32mCat \e[1;31m[04]\e[0;32mMinimal
 \e[1;33m[05]\e[0;32mArch \e[1;36m[06]\e[0;32mBlocks \e[1;34m[07]\e[0;32mCocktail \033[1;33m[08]\e[0;32mPalm \033[0;36m[09]\e[0;32mSheriff 
 \e[1;35m[10]\e[0;32mBunny \e[1;34m[11]\e[0;32mCoffee \e[1;35m[12]\e[0;32mDuck \033[1;33m[13]\e[0;32mOWL \e[1;34m[14]\e[0;32mGiraffe
-\e[1;36m[15]\e[0;32mRobo-Dog \e[1;34m[16]\e[0;32mTie-Fighter
-\e[1;32m[R]\e[0;32mRandom \e[1;36m[/]\e[0;32mSearch \033[1;31m[x]Exit [00]Menu [D]Default-Theme
+\e[1;36m[15]\e[0;32mRobo-Dog \e[1;34m[16]\e[0;32mTie-Fighter \e[1;36m[17]\e[0;32mWave
+\033[1;31m[x]Exit [00]Menu [D]Default-Theme
 '
         echo -ne "\e[1;33mm3tozz\e[0;31m@\033[1;34mfastcat\n\e[0;31m↳\e[1;36m " ; read islem
 }
@@ -272,6 +272,15 @@ rm -r ~/.config/fastfetch
 sleep 1
         cd Tie-Fighter/ && cp -r fastfetch ~/.config
 clear	
+fastfetch
+elif [[ $islem == 17 ]]; then
+	sleep 1
+	clear
+	loader
+rm -r ~/.config/fastfetch
+sleep 1
+        cd Wave/ && cp -r fastfetch ~/.config
+clear
 fastfetch
 elif [[  $islem == 00 ]]; then
         sleep 1
