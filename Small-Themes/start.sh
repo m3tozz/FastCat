@@ -31,6 +31,86 @@ FastCat - FastFetch Theme Pack!
 [####################] 100%%  completed.\r"
 sleep 0.2
 }
+
+# Theme directory mapping
+THEMES=(
+    [1]="MetoSpace" [2]="Fast-Snail" [3]="Cat" [4]="Minimal"
+    [5]="Arch" [6]="Blocks" [7]="Cocktail" [8]="Palm"
+    [9]="Sheriff" [10]="Bunny" [11]="Coffee" [12]="Duck"
+    [13]="OWL" [14]="Giraffe" [15]="Robo-Dog" [16]="Tie-Fighter"
+)
+THEME_COUNT=16
+
+# Apply a theme by directory name
+apply_by_name() {
+    local theme_name="$1"
+    sleep 1
+    clear
+    loader
+    rm -r ~/.config/fastfetch
+    sleep 1
+    cd "$theme_name/" && cp -r fastfetch ~/.config
+    clear
+    fastfetch
+}
+
+# Pick a random theme
+random_theme() {
+    local rand=$((RANDOM % THEME_COUNT + 1))
+    local name="${THEMES[$rand]}"
+    echo -e "\033[1;33mRandom pick: \033[1;32m$name\033[0m"
+    sleep 1
+    apply_by_name "$name"
+}
+
+# Search themes by name
+search_themes() {
+    echo -e "\033[1;33mSearch theme:\033[0m"
+    echo -ne "\e[1;33mm3tozz\e[0;31m@\033[1;34mfastcat\n\e[0;31m↳\e[1;36m " ; read query
+
+    if [[ -z "$query" ]]; then
+        echo -e "\033[1;31mEmpty search.\033[0m"
+        sleep 1
+        return
+    fi
+
+    local found=0
+    local matches=()
+    local match_nums=()
+
+    for i in "${!THEMES[@]}"; do
+        if echo "${THEMES[$i]}" | grep -qi "$query"; then
+            matches+=("${THEMES[$i]}")
+            match_nums+=("$i")
+            ((found++))
+        fi
+    done
+
+    if [[ $found -eq 0 ]]; then
+        echo -e "\033[1;31mNo themes found matching '$query'\033[0m"
+        sleep 2
+        return
+    fi
+
+    echo -e "\033[1;34m--- Search Results ---\033[0m"
+    for idx in "${!matches[@]}"; do
+        echo -e "  \033[1;33m[${match_nums[$idx]}]\033[0m ${matches[$idx]}"
+    done
+    echo -e "\033[1;34m----------------------\033[0m"
+    echo -e "\033[0;36mEnter number to apply, or press Enter to go back:\033[0m"
+    echo -ne "\e[1;33mm3tozz\e[0;31m@\033[1;34mfastcat\n\e[0;31m↳\e[1;36m " ; read choice
+
+    if [[ -n "$choice" ]]; then
+        choice=$((10#$choice))
+        if [[ -n "${THEMES[$choice]+x}" ]]; then
+            apply_by_name "${THEMES[$choice]}"
+        else
+            echo -e "\033[1;31mInvalid number!\033[0m"
+            sleep 1
+        fi
+    fi
+}
+
 clear
 banner(){
 echo -e '\033[0;36m
@@ -215,6 +295,11 @@ sleep 1
         cd Default/ && cp -r fastfetch ~/.config
 clear   
 fastfetch
+elif [[ $islem == R || $islem == r ]]; then
+    random_theme
+elif [[ $islem == "/" ]]; then
+    search_themes
+    exec bash "$0"
 elif [[ $islem == x || $islem == X ]]; then
 	clear
 echo -e "\033[1;31m GoodBye\033[0m"
