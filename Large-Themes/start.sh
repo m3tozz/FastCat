@@ -155,7 +155,7 @@ search_themes() {
     fi
 }
 
-# --- Banner ve Menü ---
+# banner
 clear
 banner(){
 echo -e '\033[0;36m
@@ -181,7 +181,7 @@ echo -ne "\e[1;33mm3tozz\e[0;31m@\033[1;34mfastcat\n\e[0;31m↳\e[1;36m " ; read
 
 banner
 
-# --- Menü Seçimleri ---
+# menu
 case $islem in
     [1-9]|0[1-9]|1[0-9]|2[0-9]|3[0-5])
         choice=$((10#$islem))
