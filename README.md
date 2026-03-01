@@ -132,6 +132,7 @@ Contributors
 <details>
 <summary>How can I add my own fastfetch configuration to the fastcat community?</summary>
  Fork <a href="https://github.com/m3tozz/fastcat-community-themes">this repo</a>, add your theme, and submit a pull request.<br>
+ <p align="center"><a href="https://m3tozz.github.io/FastCat-Themes">Click to preview FastCat's Themes</a></p>
 </details>
 
 --------------------------------------------------------------------------
