@@ -10,12 +10,11 @@ if grep -q $'\r' "$0"; then
     else
         sed -i 's/\r$//' "$0" # Use GNU sed on Linux
     fi
-    # Re-execute the script with the corrected line endings
     exec bash "$0" "$@"
 fi
+
 # Made By M3TOZZ
-loader ()
-{
+loader () {
 printf "\033[0m
 FastCat - FastFetch Theme Pack!
 [#####               ] 25%%  completed.\r"
@@ -42,9 +41,29 @@ THEMES=(
     [21]="Spider-Man" [22]="Triangle" [23]="Stars" [24]="Yandere-Girl"
     [25]="TheLead" [26]="ShirazTux" [27]="Kaviani-Derafsh" [28]="Arthur-Morgan-hat"
     [29]="MetoCat" [30]="Shiraz-Linux" [31]="Bulla-Cachy"
+    [32]="Phoenix" [33]="Dragon" [34]="Zeith-Hum" [35]="Anchor"
 )
 
-# Preview a theme without applying it
+THEME_COUNT=${#THEMES[@]}
+
+apply_by_name() {
+    local theme="$1"
+    if [[ ! -d "$theme" ]]; then
+        echo -e "\033[1;31mTheme directory '$theme' not found!\033[0m"
+        sleep 1
+        return
+    fi
+    sleep 1
+    clear
+    loader
+    rm -rf ~/.config/fastfetch
+    sleep 1
+    mkdir -p ~/.config/fastfetch
+    cp -r "$theme/fastfetch" ~/.config/
+    clear
+    fastfetch
+}
+
 preview_theme() {
     local theme_dir="$1"
     local tmp_dir
@@ -54,7 +73,6 @@ preview_theme() {
 
     local config="$tmp_dir/config.jsonc"
 
-    # Fix logo source paths to use temp directory
     if [[ "$(uname)" == "Darwin" ]]; then
         sed -i '' "s|~/.config/fastfetch/|$tmp_dir/|g" "$config"
         sed -i '' "s|\\\$HOME/.config/fastfetch/|$tmp_dir/|g" "$config"
@@ -63,7 +81,6 @@ preview_theme() {
         sed -i "s|\\\$HOME/.config/fastfetch/|$tmp_dir/|g" "$config"
     fi
 
-    # Fix relative image paths (for visual themes)
     for img in "$tmp_dir"/*.png "$tmp_dir"/*.jpg "$tmp_dir"/*.jpeg; do
         [[ -f "$img" ]] || continue
         local imgname
@@ -81,10 +98,64 @@ preview_theme() {
     echo -e "\n\033[1;33m--- End of Preview ---\033[0m"
     echo -e "\033[0;36mPress any key to return to menu...\033[0m"
     read -r -n1
-
     rm -rf "$tmp_dir"
 }
 
+random_theme() {
+    local rand=$((RANDOM % THEME_COUNT))
+    local name="${THEMES[$rand]}"
+    echo -e "\033[1;33mRandom pick: \033[1;32m$name\033[0m"
+    sleep 1
+    apply_by_name "$name"
+}
+
+search_themes() {
+    echo -e "\033[1;33mSearch theme:\033[0m"
+    read -rp $'\e[1;33mm3tozz\e[0;31m@\033[1;34mfastcat\n\e[0;31m↳\e[1;36m ' query
+
+    if [[ -z "$query" ]]; then
+        echo -e "\033[1;31mEmpty search.\033[0m"
+        sleep 1
+        return
+    fi
+
+    local found=0
+    local matches=()
+    local match_nums=()
+
+    for i in "${!THEMES[@]}"; do
+        if [[ "${THEMES[$i],,}" == *"${query,,}"* ]]; then
+            matches+=("${THEMES[$i]}")
+            match_nums+=("$i")
+            ((found++))
+        fi
+    done
+
+    if [[ $found -eq 0 ]]; then
+        echo -e "\033[1;31mNo themes found matching '$query'\033[0m"
+        sleep 2
+        return
+    fi
+
+    echo -e "\033[1;34m--- Search Results ---\033[0m"
+    for idx in "${!matches[@]}"; do
+        echo -e "  \033[1;33m[${match_nums[$idx]}]\033[0m ${matches[$idx]}"
+    done
+    echo -e "\033[1;34m----------------------\033[0m"
+
+    read -rp $'\033[0;36mEnter number to apply, or press Enter to go back:\033[0m ' choice
+    if [[ -n "$choice" ]]; then
+        choice=$((10#$choice))
+        if [[ -n "${THEMES[$choice]+x}" ]]; then
+            apply_by_name "${THEMES[$choice]}"
+        else
+            echo -e "\033[1;31mInvalid number!\033[0m"
+            sleep 1
+        fi
+    fi
+}
+
+# --- Banner ve Menü ---
 clear
 banner(){
 echo -e '\033[0;36m
@@ -102,372 +173,52 @@ echo -e '\033[0;36m
 \e[1;34m[21]\e[0;32mSpider-Man \e[0;36m[22]\e[0;32mTriangle \033[1;33m[23]\e[0;32mStars \e[1;35m[24]\e[0;32mYandere-Girl
 \e[1;34m[25]\e[0;32mTheLead \e[1;35m[26]\e[0;32mShirazTux \e[1;31m[27]\e[0;32mKaviani-Derafsh \e[1;35m[28]\e[0;32mArthur-Morgan-hat
 \e[1;31m[29]\e[0;32mMetoCat \e[1;33m[30]\e[0;32mShiraz-Linux \e[1;35m[31]\e[0;32mBulla-Cachy
-\033[1;31m[P]\e[0;32mPreview [R]Random \033[1;31m[x]Exit [00]Menu [D]Default-Theme
+\033[1;33m[32]\e[0;32mPhoenix \e[1;35m[33]\e[0;32mDragon \033[1;33m[34]\e[0;32mZeith-Hum \033[0;36m[35]\e[0;32mAnchor
+\033[1;31m[P]Preview [R]Random [x]Exit [00]Menu [D]Default-Theme
 '
-        echo -ne "\e[1;33mm3tozz\e[0;31m@\033[1;34mfastcat\n\e[0;31m↳\e[1;36m " ; read islem
+echo -ne "\e[1;33mm3tozz\e[0;31m@\033[1;34mfastcat\n\e[0;31m↳\e[1;36m " ; read islem
 }
+
 banner
-if [[ $islem == 1 || $islem == 01 ]]; then
-	sleep 1
-	clear
-	loader
-rm -r ~/.config/fastfetch
-sleep 1
-        cd Anime-Boy/ && cp -r fastfetch ~/.config
-clear	
-fastfetch
-elif [[ $islem == 2 || $islem == 02 ]]; then
-	sleep 1
-	clear
-	loader
-rm -r ~/.config/fastfetch
-sleep 1
-        cd Death/ && cp -r fastfetch ~/.config
-clear	
-fastfetch
-elif [[ $islem == 3 || $islem == 03 ]]; then
-	sleep 1
-	clear
-	loader
-rm -r ~/.config/fastfetch
-sleep 1
-        cd Pentagram/ && cp -r fastfetch ~/.config
-clear
-fastfetch
-elif [[ $islem == 4 || $islem == 04 ]]; then
-        sleep 1
-        clear
-        loader
-rm -r ~/.config/fastfetch
-sleep 1
-        cd Scorpion/ && cp -r fastfetch ~/.config
-clear   
-fastfetch
-elif [[ $islem == 5 || $islem == 05 ]]; then
-        sleep 1
-        clear
-        loader
-rm -r ~/.config/fastfetch
-sleep 1
-        cd Anime-Girl/ && cp -r fastfetch ~/.config
-clear   
-fastfetch
-elif [[ $islem == 6 || $islem == 06 ]]; then
-        sleep 1
-        clear
-        loader
-rm -r ~/.config/fastfetch
-sleep 1
-        cd Saturn/ && cp -r fastfetch ~/.config
-clear   
-fastfetch
-elif [[ $islem == 7 || $islem == 07 ]]; then
-        sleep 1
-        clear
-        loader
-rm -r ~/.config/fastfetch
-sleep 1
-        cd Suse-Icons/ && cp -r fastfetch ~/.config
-clear   
-fastfetch
-elif [[ $islem == 8 || $islem == 08 ]]; then
-        sleep 1
-        clear
-        loader
-rm -r ~/.config/fastfetch
-sleep 1
-        cd Cat/ && cp -r fastfetch ~/.config
-clear   
-fastfetch
-elif [[ $islem == 9 || $islem == 09 ]]; then
-        sleep 1
-        clear
-        loader
-rm -r ~/.config/fastfetch
-sleep 1
-        cd Jurassic/ && cp -r fastfetch ~/.config
-clear   
-fastfetch
-elif [[ $islem == 10 ]]; then
-        sleep 1
-        clear
-        loader
-rm -r ~/.config/fastfetch
-sleep 1
-        cd BatMan/ && cp -r fastfetch ~/.config
-clear   
-fastfetch
-elif [[ $islem == 11 ]]; then
-	sleep 1
-	clear
-	loader
-rm -r ~/.config/fastfetch
-sleep 1
-        cd Groups/ && cp -r fastfetch ~/.config
-clear
-fastfetch
-elif [[ $islem == 12 ]]; then
-	sleep 1
-	clear
-	loader
-rm -r ~/.config/fastfetch
-sleep 1
-        cd Rose/ && cp -r fastfetch ~/.config
-clear
-fastfetch
-elif [[ $islem == 13 ]]; then
-	sleep 1
-	clear
-	loader
-rm -r ~/.config/fastfetch
-sleep 1
-        cd Fedora/ && cp -r fastfetch ~/.config
-clear
-fastfetch
-elif [[ $islem == 14 ]]; then
-	sleep 1
-	clear
-	loader
-rm -r ~/.config/fastfetch
-sleep 1
-        cd Arch/ && cp -r fastfetch ~/.config
-clear
-fastfetch
-elif [[ $islem == 15 ]]; then
-	sleep 1
-	clear
-	loader
-rm -r ~/.config/fastfetch
-sleep 1
-        cd Hyprland/ && cp -r fastfetch ~/.config
-clear
-fastfetch
-elif [[ $islem == 16 ]]; then
-	sleep 1
-	clear
-	loader
-rm -r ~/.config/fastfetch
-sleep 1
-        cd Simpsons/ && cp -r fastfetch ~/.config
-clear
-fastfetch
-elif [[ $islem == 17 ]]; then
-	sleep 1
-	clear
-	loader
-rm -r ~/.config/fastfetch
-sleep 1
-        cd Origami/ && cp -r fastfetch ~/.config
-clear
-fastfetch
-elif [[ $islem == 18 ]]; then
-	sleep 1
-	clear
-	loader
-rm -r ~/.config/fastfetch
-sleep 1
-        cd Home/ && cp -r fastfetch ~/.config
-clear
-fastfetch
-elif [[ $islem == 19 ]]; then
-	sleep 1
-	clear
-	loader
-rm -r ~/.config/fastfetch
-sleep 1
-        cd DeadPool/ && cp -r fastfetch ~/.config
-clear
-fastfetch
-elif [[ $islem == 20 ]]; then
-	sleep 1
-	clear
-	loader
-rm -r ~/.config/fastfetch
-sleep 1
-        cd Superman/ && cp -r fastfetch ~/.config
-clear
-fastfetch
-elif [[ $islem == 21 ]]; then
-	sleep 1
-	clear
-	loader
-rm -r ~/.config/fastfetch
-sleep 1
-        cd Spider-Man/ && cp -r fastfetch ~/.config
-clear
-fastfetch
-elif [[ $islem == 22 ]]; then
-	sleep 1
-	clear
-	loader
-rm -r ~/.config/fastfetch
-sleep 1
-        cd Triangle/ && cp -r fastfetch ~/.config
-clear
-fastfetch
-elif [[ $islem == 23 ]]; then
-	sleep 1
-	clear
-	loader
-rm -r ~/.config/fastfetch
-sleep 1
-        cd Stars/ && cp -r fastfetch ~/.config
-clear
-fastfetch
-elif [[ $islem == 24 ]]; then
-	sleep 1
-	clear
-	loader
-rm -r ~/.config/fastfetch
-sleep 1
-        cd Yandere-Girl/ && cp -r fastfetch ~/.config
-clear
-fastfetch
-elif [[ $islem == 25 ]]; then
-	sleep 1
-	clear
-	loader
-rm -r ~/.config/fastfetch/
-sleep 1
-		mkdir -p ~/.config/fastfetch/
-        cd TheLead/ && cp -r fastfetch ~/.config
-clear
-fastfetch
-elif [[ $islem == 26 ]]; then
-	sleep 1
-	clear
-	loader
-rm -r ~/.config/fastfetch
-sleep 1
-mkdir -p ~/.config/fastfetch/
-        cd ShirazTux/ && cp -r fastfetch ~/.config
-clear
-fastfetch
-elif [[ $islem == 27 ]]; then
-	sleep 1
-	clear
-	loader
-rm -r ~/.config/fastfetch
-sleep 1
-mkdir -p ~/.config/fastfetch/
-        cd Kaviani-Derafsh/ && cp -r fastfetch ~/.config
-clear
-fastfetch
-elif [[ $islem == 28 ]]; then
-	sleep 1
-	clear
-	loader
-rm -r ~/.config/fastfetch
-sleep 1
-mkdir -p ~/.config/fastfetch/
-mv "Arthur-Morgan's-hat" "Arthur-Morgan-hat"
-cd    Arthur-Morgan-hat/ && cp -r fastfetch ~/.config
-clear
-fastfetch
-elif [[ $islem == 29 ]]; then
-	sleep 1
-	clear
-	loader
-rm -r ~/.config/fastfetch/
-sleep 1
-		mkdir -p ~/.config/fastfetch/
-        cd MetoCat/ && cp -r fastfetch ~/.config
-clear
-fastfetch
-elif [[ $islem == 30 ]]; then
-	sleep 1
-	clear
-	loader
-rm -r ~/.config/fastfetch/
-sleep 1
-		mkdir -p ~/.config/fastfetch/
-        cd Shiraz-Linux/ && cp -r fastfetch ~/.config
-clear
-fastfetch
-elif [[ $islem == 31 ]]; then
-	sleep 1
-	clear
-	loader
-rm -r ~/.config/fastfetch/
-sleep 1
-		mkdir -p ~/.config/fastfetch/
-        cd Bulla-Cachy/ && cp -r fastfetch ~/.config
-clear
-fastfetch
-elif [[ $islem == 32 ]]; then
-	sleep 1
-	clear
-	loader
-rm -r ~/.config/fastfetch/
-sleep 1
-		mkdir -p ~/.config/fastfetch/
-        cd Phoenix/ && cp -r fastfetch ~/.config
-clear
-fastfetch
-elif [[ $islem == 33 ]]; then
-	sleep 1
-	clear
-	loader
-rm -r ~/.config/fastfetch/
-sleep 1
-		mkdir -p ~/.config/fastfetch/
-        cd Dragon/ && cp -r fastfetch ~/.config
-clear
-fastfetch
-elif [[ $islem == 34 ]]; then
-	sleep 1
-	clear
-	loader
-rm -r ~/.config/fastfetch/
-sleep 1
-		mkdir -p ~/.config/fastfetch/
-        cd Zenith-Hum/ && cp -r fastfetch ~/.config
-clear
-fastfetch
-elif [[ $islem == 35 ]]; then
-	sleep 1
-	clear
-	loader
-rm -r ~/.config/fastfetch/
-sleep 1
-		mkdir -p ~/.config/fastfetch/
-        cd Anchor/ && cp -r fastfetch ~/.config
-clear
-fastfetch
-elif [[  $islem == 00 ]]; then
-        sleep 1
-        cd ..
-        bash ./fastcat.sh -s
-elif [[ $islem == D || $islem == d  ]]; then
-        sleep 1
-        clear
-        loader
-rm -r ~/.config/fastfetch
-sleep 1
-        cd Default/ && cp -r fastfetch ~/.config
-clear   
-fastfetch
-elif [[ $islem == P || $islem == p ]]; then
-    echo -e "\033[1;33mEnter theme number to preview:\033[0m"
-    echo -ne "\e[1;33mm3tozz\e[0;31m@\033[1;34mfastcat\n\e[0;31m↳\e[1;36m " ; read preview_num
-    # Remove leading zero
-    preview_num=$((10#$preview_num))
-    if [[ -n "${THEMES[$preview_num]+x}" ]]; then
-        local_theme="${THEMES[$preview_num]}"
-        # Handle Arthur-Morgan's-hat directory name variant
-        if [[ ! -d "$local_theme" && -d "Arthur-Morgan's-hat" && "$local_theme" == "Arthur-Morgan-hat" ]]; then
-            local_theme="Arthur-Morgan's-hat"
+
+# --- Menü Seçimleri ---
+case $islem in
+    [1-9]|0[1-9]|1[0-9]|2[0-9]|3[0-5])
+        choice=$((10#$islem))
+        apply_by_name "${THEMES[$choice]}"
+        ;;
+    P|p) 
+        echo -e "\033[1;33mEnter theme number to preview:\033[0m"
+        read -r preview_num
+        preview_num=$((10#$preview_num))
+        if [[ -n "${THEMES[$preview_num]+x}" ]]; then
+            preview_theme "${THEMES[$preview_num]}"
+        else
+            echo -e "\033[1;31mInvalid theme number!\033[0m"
+            sleep 1
         fi
-        preview_theme "$local_theme"
-    else
-        echo -e "\033[1;31mInvalid theme number!\033[0m"
-        sleep 1
-    fi
-    exec bash "$0"
-elif [[ $islem == x || $islem == X ]]; then
-	clear
-echo -e "\033[1;31m GoodBye\033[0m"
-	exit 1
-else
-	echo -e '\033[36;40;1m Wrong transaction number!'	
-fi
+        exec bash "$0"
+        ;;
+    R|r)
+        random_theme
+        ;;
+    D|d)
+    sleep 1
+    clear
+    loader
+    rm -r ~/.config/fastfetch
+    clear   
+    fastfetch
+        ;;
+    00)
+        bash ./fastcat.sh -s
+        ;;
+    X|x)
+        clear
+        echo -e "\033[1;31mGoodBye\033[0m"
+        exit 0
+        ;;
+    *)
+        echo -e '\033[36;40;1mWrong transaction number!'
+        ;;
+esac
