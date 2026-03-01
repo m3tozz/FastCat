@@ -43,84 +43,46 @@ THEMES=(
     [25]="TheLead" [26]="ShirazTux" [27]="Kaviani-Derafsh" [28]="Arthur-Morgan-hat"
     [29]="MetoCat" [30]="Shiraz-Linux" [31]="Bulla-Cachy"
 )
-THEME_COUNT=31
 
-# Apply a theme by directory name
-apply_by_name() {
-    local theme_name="$1"
-    local theme_dir="$theme_name"
+# Preview a theme without applying it
+preview_theme() {
+    local theme_dir="$1"
+    local tmp_dir
+    tmp_dir=$(mktemp -d)
 
-    # Handle special case: Arthur-Morgan's-hat
-    if [[ "$theme_name" == "Arthur-Morgan-hat" ]] && [[ -d "Arthur-Morgan's-hat" ]] && [[ ! -d "Arthur-Morgan-hat" ]]; then
-        mv "Arthur-Morgan's-hat" "Arthur-Morgan-hat"
+    cp -r "$theme_dir/fastfetch/"* "$tmp_dir/"
+
+    local config="$tmp_dir/config.jsonc"
+
+    # Fix logo source paths to use temp directory
+    if [[ "$(uname)" == "Darwin" ]]; then
+        sed -i '' "s|~/.config/fastfetch/|$tmp_dir/|g" "$config"
+        sed -i '' "s|\\\$HOME/.config/fastfetch/|$tmp_dir/|g" "$config"
+    else
+        sed -i "s|~/.config/fastfetch/|$tmp_dir/|g" "$config"
+        sed -i "s|\\\$HOME/.config/fastfetch/|$tmp_dir/|g" "$config"
     fi
 
-    sleep 1
-    clear
-    loader
-    rm -r ~/.config/fastfetch
-    sleep 1
-    mkdir -p ~/.config/fastfetch/
-    cd "$theme_dir/" && cp -r fastfetch ~/.config
-    clear
-    fastfetch
-}
-
-# Pick a random theme
-random_theme() {
-    local rand=$((RANDOM % THEME_COUNT + 1))
-    local name="${THEMES[$rand]}"
-    echo -e "\033[1;33mRandom pick: \033[1;32m$name\033[0m"
-    sleep 1
-    apply_by_name "$name"
-}
-
-# Search themes by name
-search_themes() {
-    echo -e "\033[1;33mSearch theme:\033[0m"
-    echo -ne "\e[1;33mm3tozz\e[0;31m@\033[1;34mfastcat\n\e[0;31m↳\e[1;36m " ; read query
-
-    if [[ -z "$query" ]]; then
-        echo -e "\033[1;31mEmpty search.\033[0m"
-        sleep 1
-        return
-    fi
-
-    local found=0
-    local matches=()
-    local match_nums=()
-
-    for i in "${!THEMES[@]}"; do
-        if echo "${THEMES[$i]}" | grep -qi "$query"; then
-            matches+=("${THEMES[$i]}")
-            match_nums+=("$i")
-            ((found++))
-        fi
-    done
-
-    if [[ $found -eq 0 ]]; then
-        echo -e "\033[1;31mNo themes found matching '$query'\033[0m"
-        sleep 2
-        return
-    fi
-
-    echo -e "\033[1;34m--- Search Results ---\033[0m"
-    for idx in "${!matches[@]}"; do
-        echo -e "  \033[1;33m[${match_nums[$idx]}]\033[0m ${matches[$idx]}"
-    done
-    echo -e "\033[1;34m----------------------\033[0m"
-    echo -e "\033[0;36mEnter number to apply, or press Enter to go back:\033[0m"
-    echo -ne "\e[1;33mm3tozz\e[0;31m@\033[1;34mfastcat\n\e[0;31m↳\e[1;36m " ; read choice
-
-    if [[ -n "$choice" ]]; then
-        choice=$((10#$choice))
-        if [[ -n "${THEMES[$choice]+x}" ]]; then
-            apply_by_name "${THEMES[$choice]}"
+    # Fix relative image paths (for visual themes)
+    for img in "$tmp_dir"/*.png "$tmp_dir"/*.jpg "$tmp_dir"/*.jpeg; do
+        [[ -f "$img" ]] || continue
+        local imgname
+        imgname=$(basename "$img")
+        if [[ "$(uname)" == "Darwin" ]]; then
+            sed -i '' "s|\"source\": \"$imgname\"|\"source\": \"$tmp_dir/$imgname\"|g" "$config"
         else
-            echo -e "\033[1;31mInvalid number!\033[0m"
-            sleep 1
+            sed -i "s|\"source\": \"$imgname\"|\"source\": \"$tmp_dir/$imgname\"|g" "$config"
         fi
-    fi
+    done
+
+    clear
+    echo -e "\033[1;33m--- Preview Mode (not applied) ---\033[0m"
+    fastfetch --config "$config"
+    echo -e "\n\033[1;33m--- End of Preview ---\033[0m"
+    echo -e "\033[0;36mPress any key to return to menu...\033[0m"
+    read -r -n1
+
+    rm -rf "$tmp_dir"
 }
 
 clear
@@ -139,9 +101,8 @@ echo -e '\033[0;36m
 \033[1;33m[17]\e[0;32mOrigami \e[1;35m[18]\e[0;32mHome \033[1;33m[19]\e[0;32mDeadPool \033[0;36m[20]\e[0;32mSuperman
 \e[1;34m[21]\e[0;32mSpider-Man \e[0;36m[22]\e[0;32mTriangle \033[1;33m[23]\e[0;32mStars \e[1;35m[24]\e[0;32mYandere-Girl
 \e[1;34m[25]\e[0;32mTheLead \e[1;35m[26]\e[0;32mShirazTux \e[1;31m[27]\e[0;32mKaviani-Derafsh \e[1;35m[28]\e[0;32mArthur-Morgan-hat
-\e[1;31m[29]\e[0;32mMetoCat \e[1;33m[30]\e[0;32mShiraz-Linux \e[1;35m[31]\e[0;32mBulla-Cachy \e[1;34m[32]\e[0;32mPhoenix
-\e[1;30m[33]\e[0;32mDragon \e[1;31m[34]\e[0;32mZenith-Hum \e[1;32m[35]\e[0;32mAnchor
-\033[1;31m [R]Random [x]Exit [00]Menu [D]Default-Theme
+\e[1;31m[29]\e[0;32mMetoCat \e[1;33m[30]\e[0;32mShiraz-Linux \e[1;35m[31]\e[0;32mBulla-Cachy
+\033[1;31m[P]\e[0;32mPreview [R]Random \033[1;31m[x]Exit [00]Menu [D]Default-Theme
 '
         echo -ne "\e[1;33mm3tozz\e[0;31m@\033[1;34mfastcat\n\e[0;31m↳\e[1;36m " ; read islem
 }
@@ -486,10 +447,22 @@ sleep 1
         cd Default/ && cp -r fastfetch ~/.config
 clear   
 fastfetch
-elif [[ $islem == R || $islem == r ]]; then
-    random_theme
-elif [[ $islem == "/" ]]; then
-    search_themes
+elif [[ $islem == P || $islem == p ]]; then
+    echo -e "\033[1;33mEnter theme number to preview:\033[0m"
+    echo -ne "\e[1;33mm3tozz\e[0;31m@\033[1;34mfastcat\n\e[0;31m↳\e[1;36m " ; read preview_num
+    # Remove leading zero
+    preview_num=$((10#$preview_num))
+    if [[ -n "${THEMES[$preview_num]+x}" ]]; then
+        local_theme="${THEMES[$preview_num]}"
+        # Handle Arthur-Morgan's-hat directory name variant
+        if [[ ! -d "$local_theme" && -d "Arthur-Morgan's-hat" && "$local_theme" == "Arthur-Morgan-hat" ]]; then
+            local_theme="Arthur-Morgan's-hat"
+        fi
+        preview_theme "$local_theme"
+    else
+        echo -e "\033[1;31mInvalid theme number!\033[0m"
+        sleep 1
+    fi
     exec bash "$0"
 elif [[ $islem == x || $islem == X ]]; then
 	clear
