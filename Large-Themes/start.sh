@@ -102,7 +102,7 @@ echo -e '\033[0;36m
 \e[1;34m[21]\e[0;32mSpider-Man \e[0;36m[22]\e[0;32mTriangle \033[1;33m[23]\e[0;32mStars \e[1;35m[24]\e[0;32mYandere-Girl
 \e[1;34m[25]\e[0;32mTheLead \e[1;35m[26]\e[0;32mShirazTux \e[1;31m[27]\e[0;32mKaviani-Derafsh \e[1;35m[28]\e[0;32mArthur-Morgan-hat
 \e[1;31m[29]\e[0;32mMetoCat \e[1;33m[30]\e[0;32mShiraz-Linux \e[1;35m[31]\e[0;32mBulla-Cachy
-\033[1;31m[P]\e[0;32mPreview \033[1;31m[x]Exit [00]Menu [D]Default-Theme
+\033[1;31m[P]\e[0;32mPreview [R]Random \033[1;31m[x]Exit [00]Menu [D]Default-Theme
 '
         echo -ne "\e[1;33mm3tozz\e[0;31m@\033[1;34mfastcat\n\e[0;31m↳\e[1;36m " ; read islem
 }
@@ -392,6 +392,46 @@ rm -r ~/.config/fastfetch/
 sleep 1
 		mkdir -p ~/.config/fastfetch/
         cd Bulla-Cachy/ && cp -r fastfetch ~/.config
+clear
+fastfetch
+elif [[ $islem == 32 ]]; then
+	sleep 1
+	clear
+	loader
+rm -r ~/.config/fastfetch/
+sleep 1
+		mkdir -p ~/.config/fastfetch/
+        cd Phoenix/ && cp -r fastfetch ~/.config
+clear
+fastfetch
+elif [[ $islem == 33 ]]; then
+	sleep 1
+	clear
+	loader
+rm -r ~/.config/fastfetch/
+sleep 1
+		mkdir -p ~/.config/fastfetch/
+        cd Dragon/ && cp -r fastfetch ~/.config
+clear
+fastfetch
+elif [[ $islem == 34 ]]; then
+	sleep 1
+	clear
+	loader
+rm -r ~/.config/fastfetch/
+sleep 1
+		mkdir -p ~/.config/fastfetch/
+        cd Zenith-Hum/ && cp -r fastfetch ~/.config
+clear
+fastfetch
+elif [[ $islem == 35 ]]; then
+	sleep 1
+	clear
+	loader
+rm -r ~/.config/fastfetch/
+sleep 1
+		mkdir -p ~/.config/fastfetch/
+        cd Anchor/ && cp -r fastfetch ~/.config
 clear
 fastfetch
 elif [[  $islem == 00 ]]; then

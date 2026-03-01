@@ -243,6 +243,15 @@ sleep 1
         cd Tie-Fighter/ && cp -r fastfetch ~/.config
 clear	
 fastfetch
+elif [[ $islem == 17 ]]; then
+	sleep 1
+	clear
+	loader
+rm -r ~/.config/fastfetch
+sleep 1
+        cd Wave/ && cp -r fastfetch ~/.config
+clear
+fastfetch
 elif [[  $islem == 00 ]]; then
         sleep 1
         cd ..

@@ -1,0 +1,84 @@
+{
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+    "logo": {
+        "source": "$HOME/.config/fastfetch/ascii.txt",
+        "padding": {
+            "top": 2,
+            "right": 4
+        },
+        "color": {
+            "1": "34"
+        }
+    },
+    "display": {
+        "separator": " 🌊 ",
+        "color": {
+            "keys": "36",
+            "output": "37"
+        }
+    },
+    "modules": [
+    	"break",
+        {
+            "type": "title",
+            "format": "    {1}@{2} ",
+            "color": {
+                "user": "34",
+                "at": "36",
+                "host": "34"
+            }
+        },
+        {
+            "type": "custom",
+            "format": "  ≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋",
+            "outputColor": "34"
+        },
+        {
+            "type": "os",
+            "key": " ⚓ ",
+            "keyColor": "36"
+        },
+        {
+            "type": "kernel",
+            "key": " 🫧 ",
+            "keyColor": "36"
+        },
+        {
+            "type": "cpu",
+            "key": " 🔱 ",
+            "format": "{1}",
+            "keyColor": "36"
+        },
+        {
+            "type": "gpu",
+            "key": " 🪸 ",
+            "keyColor": "36"
+        },
+        {
+            "type": "memory",
+            "key": " 🚰 ",
+            "keyColor": "36"
+        },
+        {
+            "type": "shell",
+            "key": " 🐚 ",
+            "keyColor": "36"
+        },
+        {
+            "type": "wm",
+            "key": " 🧊 ",
+            "keyColor": "36"
+        },
+        {
+            "type": "uptime",
+            "key": " ⏳ ",
+            "keyColor": "36"
+        },
+        {
+            "type": "custom",
+            "format": "  ≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋≋",
+            "outputColor": "34"
+        },
+        "break",
+    ]
+}
