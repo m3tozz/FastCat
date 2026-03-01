@@ -51,7 +51,7 @@ bash ./fastcat.sh --backup
 
 # Themes
 > [!IMPORTANT]  
-> Since the FastCat script can now preview its themes, the [FastCat's preview theme site](https://m3tozz.github.io/fastcat-themes) is no longer needed.
+> Since the FastCat script can now preview its themes, the [FastCat's preview theme site](https://m3tozz.github.io/FastCat-Themes/) is no longer needed.
 > After selecting either the **Large** or **Small** theme section within FastCat, you can use the **P (Preview)** section to preview the theme you want.
 
 <details>
