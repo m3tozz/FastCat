@@ -49,8 +49,21 @@ bash ./fastcat.sh --backup
 
 ---
 
-<p align="center"><img src="https://github.com/user-attachments/assets/aa96371a-8c47-4ce8-9c89-2e482e726bf0"></p>
-<p align="center">
+# Themes
+> [!IMPORTANT]  
+> Since the FastCat script can now preview its themes, the [FastCat's preview theme site](https://m3tozz.github.io/fastcat-themes) is no longer needed.
+> After selecting either the **Large** or **Small** theme section within FastCat, you can use the **P (Preview)** section to preview the theme you want.
+
+<details>
+<summary>How can I add my own fastfetch configuration to the fastcat community?</summary>
+ Fork <a href="https://github.com/m3tozz/fastcat-community-themes">this repo</a>, add your theme, and submit a pull request.<br>
+ -
+<a href="https://github.com/m3tozz/fastcat-community-themes/blob/main/PREVIEW-THEMES.md">Click to preview themes uploaded by FastCat community</a>
+</details>
+
+---
+
+<p align="center"><img src="https://github.com/user-attachments/assets/aa96371a-8c47-4ce8-9c89-2e482e726bf0">
 <a href="https://discord.com/invite/sQwYCZer95"><img src="https://img.shields.io/badge/Join The Community Discord Server-black?&logo=discord" hspace="10"  align="center" /></a>
 <a href="https://matrix.to/#/#neocat-channels:matrix.org"><img src="https://img.shields.io/badge/Join The Community Matrix Server-black?&logo=matrix" hspace="10"  align="center" /></a></p>
  
