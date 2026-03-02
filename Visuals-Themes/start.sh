@@ -32,7 +32,7 @@ loader() {
 
 # Theme directory mapping
 THEMES=(
-    [1]="Dragonball" [2]="One-Piece" [3]="Xenia"
+    [1]="Dragonball" [2]="One-Piece" [3]="Xenia" [4]="Creepy-Pumpkin"
 )
 
 # Prompts the user to select the image rendering protocol with details.
@@ -108,6 +108,7 @@ banner() {
 \033[0;36m| || (_| \__ \ |_| \__/\ (_| | |_ 
 \033[0;31m\_| \__,_|___/\__|\____/\__,_|\__|     
 \e[1;34m[01]\e[0;32mDragonball \e[1;35m[02]\e[0;32mOne-Piece \e[1;31m[03]\e[0;32mXenia
+\e[1;37m[04]\e[0;32mCreepy-Pumpkin
 \e[3m\e[92mThese themes require an image-supporting terminal emulator.\e[0m
 \033[1;31m[P]\e[0;32mPreview \033[1;31m[x]Exit  [00]Menu  [D]Default-Theme
 '
@@ -133,6 +134,11 @@ while true; do
         3|03)
             prompt_logo_protocol
             apply_visual_theme "Xenia"
+            break
+            ;;
+        4|04)
+            prompt_logo_protocol
+            apply_visual_theme "Creepy-Pumpkin"
             break
             ;;
         00)
