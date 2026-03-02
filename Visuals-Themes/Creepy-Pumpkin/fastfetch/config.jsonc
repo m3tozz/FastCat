@@ -2,7 +2,6 @@
 
 {
   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
-
   "logo": {
     "type": "iterm",
     "source": "logo.png",
@@ -47,7 +46,6 @@
       "format": " ✦ ✦ ✦  SYSTEM  ✦ ✦ ✦",
       "outputColor": "5"
     },
-
     {
       "type": "os",
       "key": " 🧩 OS  ",
@@ -68,13 +66,11 @@
       "key": " 🐚 SH  ",
       "keyColor": "yellow"
     },
-
     {
       "type": "custom",
       "format": " ✦ ✦ ✦  DESKTOP ✦ ✦ ✦",
       "outputColor": "5"
     },
-
     {
       "type": "de",
       "key": " 🪟 DE  ",
@@ -106,13 +102,11 @@
       "key": " 🖥️ TERM",
       "keyColor": "blue"
     },
-
     {
       "type": "custom",
       "format": " ✦ ✦ ✦  Hardware  ✦ ✦ ✦",
       "outputColor": "5"
     },
-
     {
       "type": "host",
       "key": " 💻 HST ",
@@ -144,13 +138,11 @@
       "key": " 🔄 SWP ",
       "keyColor": "green"
     },
-
     {
       "type": "custom",
       "format": " ✦ ✦ ✦  Media  ✦ ✦ ✦",
       "outputColor": "5"
     },
-
     {
       "type": "sound",
       "key": " 🔊 VOL ",
