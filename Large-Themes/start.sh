@@ -42,6 +42,7 @@ THEMES=(
     [25]="TheLead" [26]="ShirazTux" [27]="Kaviani-Derafsh" [28]="Arthur-Morgan-hat"
     [29]="MetoCat" [30]="Shiraz-Linux" [31]="Bulla-Cachy"
     [32]="Phoenix" [33]="Dragon" [34]="Zenith-Hum" [35]="Anchor"
+    [36]="Casual"
 )
 
 THEME_COUNT=${#THEMES[@]}
@@ -174,6 +175,7 @@ echo -e '\033[0;36m
 \e[1;34m[25]\e[0;32mTheLead \e[1;35m[26]\e[0;32mShirazTux \e[1;31m[27]\e[0;32mKaviani-Derafsh \e[1;35m[28]\e[0;32mArthur-Morgan-hat
 \e[1;31m[29]\e[0;32mMetoCat \e[1;33m[30]\e[0;32mShiraz-Linux \e[1;35m[31]\e[0;32mBulla-Cachy
 \033[1;33m[32]\e[0;32mPhoenix \e[1;35m[33]\e[0;32mDragon \033[1;33m[34]\e[0;32mZenith-Hum \033[0;36m[35]\e[0;32mAnchor
+\033[1;37m[36]\e[0;32mCasual
 \033[1;31m[P]Preview [R]Random [x]Exit [00]Menu [D]Default-Theme
 '
 echo -ne "\e[1;33mm3tozz\e[0;31m@\033[1;34mfastcat\n\e[0;31m↳\e[1;36m " ; read islem
@@ -183,7 +185,7 @@ banner
 
 # menu
 case $islem in
-    [1-9]|0[1-9]|1[0-9]|2[0-9]|3[0-5])
+    [1-9]|0[1-9]|1[0-9]|2[0-9]|3[0-6])
         choice=$((10#$islem))
         apply_by_name "${THEMES[$choice]}"
         ;;

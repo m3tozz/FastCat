@@ -1,0 +1,215 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+
+  "logo": {
+    "type": "auto",
+    "padding": {
+      "top": 5,
+      "right": 3,
+      "left": 1
+    },
+    "color": {
+      "1": "bright_magenta"
+    }
+  },
+
+  "display": {
+    "separator": "  ",
+    "key": {
+      "width": 15,
+      "color": "bright_white"
+    },
+    "color": "bright_cyan",
+    "brightColor": "bright_white",
+    "bar": {
+      "width": 20,
+      "char": {
+        "elapsed": "󰮯",
+        "total": "◦"
+      },
+      "color": {
+        "elapsed": "bright_green",
+        "total": "bright_black"
+      }
+    }
+  },
+
+"modules": [
+    {
+      "type": "title",
+      "format": "{#bright_red}{user-name}{#bright_yellow}@{#bright_cyan}{host-name}{#}   Arch Linux",
+    },
+    "break",
+
+    {
+      "type": "custom",
+      "format": " \u001b[1;38;5;213mHardware\u001b[0m"
+    },
+    {
+      "type": "host",
+      "key": "  Model",
+      "keycolor": "bright_magenta"
+    },
+    {
+      "type": "cpu",
+      "key": "  CPU",
+      "keycolor": "bright_yellow",
+      "showPeCoreCount": true,
+      "temp": true
+    },
+    {
+      "type": "gpu",
+      "key": "  GPU",
+      "keycolor": "bright_green",
+      "temp": true
+    },
+    {
+      "type": "memory",
+      "key": "  RAM",
+      "keycolor": "bright_blue",
+      "percent": {
+        "type": 3,
+        "green": 50,
+        "yellow": 80
+      }
+    },
+    {
+      "type": "swap",
+      "key": " 󰾴 Swap",
+      "keycolor": "bright_purple",
+      "percent": {
+        "type": 3
+      }
+    },
+    {
+      "type": "disk",
+      "key": "  Disk (/)",
+      "folders": "/",
+      "keycolor": "bright_cyan",
+      "percent": {
+        "type": 3
+      }
+    },
+    {
+      "type": "disk",
+      "key": "  Home",
+      "folders": "/home",
+      "keycolor": "38;5;87",
+      "percent": {
+        "type": 3
+      }
+    },
+    "break",
+    {
+      "type": "custom",
+      "format": " \u001b[1;38;5;219mSoftware\u001b[0m"
+    },
+    {
+      "type": "os",
+      "key": "  OS",
+      "keycolor": "bright_yellow"
+    },
+    {
+      "type": "kernel",
+      "key": "  Kernel",
+      "keycolor": "bright_red"
+    },
+    {
+      "type": "de",
+      "key": "  DE",
+      "keycolor": "bright_purple"
+    },
+    {
+      "type": "wm",
+      "key": "  WM",
+      "keycolor": "bright_green"
+    },
+    {
+      "type": "wmtheme",
+      "key": "  WM Theme",
+      "keycolor": "38;5;207"
+    },
+    {
+      "type": "theme",
+      "key": "  Theme",
+      "format": "{1}",
+      "keycolor": "bright_cyan"
+    },
+    {
+      "type": "icons",
+      "key": "  Icons",
+      "keycolor": "bright_magenta"
+    },
+    {
+      "type": "font",
+      "key": "  Font",
+      "keycolor": "38;5;213"
+    },
+    {
+      "type": "terminal",
+      "key": "  Terminal",
+      "keycolor": "bright_blue"
+    },
+    {
+      "type": "terminalfont",
+      "key": "  Term Font",
+      "keycolor": "38;5;51"
+    },
+    {
+      "type": "shell",
+      "key": "  Shell",
+      "keycolor": "bright_yellow"
+    },
+    "break",
+    {
+      "type": "custom",
+      "format": " \u001b[1;38;5;226mExtras\u001b[0m"
+    },
+    {
+      "type": "uptime",
+      "key": "  Uptime",
+      "keycolor": "bright_yellow"
+    },
+    {
+      "type": "loadavg",
+      "key": " 󰝲 Load",
+      "keycolor": "38;5;220"
+    },
+    {
+      "type": "processes",
+      "key": "  Processes",
+      "keycolor": "bright_green"
+    },
+    {
+      "type": "battery",
+      "key": "  Battery",
+      "keycolor": "bright_green",
+      "temp": true,
+      "percent": {
+        "green": 60,
+        "yellow": 30,
+        "type": 3
+      }
+    },
+    {
+      "type": "localip",
+      "key": "  Local IP",
+      "compact": true,
+      "keycolor": "bright_blue"
+    },
+    {
+      "type": "publicip",
+      "key": "  Public IP",
+      "timeout": 1500,
+      "keycolor": "bright_cyan"
+    },
+    "break",
+
+    {
+      "type": "colors",
+      "paddingLeft": 3,
+      "symbol": "circle",
+      "paddingRight": 1
+    }
+  ]
+}
