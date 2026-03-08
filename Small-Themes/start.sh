@@ -119,7 +119,7 @@ echo -e '\033[0;36m
 \e[1;33m[05]\e[0;32mArch \e[1;36m[06]\e[0;32mBlocks \e[1;34m[07]\e[0;32mCocktail \033[1;33m[08]\e[0;32mPalm \033[0;36m[09]\e[0;32mSheriff 
 \e[1;35m[10]\e[0;32mBunny \e[1;34m[11]\e[0;32mCoffee \e[1;35m[12]\e[0;32mDuck \033[1;33m[13]\e[0;32mOWL \e[1;34m[14]\e[0;32mGiraffe
 \e[1;36m[15]\e[0;32mRobo-Dog \e[1;34m[16]\e[0;32mTie-Fighter \033[1;35m[17]\e[0;32mWave \033[1;36m[18]\e[0;32mFancy_love
-\e[1;34m[19]\e[0;32mSimple \e[1;35m[20]\e[0;32mSimple
+\e[1;34m[19]\e[0;32mSimple \e[1;35m[20]\e[0;32mGraffiti
 \033[1;31m[P]Preview [R]Random [x]Exit [00]Menu [D]Default-Theme
 '
 echo -ne "\e[1;33mm3tozz\e[0;31m@\033[1;34mfastcat\n\e[0;31m↳\e[1;36m " ; read islem
