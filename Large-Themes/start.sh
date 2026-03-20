@@ -30,7 +30,7 @@ FastCat - FastFetch Theme Pack!
 [####################] 100%%  completed.\r"
 sleep 0.2
 }
-
+mv "Arthur-Morgan's-hat" Artur-Morgan-hat
 # Theme directory mapping
 THEMES=(
     [1]="Anime-Boy" [2]="Death" [3]="Pentagram" [4]="Scorpion"
