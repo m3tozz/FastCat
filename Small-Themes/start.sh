@@ -38,7 +38,7 @@ THEMES=(
     [9]="Sheriff" [10]="Bunny" [11]="Coffee" [12]="Duck"
     [13]="OWL" [14]="Giraffe" [15]="Robo-Dog" [16]="Tie-Fighter"
     [17]="Wave" [18]="Fancy_love" [19]="Simple" [20]="Grafitti"
-    [21]="Genhode"
+    [21]="Genhode" [22]="cat_scratch"
 )
 
 THEME_COUNT=${#THEMES[@]}
@@ -120,7 +120,7 @@ echo -e '\033[0;36m
 \e[1;33m[05]\e[0;32mArch \e[1;36m[06]\e[0;32mBlocks \e[1;34m[07]\e[0;32mCocktail \033[1;33m[08]\e[0;32mPalm \033[0;36m[09]\e[0;32mSheriff 
 \e[1;35m[10]\e[0;32mBunny \e[1;34m[11]\e[0;32mCoffee \e[1;35m[12]\e[0;32mDuck \033[1;33m[13]\e[0;32mOWL \e[1;34m[14]\e[0;32mGiraffe
 \e[1;36m[15]\e[0;32mRobo-Dog \e[1;34m[16]\e[0;32mTie-Fighter \033[1;35m[17]\e[0;32mWave \033[1;36m[18]\e[0;32mFancy_love
-\e[1;34m[19]\e[0;32mSimple \e[1;35m[20]\e[0;32mGraffiti \e[1;38m[21]\e[0;32mGenhode
+\e[1;34m[19]\e[0;32mSimple \e[1;35m[20]\e[0;32mGraffiti \e[1;38m[21]\e[0;32mGenhode \e[1;33m[22]\e[0;32mcat_scratch
 \033[1;31m[P]Preview [R]Random [x]Exit [00]Menu [D]Default-Theme
 '
 echo -ne "\e[1;33mm3tozz\e[0;31m@\033[1;34mfastcat\n\e[0;31m↳\e[1;36m " ; read islem
@@ -130,7 +130,7 @@ banner
 
 # menu
 case $islem in
-    [1-9]|0[1-9]|1[0-9]|2[0-2])
+    [1-9]|0[1-9]|1[0-9]|2[0-3])
         choice=$((10#$islem))
         apply_by_name "${THEMES[$choice]}"
         ;;
