@@ -108,7 +108,7 @@ banner() {
 \033[0;36m| || (_| \__ \ |_| \__/\ (_| | |_ 
 \033[0;31m\_| \__,_|___/\__|\____/\__,_|\__|     
 \e[1;34m[01]\e[0;32mDragonball \e[1;35m[02]\e[0;32mOne-Piece \e[1;31m[03]\e[0;32mXenia
-\e[1;37m[04]\e[0;32mCreepy-Pumpkin
+\e[1;37m[04]\e[0;32mCreepy-Pumpkin \e[1;33m[05]\e[0;32mcat_scratch
 \e[3m\e[92mThese themes require an image-supporting terminal emulator.\e[0m
 \033[1;31m[P]\e[0;32mPreview \033[1;31m[x]Exit  [00]Menu  [D]Default-Theme
 '
@@ -139,6 +139,11 @@ while true; do
         4|04)
             prompt_logo_protocol
             apply_visual_theme "Creepy-Pumpkin"
+            break
+            ;;
+        5|04)
+            prompt_logo_protocol
+            apply_visual_theme "cat_scratch"
             break
             ;;
         00)
