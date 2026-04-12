@@ -106,6 +106,44 @@ random_theme() {
     apply_by_name "$name"
 }
 
+preview_loop() {
+    while true; do
+        clear
+        echo -e "\033[1;33m--- Preview Mode -------------------------------------------\033[0m"
+        local idx=0
+        for key in $(echo "${!THEMES[@]}" | tr ' ' '\n' | sort -n); do
+            printf "  \e[1;34m[%02d]\e[0;32m %-18s\033[0m" "$key" "${THEMES[$key]}"
+            (( ++idx % 4 == 0 )) && echo
+        done
+        echo
+        echo -e "\033[1;33m------------------------------------------------------------\033[0m"
+        echo -e "\033[0;36mType a number to preview · [Q] return to menu\033[0m"
+        echo -ne "\e[1;33mm3tozz\e[0;31m@\033[1;34mfastcat \033[1;31m(preview)\n\e[0;31m↳\e[1;36m "
+        read -r preview_input
+
+        case "$preview_input" in
+            Q|q)
+                clear
+                break
+                ;;
+            ''|*[!0-9]*)
+                echo -e "\033[1;31mInvalid input!\033[0m"
+                sleep 1
+                ;;
+            *)
+                local choice
+                choice=$((10#$preview_input))
+                if [[ -n "${THEMES[$choice]+x}" ]]; then
+                    preview_theme "${THEMES[$choice]}"
+                else
+                    echo -e "\033[1;31mTheme #$choice not found!\033[0m"
+                    sleep 1
+                fi
+                ;;
+        esac
+    done
+}
+
 # banner
 clear
 banner(){
@@ -135,15 +173,7 @@ case $islem in
         apply_by_name "${THEMES[$choice]}"
         ;;
     P|p) 
-        echo -e "\033[1;33mEnter theme number to preview:\033[0m"
-        read -r preview_num
-        preview_num=$((10#$preview_num))
-        if [[ -n "${THEMES[$preview_num]+x}" ]]; then
-            preview_theme "${THEMES[$preview_num]}"
-        else
-            echo -e "\033[1;31mInvalid theme number!\033[0m"
-            sleep 1
-        fi
+        preview_loop
         exec bash "$0"
         ;;
     R|r)
