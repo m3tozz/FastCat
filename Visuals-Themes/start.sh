@@ -152,34 +152,59 @@ while true; do
             break
             ;;
         P|p)
-            echo -e "\033[1;33mEnter theme number to preview:\033[0m"
-            echo -ne "\e[1;33mm3tozz\e[0;31m@\033[1;34mfastcat\n\e[0;31m↳\e[1;36m " ; read preview_num
-            preview_num=$((10#$preview_num))
-            if [[ -n "${THEMES[$preview_num]+x}" ]]; then
-                prompt_logo_protocol
-                local_theme="${THEMES[$preview_num]}"
-                tmp_dir=$(mktemp -d)
-                cp -r "$local_theme/fastfetch/"* "$tmp_dir/"
-                config="$tmp_dir/config.jsonc"
-                # Fix image protocol
-                if [[ "$(uname)" == "Darwin" ]]; then
-                    sed -i '' '/"logo": {/,/}/s/"type": ".*"/"type": "'"$LOGO_PROTOCOL"'"/' "$config"
-                    sed -i '' "s|\"source\": \"|\"source\": \"$tmp_dir/|g" "$config"
-                else
-                    sed -i '/"logo": {/,/}/ s/"type": ".*"/"type": "'"$LOGO_PROTOCOL"'"/' "$config"
-                    sed -i "s|\"source\": \"|\"source\": \"$tmp_dir/|g" "$config"
-                fi
+            # Ask for protocol once, then stay in preview loop
+            prompt_logo_protocol
+            while true; do
                 clear
-                echo -e "\033[1;33m--- Preview Mode (not applied) ---\033[0m"
-                fastfetch --config "$config" --show-errors
-                echo -e "\n\033[1;33m--- End of Preview ---\033[0m"
-                echo -e "\033[0;36mPress any key to return to menu...\033[0m"
-                read -r -n1
-                rm -rf "$tmp_dir"
-            else
-                echo -e "\033[1;31mInvalid theme number!\033[0m"
-                sleep 1
-            fi
+                echo -e "\033[1;33m--- Preview Mode (Protocol: $LOGO_PROTOCOL) -----------------------\033[0m"
+                for key in $(echo "${!THEMES[@]}" | tr ' ' '\n' | sort -n); do
+                    echo -e "  \e[1;34m[$key]\e[0;32m ${THEMES[$key]}\033[0m"
+                done
+                echo -e "\033[1;33m-------------------------------------------------------------------\033[0m"
+                echo -e "\033[0;36mType a number to preview · [C] change protocol · [Q] return to menu\033[0m"
+                echo -ne "\e[1;33mm3tozz\e[0;31m@\033[1;34mfastcat \033[1;31m(preview)\n\e[0;31m↳\e[1;36m "
+                read -r preview_input
+
+                case "$preview_input" in
+                    Q|q)
+                        clear
+                        break
+                        ;;
+                    C|c)
+                        prompt_logo_protocol
+                        ;;
+                    ''|*[!0-9]*)
+                        echo -e "\033[1;31mInvalid input!\033[0m"
+                        sleep 1
+                        ;;
+                    *)
+                        choice=$((10#$preview_input))
+                        if [[ -n "${THEMES[$choice]+x}" ]]; then
+                            local_theme="${THEMES[$choice]}"
+                            tmp_dir=$(mktemp -d)
+                            config="$tmp_dir/config.jsonc"
+                            cp -r "$local_theme/fastfetch/"* "$tmp_dir/"
+                            if [[ "$(uname)" == "Darwin" ]]; then
+                                sed -i '' '/"logo": {/,/}/s/"type": ".*"/"type": "'"$LOGO_PROTOCOL"'"/' "$config"
+                                sed -i '' "s|\"source\": \"|\"source\": \"$tmp_dir/|g" "$config"
+                            else
+                                sed -i '/"logo": {/,/}/ s/"type": ".*"/"type": "'"$LOGO_PROTOCOL"'"/' "$config"
+                                sed -i "s|\"source\": \"|\"source\": \"$tmp_dir/|g" "$config"
+                            fi
+                            clear
+                            echo -e "\033[1;33m--- Preview: $local_theme (not applied) ---\033[0m"
+                            fastfetch --config "$config" --show-errors
+                            echo -e "\n\033[1;33m--- End of Preview ---\033[0m"
+                            echo -e "\033[0;36mPress any key to continue...\033[0m"
+                            read -r -n1
+                            rm -rf "$tmp_dir"
+                        else
+                            echo -e "\033[1;31mTheme #$choice not found!\033[0m"
+                            sleep 1
+                        fi
+                        ;;
+                esac
+            done
             ;;
         D|d)
             echo -e "\n\033[1;33mWarning: There is no 'default' for visual themes.\033[0m"
