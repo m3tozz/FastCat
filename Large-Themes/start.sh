@@ -243,6 +243,7 @@ case $islem in
     fastfetch
         ;;
     00)
+        cd ..
         bash ./fastcat.sh -s
         ;;
     X|x)
