@@ -39,7 +39,7 @@ if [ "$remote_ver" != "$local_ver" ]; then
     fi
 fi
 # FastCat Version
-    version='1.3.2.9'
+    version='1.3.3'
 # Colors
     red='\e[1;31m'
     yellow='\e[1;33m'
@@ -132,7 +132,7 @@ echo -e '\033[1;36m
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀                                       
 '
 echo -e '
-\e[1;34m[01]\e[0;32mSmall Themes \e[1;35m[02]\e[0;32mLarge Themes \e[1;33m[03]\e[0;32mVisuals Themes \033[0;33m[C]\e[0;32mCommunity Themes 
+\e[1;34m[01]\e[0;32mSmall Themes \e[1;35m[02]\e[0;32mLarge Themes \e[1;33m[03]\e[0;32mVisuals Themes  
 \e[1;31m[A]About [B]Backup [x]Exit\033[0m
 '
         echo -ne "\e[1;31mm3tozz\033[0;36m@\033[1;33mfastcat\n\e \033[0;36m↳\033[0m " ; read islem
@@ -154,20 +154,6 @@ elif [[ $islem == 3 || $islem == 03 ]]; then
 	bash start.sh
 elif [[ $islem == x || $islem == X ]]; then
 	clear
-elif [[ $islem == c || $islem == C ]]; then
-	clear
-	rm -rf fastcat-community-themes
-	git clone https://github.com/m3tozz/fastcat-community-themes.git
- 	clear
- 	cd fastcat-community-themes
- 	echo -e '\033[0;33mTo add your own fastfetch configuration to the FastCat community,'
-	echo -e '\033[0;31mAdd your own configuration at https://github.com/m3tozz/fastcat-community-themes'
-	echo -e 'and submit a Pull Request..\e[0m'
- 	echo -e "\033[1;32m Themes Uploaded by Our Community:\033[01;35m"
- 	ls -d */
- 	echo -e '\033[0;33mYou need to manually install the themes in this folder into .config/fastfetch.\033[0;31m'
-  	pwd
-	echo -e '    \033[0m'
 elif [[ $islem == a || $islem == A ]]; then
 	clear
 echo -e '
