@@ -1,0 +1,120 @@
+{
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+    "logo": {
+    	"source": "~/.config/fastfetch/logo.png",
+    	"type": "kitty",
+    	"height": 16,
+    	"padding": {
+    		"top": 1,
+    	}
+  },
+  "display": {
+    "separator": " ➜  ",
+    "color": {
+      "keys": "38;5;147"
+    }
+  },
+  "modules": [
+    {
+      "type": "title",
+      "format": "    \u001b[90m    󰌽   {user-name} • Fastfetch\u001b[90m  󰌽",
+      "color": {
+        "user": "38;5;111",
+        "host": "38;5;111"
+      }
+    },
+    {
+      "type": "custom",
+      "format": " 󰝤───────────────────────────────────────󰝤",
+      "color": "38;5;242"
+    },
+    {
+      "type": "os",
+      "key": " 󰣇  SYSTEM  ",
+      "keyColor": "38;5;111"
+    },
+    {
+      "type": "kernel",
+      "key": " 󰌢  KERNEL  ",
+      "keyColor": "38;5;111"
+    },
+    {
+      "type": "command",
+      "key": " 󰃭  AGE     ",
+      "keyColor": "38;5;111",
+      "text": "birth_install=$(stat -c %W / | tr -d '0' == '' && stat -c %Y / || stat -c %W /); now=$(date +%s); echo $(((now-birth_install)/86400)) days"
+    },
+    {
+      "type": "uptime",
+      "key": " 󰔛  UPTIME  ",
+      "keyColor": "38;5;111"
+    },
+    {
+      "type": "packages",
+      "key": " 󰏖  PACKS   ",
+      "keyColor": "38;5;111"
+    },
+    {
+      "type": "break"
+    },
+    {
+      "type": "cpu",
+      "key": " 󰍛  CPU     ",
+      "keyColor": "38;5;147",
+      "format": "{1}",
+    },
+    {
+      "type": "gpu",
+      "key": " 󰍹  GPU     ",
+      "keyColor": "38;5;147",
+      "format": "{2}"
+    },
+{
+      "type": "memory",
+      "key": " 󰑭  RAM     ",
+      "keyColor": "38;5;147",
+      "format": "{1} / {2} ({3})"
+    },
+    {
+      "type": "disk",
+      "key": " 󰋊  DISK    ",
+      "keyColor": "38;5;147",
+      "format": "{1} / {2} ({3})"
+    },
+    {
+      "type": "break"
+    },
+    {
+      "type": "wm",
+      "key": " 󱂬  WINDOW  ",
+      "keyColor": "38;5;115"
+    },
+    {
+      "type": "shell",
+      "key": " 󰆍  SHELL   ",
+      "keyColor": "38;5;115"
+    },
+    {
+      "type": "terminal",
+      "key": "   TERM    ",
+      "keyColor": "38;5;115"
+    },
+    {
+      "type": "media",
+      "key": " 󰝚  PLAYER  ",
+      "keyColor": "38;5;115",
+    },
+    {
+      "type": "break"
+    },
+    {
+      "type": "custom",
+      "format": " 󰝤───────────────────────────────────────󰝤",
+      "color": "38;5;242"
+    },
+    {
+      "type": "custom",
+      "format": "    \u001b[90m     󰮯  󰊠  󰊠  󰊠  󰊠  󰊠  󰊠  󰊠 \u001b[90m"
+    },
+  ]
+}
