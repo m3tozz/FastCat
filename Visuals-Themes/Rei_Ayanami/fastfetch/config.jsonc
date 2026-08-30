@@ -1,0 +1,143 @@
+{
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+    "logo": {
+        "source": "rei.png",
+        "type": "kitty-direct",
+        "width": 25,
+        "height": 12,
+        "padding": {
+            "top": 4,
+            "right": 2
+        }
+    },
+    "display": {
+        "separator": "  "
+    },
+    "modules": [     
+        {
+            "type": "custom",
+            "format": "\u001b[38;2;123;143;204m             ┌──────────────────────────────────────┐"
+        },
+        {
+            "type": "custom",
+            "format": "\u001b[38;2;123;143;204m                         @@@@  @@@@@ @@@  "
+        },
+        {
+            "type": "custom",
+            "format": "\u001b[38;2;123;143;204m                         @   @ @      @  "
+        },
+        {
+            "type": "custom",
+            "format": "\u001b[38;2;123;143;204m                         @@@@  @@@@   @  "
+        },  
+        {
+            "type": "custom",
+            "format": "\u001b[38;2;123;143;204m                         @  @  @      @  "
+        },  
+        {
+            "type": "custom",
+            "format": "\u001b[38;2;123;143;204m                         @   @ @@@@@ @@@ "
+        },  
+        {
+            "type": "custom",
+            "format": "\u001b[38;2;123;143;204m             └──────────────────────────────────────┘"
+        },
+        
+
+        // Distribution, Kernel, and Package Details
+        {
+            "type": "os",
+            "key": " OS",
+            "keyColor": "#7b8fcc",
+            "format": "{2}"
+        },
+        {
+            "type": "os",
+            "key": "├󰣭", // Just get your distro's logo off nerdfonts.com
+            "keyColor": "#7b8fcc"
+        },
+        {
+            "type": "kernel",
+            "key": "├",
+            "keyColor": "#7b8fcc"
+        },
+        {
+            "type": "packages",
+            "key": "├󰏖",
+            "keyColor": "#7b8fcc"
+        },
+        {
+            "type": "shell",
+            "key": "└",
+            "keyColor": "#7b8fcc"
+        },
+
+        "break",
+        
+        //  Graphical Interface and Customization
+        {
+            "type": "wm",
+            "key": " DE/WM",
+            "keyColor": "#bc2b3d"
+        },
+        {
+            "type": "lm",
+            "key": "├󰧨",
+            "keyColor": "#bc2b3d"
+        },
+        {
+            "type": "wmtheme",
+            "key": "├󰉼",
+            "keyColor": "#bc2b3d"
+        },
+        {
+            "type": "icons",
+            "key": "├󰀻",
+            "keyColor": "#bc2b3d"
+        },
+        {
+            "type": "terminal",
+            "key": "└󰸉",
+            "keyColor": "#bc2b3d"
+        },
+
+        "break",
+
+        // Your Computer's Specifications
+        {
+            "type": "host",
+            "key": "󰌢 PC",
+            "keyColor": "#e1b7cc"
+        },
+        {
+            "type": "cpu",
+            "key": "├󰻠",
+            "keyColor": "#e1b7cc"
+        },
+        {
+            "type": "gpu",
+            "key": "├󰍛",
+            "keyColor": "#e1b7cc"
+        },
+        {
+            "type": "disk",
+            "key": "├",
+            "keyColor": "#e1b7cc"
+        },
+        {
+            "type": "memory",
+            "key": "├󰑭",
+            "keyColor": "#e1b7cc"
+        },
+        {
+            "type": "display",
+            "key": "├󰍹",
+            "keyColor": "#e1b7cc"
+        },
+        {
+            "type": "uptime",
+            "key": "└󰅐",
+            "keyColor": "#e1b7cc"
+        }
+    ]
+}
