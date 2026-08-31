@@ -4,14 +4,13 @@
 
 ---
 
-What is FastCat?
- --
+## What is FastCat?
 FastCat contains its own fastfetch configurations and uploads the selected configuration to your system!
 
 ---
 
-<a href="https://www.instagram.com/textzuhree/"><img src="https://img.shields.io/badge/textzuhree-black?&logo=instagram&logoColor=purple" hspace="10"  align="right" /></a>Install (Automatic)
---
+## <a href="https://www.instagram.com/textzuhree/"><img src="https://img.shields.io/badge/textzuhree-black?&logo=instagram&logoColor=purple" hspace="10"  align="right" /></a>Install (Automatic)
+
 ```bash
 git clone --depth 1 https://github.com/m3tozz/FastCat.git && cd FastCat && bash ./fastcat.sh --shell
 ```
@@ -49,7 +48,7 @@ bash ./fastcat.sh --backup
 
 ---
 
-# Themes
+## Themes
 > [!IMPORTANT]  
 > Since the FastCat script can now preview its themes, the [FastCat's preview theme site](https://m3tozz.github.io/FastCat-Themes/) is no longer needed.
 > After selecting either the **Large** or **Small** theme section within FastCat, you can use the **P (Preview)** section to preview the theme you want.
@@ -66,8 +65,8 @@ bash ./fastcat.sh --backup
 <a href="https://matrix.to/#/#neocat-channels:matrix.org"><img src="https://img.shields.io/badge/Join The Community Matrix Server-black?&logo=matrix" hspace="10"  align="center" /></a></p>
  
 ---
-Support | Bağış Yap
---
+## Support | Bağış Yap
+
 [![Donate to HAYTAP](https://img.shields.io/badge/🐾_Donate-HAYTAP❤️-red?style=for-the-badge)](https://fonzip.com/haytap/bagis)
 
 > [!IMPORTANT]  
@@ -122,12 +121,25 @@ Support | Bağış Yap
 
 ---
 
-Contributors
---
+## Contributors
+
 <a href="https://github.com/m3tozz/FastCat/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=m3tozz/FastCat" />
+  <img src="https://contrib.rocks/image?repo=m3tozz/FastCat&v=" />
 </a>
 
---------------------------------------------------------------------------
+---
+
+## Star History
+
+<p align ="center"><a href="https://www.star-history.com/?repos=m3tozz%2FFastCat&type=timeline&legend=top-left">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=m3tozz/FastCat&type=timeline&theme=dark&legend=top-left&sealed_token=t0CC9l2JnoA6QEXjF7o4lfXKxGq4KW_hWPQ9QMZW4Qpvq4CUizbVZotPvOzxBlwslgiFwiunstwlEWJ0lY1sYwFgeg9OiRj5aIZcJTnOPzHX35hMxZSO8O8YRiKxAuErCT-xqiq_OmFKYNjW5U2vqCGk9n0hi98Dkzf_S5o9PbwZIoY-hlecXLPiF9sz" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=m3tozz/FastCat&type=timeline&legend=top-left&sealed_token=t0CC9l2JnoA6QEXjF7o4lfXKxGq4KW_hWPQ9QMZW4Qpvq4CUizbVZotPvOzxBlwslgiFwiunstwlEWJ0lY1sYwFgeg9OiRj5aIZcJTnOPzHX35hMxZSO8O8YRiKxAuErCT-xqiq_OmFKYNjW5U2vqCGk9n0hi98Dkzf_S5o9PbwZIoY-hlecXLPiF9sz" />
+   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=m3tozz/FastCat&type=timeline&legend=top-left&sealed_token=t0CC9l2JnoA6QEXjF7o4lfXKxGq4KW_hWPQ9QMZW4Qpvq4CUizbVZotPvOzxBlwslgiFwiunstwlEWJ0lY1sYwFgeg9OiRj5aIZcJTnOPzHX35hMxZSO8O8YRiKxAuErCT-xqiq_OmFKYNjW5U2vqCGk9n0hi98Dkzf_S5o9PbwZIoY-hlecXLPiF9sz" />
+ </picture>
+</a>
+</p>
+
+---
 
 <p align="center"> <i>“Peace begins with a smile.”</i> — Mother Teresa </p>
