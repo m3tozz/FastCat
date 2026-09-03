@@ -210,7 +210,7 @@ echo -e '\033[0;36m
 \e[1;34m[21]\e[0;32mSpider-Man \e[0;36m[22]\e[0;32mTriangle \033[1;33m[23]\e[0;32mStars \e[1;35m[24]\e[0;32mYandere-Girl
 \e[1;34m[25]\e[0;32mTheLead \e[1;35m[26]\e[0;32mShirazTux \e[1;31m[27]\e[0;32mKaviani-Derafsh \e[1;35m[28]\e[0;32mArthur-Morgan-hat
 \e[1;31m[29]\e[0;32mMetoCat \e[1;33m[30]\e[0;32mShiraz-Linux \e[1;35m[31]\e[0;32mBulla-Cachy
-\033[1;33m[32]\e[0;32mZenith-Hum \033[0;36m[33]\e[0;32mAnchor \033[1;37m[34]\e[0;32mCasual \033[1;37m[35]\e[0;32mLuffy
+\033[1;33m[32]\e[0;32mZenith-Hum \033[0;36m[33]\e[0;32mAnchor \033[1;37m[34]\e[0;32mCasual \033[1;33m[35]\e[0;32mLuffy
 \033[1;31m[P]Preview [R]Random [x]Exit [00]Menu [D]Default-Theme
 '
 echo -ne "\e[1;33mm3tozz\e[0;31m@\033[1;34mfastcat\n\e[0;31m↳\e[1;36m " ; read islem
