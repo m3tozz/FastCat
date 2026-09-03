@@ -32,7 +32,7 @@ loader() {
 
 # Theme directory mapping
 THEMES=(
-    [1]="Dragonball" [2]="One-Piece" [3]="Xenia" [4]="Creepy-Pumpkin" [5]="cat_scratch" [6]="Gruvbox" [7]="Dragon" [8]="Phoenix" [9]="Rei_Ayanami"
+    [1]="Dragonball" [2]="One-Piece" [3]="Xenia" [4]="Creepy-Pumpkin" [5]="cat_scratch" [6]="Gruvbox" [7]="Dragon" [8]="Phoenix" [9]="Rei_Ayanami"[10]="agk_clan" [11]="aisaka" [12]="geass" [13]="hyprland" [14]="loli" [15]="pochita" [16]="ryuzaki" 
 )
 
 # Prompts the user to select the image rendering protocol with details.
@@ -108,10 +108,12 @@ banner() {
 \033[0;36m| || (_| \__ \ |_| \__/\ (_| | |_ 
 \033[0;31m\_| \__,_|___/\__|\____/\__,_|\__|     
 \e[1;34m[01]\e[0;32mDragonball \e[1;35m[02]\e[0;32mOne-Piece \e[1;31m[03]\e[0;32mXenia
-\e[1;37m[04]\e[0;32mCreepy-Pumpkin \e[1;33m[05]\e[0;32mcat_scratch \e[1;35m[06]\e[0;32mGruvbox
+\e[1;37m[04]\e[0;32mCreepy-Pumpkin \e[1;33m[05]\e[0;32mCat_Scratch \e[1;35m[06]\e[0;32mGruvbox
 \e[1;35m[07]\e[0;32mDragon \e[1;31m[08]\e[0;32mPhoenix \e[38;2;123;143;204m[09]\e[0;32mRei_Ayanami
+\e[1;34m[10]\e[0;32mAgk_Clan \e[1;35m[11]\e[0;32mAisaka \e[1;31m[12]\e[0;32mGeass
+\e[1;37m[13]\e[0;32mHyprland \e[1;33m[14]\e[0;32mLoli \e[1;35m[15]\e[0;32mPochita \e[1;34m[16]\e[0;32mRyuzaki
 \e[3m\e[92mThese themes require an image-supporting terminal emulator.\e[0m
-\033[1;31m[P]\e[0;32mPreview \033[1;31m[x]Exit  [00]Menu  [D]Default-Theme
+\033[1;31m[P]Preview [x]Exit  [00]Menu  [D]Default-Theme
 '
 }
 
@@ -167,6 +169,41 @@ while true; do
 	        apply_visual_theme "Rei_Ayanami"
 	        break
 	        ;;
+        10|10)
+            prompt_logo_protocol
+            apply_visual_theme "agk_clan"
+            break
+            ;;
+        11|11)
+            prompt_logo_protocol
+            apply_visual_theme "aisaka"
+            break
+            ;;
+        12|12)
+            prompt_logo_protocol
+            apply_visual_theme "geass"
+            break
+            ;;
+        13|13)
+            prompt_logo_protocol
+            apply_visual_theme "hyprland"
+            break
+            ;;
+        14|14)
+            prompt_logo_protocol
+            apply_visual_theme "loli"
+            break
+            ;;
+        15|15)
+            prompt_logo_protocol
+            apply_visual_theme "pochita"
+            break
+            ;;
+        16|16)
+            prompt_logo_protocol
+            apply_visual_theme "ryuzaki"
+            break
+            ;;
         00)
             cd ..
             bash ./fastcat.sh -s
