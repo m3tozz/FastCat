@@ -29,7 +29,7 @@ if [ "$remote_ver" != "$local_ver" ]; then
         git fetch origin
         git reset --hard origin/$branch
         echo "update complete. restarting script..."
-		echo -e "\033[1;31mThis message may repeat itself several times. Please wait...\e[0m"
+        echo -e "\033[1;31mThis message may repeat itself several times. Please wait...\e[0m"
         exec "$local_file" "$@"
         exit
     else
@@ -48,17 +48,19 @@ fi
     green='\e[0;32m'
     bgreen='\033[1;32m'
 # Define Constants.
-export APP="FastCat" 		# Project Name
-export CWD="${PWD}"			# Current Work Directory
-export BASENAME="${0##*/}"	# Base Name of This Script
+export APP="FastCat"        # Project Name
+export CWD="${PWD}"         # Current Work Directory
+export BASENAME="${0##*/}"  # Base Name of This Script
 # Functions.
 help() {
-	echo -e "Wrong usage, there is 3 arguments for ${BASENAME}\n
+    echo -e "Wrong usage, there is 3 arguments for ${BASENAME}\n
 \t${BASENAME} --shell: run the ${APP} .
 \t${BASENAME} --backup: back up your own fastfetch configuration.
 \t${BASENAME} --version: show the version.
 \t${BASENAME} --about: about ${APP} project.
 \t${BASENAME} --help: show this page.
+\t${BASENAME} ----------------------------------
+\t${BASENAME} ex usage: bash ./fastcat.sh --help
 "
 }
 fastcat:version() {
@@ -77,18 +79,20 @@ echo -e '
     echo -e "    Community Server    ":" $red discord.com/invite/sQwYCZer95$tp"
     echo -e "    Version             ":" $red ${version} $tp"
     echo -e "$blue###############################################################$tp"
-	exit 1
+    exit 1
 }
 fastcat:backup() {
 bash ./backup.sh
 }
 help() {
-	echo -e "	 
+    echo -e "    
 --shell: run the ${APP} .
 --backup: back up your own fastfetch configuration.
 --version: show the version.
 --about: about ${APP} project.
---help: show this page."
+--help: show this page
+----------------------------------
+example usage: bash ./fastcat.sh --help "
 }
 shell(){
 if ! command -v fastfetch
@@ -139,23 +143,23 @@ echo -e '
 }
 banner
 if [[ $islem == 1 || $islem == 01 ]]; then
-	clear
-	cd Small-Themes/
-	bash start.sh
+    clear
+    cd Small-Themes/
+    bash start.sh
 elif [[ $islem == 2 || $islem == 02 ]]; then
-	clear
-	cd Large-Themes/
-	bash start.sh
+    clear
+    cd Large-Themes/
+    bash start.sh
 elif [[ $islem == 3 || $islem == 03 ]]; then
-	clear
-	cd Visuals-Themes/
-	
-	chmod +x start.sh
-	bash start.sh
+    clear
+    cd Visuals-Themes/
+    
+    chmod +x start.sh
+    bash start.sh
 elif [[ $islem == x || $islem == X ]]; then
-	clear
+    clear
 elif [[ $islem == a || $islem == A ]]; then
-	clear
+    clear
 echo -e '
  _____         _    ____      _   
 |  ___|_ _ ___| |_ / ___|__ _| |_ 
@@ -175,25 +179,25 @@ echo -e '
 elif [[ $islem == b || $islem == B ]]; then
 $SHELL ./backup.sh
 else
-	echo -e '\e[1;34m Wrong transaction number!\033[0m'
+    echo -e '\e[1;34m Wrong transaction number!\033[0m'
 fi
 }
 # Argument Parser.
 normalized_arg=$(echo "$1" | tr '[:upper:]' '[:lower:]')
 case "$normalized_arg" in
-	"--shell"|"-s")
-		shell
-	;;
-	"--backup"|"-b")
-		fastcat:backup
-	;;
-		"--about"|"-a")
-		fastcat:about
-	;;
-	"--version"|"-v")
-		fastcat:version
-	;;
-	*)
-		help
-	;;
+    "--shell"|"-s")
+        shell
+    ;;
+    "--backup"|"-b")
+        fastcat:backup
+    ;;
+        "--about"|"-a")
+        fastcat:about
+    ;;
+    "--version"|"-v")
+        fastcat:version
+    ;;
+    *)
+        help
+    ;;
 esac
