@@ -40,7 +40,7 @@ THEMES=(
     [21]="Spider-Man" [22]="Triangle" [23]="Stars" [24]="Yandere-Girl"
     [25]="TheLead" [26]="ShirazTux" [27]="Kaviani-Derafsh" [28]="Arthur-Morgan-hat"
     [29]="MetoCat" [30]="Shiraz-Linux" [31]="Bulla-Cachy"
-    [32]="Zenith-Hum" [33]="Anchor" [36]="Casual" [37]="Luffy"
+    [32]="Zenith-Hum" [33]="Anchor" [34]="Casual" [35]="Luffy"
 )
 
 THEME_COUNT=${#THEMES[@]}
