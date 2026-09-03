@@ -32,7 +32,7 @@ loader() {
 
 # Theme directory mapping
 THEMES=(
-    [1]="Dragonball" [2]="One-Piece" [3]="Xenia" [4]="Creepy-Pumpkin" [5]="cat_scratch" [6]="Gruvbox" [7]="Dragon" [8]="Phoenix" [9]="Rei_Ayanami"[10]="agk_clan" [11]="aisaka" [12]="geass" [13]="hyprland" [14]="loli" [15]="pochita" [16]="ryuzaki" 
+    [1]="Dragonball" [2]="One-Piece" [3]="Xenia" [4]="Creepy-Pumpkin" [5]="cat_scratch" [6]="Gruvbox" [7]="Dragon" [8]="Phoenix" [9]="Rei_Ayanami" [10]="agk_clan" [11]="aisaka" [12]="geass" [13]="hyprland" [14]="loli" [15]="pochita" [16]="ryuzaki" 
 )
 
 # Prompts the user to select the image rendering protocol with details.
