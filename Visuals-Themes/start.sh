@@ -70,8 +70,9 @@ apply_visual_theme() {
 
     loader
 
-    # Clean up old config
+    # Clean up old config and fastfetch image cache
     rm -rf "$config_dest_path"
+    rm -rf "$HOME/.cache/fastfetch/images"
     mkdir -p "$config_dest_path"
 
     # Copy theme files
