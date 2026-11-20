@@ -32,7 +32,7 @@ loader() {
 
 # Theme directory mapping
 THEMES=(
-    [1]="Dragonball" [2]="One-Piece" [3]="Xenia" [4]="Creepy-Pumpkin" [5]="cat_scratch" [6]="Gruvbox" [7]="Dragon" [8]="Phoenix" [9]="Rei_Ayanami" [10]="agk_clan" [11]="aisaka" [12]="geass" [13]="hyprland" [14]="loli" [15]="pochita" [16]="ryuzaki" 
+    [1]="Dragonball" [2]="One-Piece" [3]="Xenia" [4]="Creepy-Pumpkin" [5]="cat_scratch" [6]="Gruvbox" [7]="Dragon" [8]="Phoenix" [9]="Rei_Ayanami" [10]="agk_clan" [11]="aisaka" [12]="geass" [13]="hyprland" [14]="loli" [15]="pochita" [16]="ryuzaki" [17]="fluid_nature"
 )
 
 # Prompts the user to select the image rendering protocol with details.
@@ -70,8 +70,9 @@ apply_visual_theme() {
 
     loader
 
-    # Clean up old config
+    # Clean up old config and fastfetch image cache
     rm -rf "$config_dest_path"
+    rm -rf "$HOME/.cache/fastfetch/images"
     mkdir -p "$config_dest_path"
 
     # Copy theme files
@@ -112,6 +113,7 @@ banner() {
 \e[1;35m[07]\e[0;32mDragon \e[1;31m[08]\e[0;32mPhoenix \e[38;2;123;143;204m[09]\e[0;32mRei_Ayanami
 \e[1;34m[10]\e[0;32mAgk_Clan \e[1;35m[11]\e[0;32mAisaka \e[1;31m[12]\e[0;32mGeass
 \e[1;37m[13]\e[0;32mHyprland \e[1;33m[14]\e[0;32mLoli \e[1;35m[15]\e[0;32mPochita \e[1;34m[16]\e[0;32mRyuzaki
+\e[1;34m[17]\e[0;32mfluid_nature
 \e[3m\e[92mThese themes require an image-supporting terminal emulator.\e[0m
 \033[1;31m[P]Preview [x]Exit  [00]Menu  [D]Default-Theme
 '
@@ -202,6 +204,11 @@ while true; do
         16|16)
             prompt_logo_protocol
             apply_visual_theme "ryuzaki"
+            break
+            ;;
+        17|17)
+            prompt_logo_protocol
+            apply_visual_theme "fluid_nature"
             break
             ;;
         00)

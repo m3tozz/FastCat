@@ -1,0 +1,124 @@
+{
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+    "logo": {
+        "source": "fluid_nature.png",
+        "type": "kitty",
+        "height": 16,
+        "padding": {
+            "top": 4,
+            "right": 2
+        }
+    },
+    "display": {
+        "separator": "  ",
+        "color": {
+            "output": "38;2;240;244;247"
+        },
+        "bar": {
+            "border": {
+                "left": "\uee00",
+                "leftElapsed": "\uee03",
+                "right": "\uee02",
+                "rightElapsed": "\uee05"
+            },
+            "char": {
+                "total": "\uee01",
+                "elapsed": "\uee04"
+            },
+            "color": {
+                "elapsed": "38;2;210;181;91",
+                "total": "38;2;53;69;75"
+            },
+            "width": 10
+        },
+        "percent": {
+            "type": [
+                "bar",
+                "num"
+            ]
+        }
+    },
+    "modules": [
+        {
+            "type": "title",
+            "format": "\u001b[38;2;75;94;101m╭─ \u001b[38;2;130;167;91m\u001b[1m {user-name} \u001b[38;2;75;94;101m· \u001b[38;2;246;196;69m\u001b[1m󰇅 {host-name}\u001b[0m"
+        },
+        "break",
+
+        {
+            "type": "os",
+            "key": "\u001b[38;2;130;167;91m󰣇 \u001b[38;2;155;194;107mOS      \u001b[0m"
+        },
+        {
+            "type": "kernel",
+            "key": "\u001b[38;2;130;167;91m󰒋 \u001b[38;2;155;194;107mKernel  \u001b[0m"
+        },
+        {
+            "type": "uptime",
+            "key": "\u001b[38;2;130;167;91m󰅐 \u001b[38;2;155;194;107mUptime  \u001b[0m"
+        },
+        {
+            "type": "packages",
+            "key": "\u001b[38;2;130;167;91m󰏖 \u001b[38;2;155;194;107mPackages\u001b[0m"
+        },
+        "break",
+
+        {
+            "type": "host",
+            "key": "\u001b[38;2;246;196;69m󰌢 \u001b[38;2;210;181;91mHost    \u001b[0m"
+        },
+        {
+            "type": "cpu",
+            "key": "\u001b[38;2;246;196;69m \u001b[38;2;210;181;91mCPU     \u001b[0m",
+            "format": "{name} ({cores-physical}C/{cores-logical}T) @ {freq-max}"
+        },
+        {
+            "type": "gpu",
+            "key": "\u001b[38;2;246;196;69m󰢮 \u001b[38;2;210;181;91mGPU     \u001b[0m",
+            "format": "{vendor} {name} [{type}]"
+        },
+        {
+            "type": "display",
+            "key": "\u001b[38;2;246;196;69m󰍹 \u001b[38;2;210;181;91mDisplay \u001b[0m",
+            "compactType": "original-with-refresh-rate"
+        },
+        "break",
+
+        {
+            "type": "memory",
+            "key": "\u001b[38;2;96;134;57m \u001b[38;2;155;194;107mMemory  \u001b[0m"
+        },
+        {
+            "type": "swap",
+            "key": "\u001b[38;2;96;134;57m󰓡 \u001b[38;2;155;194;107mSwap    \u001b[0m"
+        },
+        {
+            "type": "disk",
+            "key": "\u001b[38;2;96;134;57m \u001b[38;2;155;194;107mDisk    \u001b[0m"
+        },
+        "break",
+
+        {
+            "type": "de",
+            "key": "\u001b[38;2;104;120;136m󰧨 \u001b[38;2;136;152;152mDesktop \u001b[0m"
+        },
+        {
+            "type": "wm",
+            "key": "\u001b[38;2;104;120;136m \u001b[38;2;136;152;152mWM      \u001b[0m"
+        },
+        {
+            "type": "terminal",
+            "key": "\u001b[38;2;104;120;136m \u001b[38;2;136;152;152mTerminal\u001b[0m"
+        },
+        {
+            "type": "shell",
+            "key": "\u001b[38;2;104;120;136m \u001b[38;2;136;152;152mShell   \u001b[0m"
+        },
+        "break",
+
+        {
+            "type": "custom",
+            "format": "  \u001b[38;2;96;134;57m● \u001b[38;2;130;167;91m● \u001b[38;2;155;194;107m● \u001b[38;2;210;181;91m● \u001b[38;2;246;196;69m● \u001b[38;2;202;214;220m● \u001b[38;2;104;120;136m● \u001b[38;2;240;244;247m●\u001b[0m"
+        }
+    ]
+}
