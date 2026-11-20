@@ -1,14 +1,12 @@
 {
     "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
     "logo": {
-        "type": "iterm",
-        "source": "nature.png",
-        "width": 30,
-        "height": 14,
+        "source": "fluid_nature.png",
+        "type": "kitty",
+        "height": 16,
         "padding": {
             "top": 4,
-            "left": 3,
-            "right": 3
+            "right": 2
         }
     },
     "display": {

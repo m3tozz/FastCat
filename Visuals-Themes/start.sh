@@ -113,7 +113,7 @@ banner() {
 \e[1;35m[07]\e[0;32mDragon \e[1;31m[08]\e[0;32mPhoenix \e[38;2;123;143;204m[09]\e[0;32mRei_Ayanami
 \e[1;34m[10]\e[0;32mAgk_Clan \e[1;35m[11]\e[0;32mAisaka \e[1;31m[12]\e[0;32mGeass
 \e[1;37m[13]\e[0;32mHyprland \e[1;33m[14]\e[0;32mLoli \e[1;35m[15]\e[0;32mPochita \e[1;34m[16]\e[0;32mRyuzaki
-\e[1;34m[17]\e[0;32mNature
+\e[1;34m[17]\e[0;32mfluid_nature
 \e[3m\e[92mThese themes require an image-supporting terminal emulator.\e[0m
 \033[1;31m[P]Preview [x]Exit  [00]Menu  [D]Default-Theme
 '
@@ -208,7 +208,7 @@ while true; do
             ;;
         17|17)
             prompt_logo_protocol
-            apply_visual_theme "Nature"
+            apply_visual_theme "fluid_nature"
             break
             ;;
         00)
